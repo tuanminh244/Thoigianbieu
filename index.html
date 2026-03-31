@@ -4,545 +4,997 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kế Hoạch Tuần – Bảo Lâm 🏀 v2</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>Kế Hoạch Tuần – Bảo Lâm v3</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Fredoka+One&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --orange: #FF6B35;
-    --navy: #1A2744;
-    --navy-light: #243460;
-    --gold: #FFD166;
-    --green: #06D6A0;
-    --red: #EF476F;
-    --purple: #845EF7;
-    --blue: #4ECDC4;
-    --pink: #FF6B9D;
-    --bg: #F7F3EE;
-    --card: #FFFFFF;
-    --text: #1A2744;
-    --muted: #7A8099;
-    --radius: 16px;
-    --shadow: 0 4px 20px rgba(26,39,68,0.10);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+/* ─── RESET & BASE ─── */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:#FBF7F2;color:#1C2340;min-height:100vh;-webkit-font-smoothing:antialiased}
 
-/* HERO */
-.hero {
-background: linear-gradient(135deg, var(–navy) 0%, var(–navy-light) 60%, #2D4A8A 100%);
-color: white; padding: 36px 24px 28px; position: relative; overflow: hidden;
+/* ─── HERO (fully opaque – no transparent text bug) ─── */
+.hero{
+background:#1C2340;
+padding:32px 20px 28px;
+position:relative;
+overflow:hidden;
 }
-.hero::before { content:’’; position:absolute; top:-60px; right:-60px; width:220px; height:220px; border-radius:50%; border:30px solid rgba(255,107,53,0.18); }
-.hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,107,53,0.25); border:1px solid rgba(255,107,53,0.4); border-radius:20px; padding:4px 14px; font-size:11px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px; color:var(–gold); }
-.hero h1 { font-family:‘Baloo 2’,sans-serif; font-size:2rem; font-weight:800; line-height:1.1; margin-bottom:4px; }
-.hero h1 span { color:var(–orange); }
-.hero-sub { font-size:0.88rem; color:rgba(255,255,255,0.6); margin-bottom:20px; }
-.hero-stats { display:flex; gap:12px; flex-wrap:wrap; }
-.stat-chip { background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.15); border-radius:12px; padding:8px 14px; text-align:center; }
-.stat-chip .num { font-size:1.3rem; font-weight:900; color:var(–gold); line-height:1; }
-.stat-chip .lbl { font-size:0.65rem; color:rgba(255,255,255,0.6); margin-top:2px; }
+.hero-circle1{position:absolute;top:-50px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,107,53,0.15);pointer-events:none}
+.hero-circle2{position:absolute;bottom:-70px;left:20px;width:150px;height:150px;border-radius:50%;background:rgba(255,209,102,0.10);pointer-events:none}
+.hero-badge{
+display:inline-flex;align-items:center;gap:6px;
+background:#FF6B35;border-radius:20px;
+padding:4px 14px;font-size:11px;font-weight:800;
+letter-spacing:.07em;text-transform:uppercase;
+color:#fff;margin-bottom:12px;
+}
+.hero h1{
+font-family:‘Fredoka One’,cursive;
+font-size:2.1rem;color:#fff;line-height:1.1;margin-bottom:6px;
+}
+.hero h1 em{color:#FF6B35;font-style:normal}
+.hero-sub{font-size:.82rem;color:rgba(255,255,255,.55);margin-bottom:20px}
+.hero-chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{
+background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+border-radius:10px;padding:8px 14px;text-align:center;
+}
+.chip .cv{font-size:1.3rem;font-weight:900;color:#FFD166;line-height:1}
+.chip .cl{font-size:.62rem;color:rgba(255,255,255,.5);margin-top:2px}
 
-/* LEGEND */
-.legend { display:flex; flex-wrap:wrap; gap:8px; padding:12px 20px; background:white; border-bottom:1px solid #EEE; }
-.legend-item { display:flex; align-items:center; gap:5px; font-size:0.72rem; font-weight:700; color:var(–muted); }
-.dot { width:9px; height:9px; border-radius:50%; }
+/* ─── LEGEND ─── */
+.legend{
+display:flex;flex-wrap:wrap;gap:8px;
+padding:12px 18px;background:#fff;
+border-bottom:2px solid #F0EBE3;
+}
+.leg{display:flex;align-items:center;gap:5px;font-size:.7rem;font-weight:700;color:#8A90A8}
+.ldot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 
-/* TABS */
-.tabs-wrap { overflow-x:auto; background:white; padding:0 12px; border-bottom:2px solid #EEE; position:sticky; top:0; z-index:10; }
-.tabs { display:flex; min-width:max-content; }
-.tab { padding:12px 16px; font-size:0.82rem; font-weight:800; color:var(–muted); cursor:pointer; border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; background:none; border-top:none; border-left:none; border-right:none; }
-.tab.active { color:var(–orange); border-bottom-color:var(–orange); }
-.tab:hover { color:var(–navy); }
+/* ─── STICKY TABS ─── */
+.tabs-wrap{
+overflow-x:auto;background:#fff;
+padding:0 12px;border-bottom:2px solid #F0EBE3;
+position:sticky;top:0;z-index:20;
+-webkit-overflow-scrolling:touch;
+}
+.tabs{display:flex;min-width:max-content}
+.tab{
+padding:12px 15px;font-size:.8rem;font-weight:800;
+color:#8A90A8;cursor:pointer;
+border-bottom:3px solid transparent;transition:all .2s;
+white-space:nowrap;background:none;
+border-top:none;border-left:none;border-right:none;
+font-family:‘Nunito’,sans-serif;
+}
+.tab.active{color:#FF6B35;border-bottom-color:#FF6B35}
 
-/* CONTENT */
-.content { max-width:860px; margin:0 auto; padding:20px 14px 60px; }
-.day-panel { display:none; }
-.day-panel.active { display:block; }
+/* ─── PAGE CONTENT ─── */
+.content{max-width:820px;margin:0 auto;padding:20px 14px 70px}
+.day-panel{display:none}
+.day-panel.active{display:block}
 
-.day-header { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:16px; gap:10px; }
-.day-title { font-family:‘Baloo 2’,sans-serif; font-size:1.5rem; font-weight:800; color:var(–navy); }
-.day-date { font-size:0.75rem; color:var(–muted); font-weight:600; }
-.day-focus { background:linear-gradient(135deg,var(–orange),#FF8C5A); color:white; border-radius:20px; padding:5px 14px; font-size:0.75rem; font-weight:800; white-space:nowrap; flex-shrink:0; }
-
-/* TABLE */
-.schedule { width:100%; border-collapse:separate; border-spacing:0 5px; }
-.schedule thead th { text-align:left; font-size:0.65rem; font-weight:900; text-transform:uppercase; letter-spacing:0.08em; color:var(–muted); padding:0 10px 6px; }
-.schedule tbody tr { background:white; border-radius:12px; transition:transform 0.15s; }
-.schedule tbody tr:hover { transform:translateX(3px); }
-.schedule tbody td { padding:10px 10px; vertical-align:top; }
-.schedule tbody td:first-child { border-radius:12px 0 0 12px; border-left:4px solid var(–row-color,#DDD); }
-.schedule tbody td:last-child { border-radius:0 12px 12px 0; }
-
-.time-cell { font-size:0.75rem; font-weight:700; color:var(–navy); white-space:nowrap; min-width:88px; }
-.time-cell .range { color:var(–muted); font-weight:600; display:block; font-size:0.68rem; }
-
-.type-badge { display:inline-flex; align-items:center; gap:3px; padding:2px 8px; border-radius:20px; font-size:0.68rem; font-weight:800; background:var(–badge-bg,#EEE); color:var(–badge-color,#888); white-space:nowrap; }
-
-.activity-name { font-size:0.86rem; font-weight:800; color:var(–navy); margin-bottom:2px; }
-.activity-detail { font-size:0.74rem; color:var(–muted); line-height:1.4; }
-.activity-detail strong { color:var(–navy); }
-
-/* FIXED EVENT highlight */
-tr.fixed-event { background: #FFFBF0 !important; }
-tr.fixed-event td:first-child { border-left-width: 5px !important; }
-.fixed-tag { display:inline-block; background:var(–gold); color:#7A5E00; border-radius:6px; padding:1px 6px; font-size:0.62rem; font-weight:900; margin-left:6px; vertical-align:middle; }
-.hw-tag { display:inline-block; background:#FFE0EC; color:#B01742; border-radius:6px; padding:1px 6px; font-size:0.62rem; font-weight:900; margin-left:6px; vertical-align:middle; }
-
-/* Row colors */
-tr.type-wake   { –row-color:#FFD166; }
-tr.type-school { –row-color:#4ECDC4; }
-tr.type-sport  { –row-color:#FF6B35; }
-tr.type-study  { –row-color:#845EF7; }
-tr.type-hw     { –row-color:#EF476F; }
-tr.type-rest   { –row-color:#06D6A0; }
-tr.type-family { –row-color:#EF476F; }
-tr.type-flex   { –row-color:#B2BEC3; }
-tr.type-sleep  { –row-color:#1A2744; }
-tr.type-class  { –row-color:#FFD166; }
-tr.type-swim   { –row-color:#4ECDC4; }
-tr.type-gym    { –row-color:#FF6B35; }
-tr.type-piano  { –row-color:#845EF7; }
-tr.type-english{ –row-color:#06D6A0; }
-
-.badge-wake    { –badge-bg:#FFF3CC; –badge-color:#B8860B; }
-.badge-school  { –badge-bg:#E0F8F6; –badge-color:#0B8A7E; }
-.badge-sport   { –badge-bg:#FFE8DF; –badge-color:#CC4400; }
-.badge-study   { –badge-bg:#EDE8FD; –badge-color:#5B3DC9; }
-.badge-hw      { –badge-bg:#FFE0EC; –badge-color:#B01742; }
-.badge-rest    { –badge-bg:#DCFAF2; –badge-color:#0A8A65; }
-.badge-family  { –badge-bg:#FDEAEF; –badge-color:#B01742; }
-.badge-flex    { –badge-bg:#F0F0F0; –badge-color:#606060; }
-.badge-sleep   { –badge-bg:#E8EBF2; –badge-color:#1A2744; }
-.badge-class   { –badge-bg:#FFF3CC; –badge-color:#B8860B; }
-.badge-swim    { –badge-bg:#E0F8F6; –badge-color:#0B8A7E; }
-.badge-gym     { –badge-bg:#FFE8DF; –badge-color:#CC4400; }
-.badge-piano   { –badge-bg:#EDE8FD; –badge-color:#5B3DC9; }
-.badge-english { –badge-bg:#DCFAF2; –badge-color:#0A8A65; }
-
-/* SECTION CARD */
-.section-card { background:white; border-radius:var(–radius); padding:18px; margin-top:20px; box-shadow:var(–shadow); }
-.section-title { font-family:‘Baloo 2’,sans-serif; font-size:1.05rem; font-weight:800; color:var(–navy); margin-bottom:12px; display:flex; align-items:center; gap:7px; }
-
-/* CHECKLIST */
-.checklist { list-style:none; }
-.checklist li { display:flex; align-items:flex-start; gap:9px; padding:8px 0; border-bottom:1px solid #F0F0F0; font-size:0.84rem; font-weight:600; color:var(–navy); }
-.checklist li:last-child { border-bottom:none; }
-.check-box { width:19px; height:19px; border:2px solid var(–orange); border-radius:5px; flex-shrink:0; margin-top:1px; cursor:pointer; transition:all 0.2s; }
-.check-box:hover { background:var(–orange); }
-
-/* REWARD */
-.reward-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.reward-card { border-radius:12px; padding:14px; }
-.reward-card.earn { background:linear-gradient(135deg,#DCFAF2,#B8F3E4); border:1px solid #06D6A0; }
-.reward-card.lose { background:linear-gradient(135deg,#FDEAEF,#FAD0DC); border:1px solid #EF476F; }
-.reward-card h4 { font-size:0.78rem; font-weight:900; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:8px; }
-.reward-card.earn h4 { color:#047A58; }
-.reward-card.lose h4 { color:#8A0A28; }
-.reward-item { font-size:0.78rem; font-weight:600; padding:3px 0; color:var(–navy); }
-.points { font-weight:900; font-size:0.82rem; float:right; }
-.earn .points { color:#047A58; }
-.lose .points { color:#8A0A28; }
-
-/* HABITS */
-.habits-list { display:flex; flex-direction:column; gap:10px; }
-.habit-item { display:flex; align-items:center; gap:12px; padding:11px 13px; border-radius:12px; border-left:5px solid var(–h-color); background:var(–h-bg); }
-.habit-icon { font-size:1.4rem; }
-.habit-name { font-size:0.88rem; font-weight:800; color:var(–navy); }
-.habit-desc { font-size:0.72rem; color:var(–muted); margin-top:2px; }
-
-/* SUMMARY GRID */
-.summary-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-.sum-card { border-radius:12px; padding:14px; text-align:center; }
-.sum-card .icon { font-size:1.6rem; margin-bottom:5px; }
-.sum-card .val { font-size:1.3rem; font-weight:900; color:var(–navy); }
-.sum-card .lbl { font-size:0.68rem; color:var(–muted); font-weight:700; }
-
-/* NOTE */
-.note-box { background:linear-gradient(135deg,#FFF9EC,#FFF3CC); border:1px solid #FFD166; border-radius:12px; padding:14px; margin-top:12px; }
-.note-box p { font-size:0.82rem; color:#7A5E00; line-height:1.65; }
-
-.alert-box { background:linear-gradient(135deg,#FFE0EC,#FDEAEF); border:1px solid #EF476F; border-radius:12px; padding:14px; margin-top:12px; }
-.alert-box p { font-size:0.82rem; color:#8A0A28; line-height:1.65; }
-
-/* BAR */
-.bar-row { margin-bottom:9px; }
-.bar-row .bar-label { display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700; margin-bottom:3px; }
-.bar-track { height:9px; background:#EEE; border-radius:5px; overflow:hidden; }
-.bar-fill { height:100%; border-radius:5px; }
-
-/* WEEK OVERVIEW */
-.week-overview { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; }
-.wov-col { text-align:center; }
-.wov-col .wname { font-size:0.6rem; font-weight:800; text-transform:uppercase; color:var(–muted); margin-bottom:3px; }
-.wov-event { font-size:0.58rem; font-weight:700; padding:2px 0; border-radius:4px; margin-bottom:2px; }
-
-@media(max-width:600px) {
-.hero h1 { font-size:1.5rem; }
-.reward-grid { grid-template-columns:1fr; }
-.summary-grid { grid-template-columns:1fr 1fr; }
+/* Day header */
+.day-header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:16px}
+.day-title{font-family:‘Fredoka One’,cursive;font-size:1.7rem;color:#1C2340;line-height:1}
+.day-sub{font-size:.73rem;color:#8A90A8;font-weight:600;margin-top:3px}
+.focus-pill{
+background:#FF6B35;color:#fff;border-radius:20px;
+padding:5px 14px;font-size:.72rem;font-weight:800;
+white-space:nowrap;flex-shrink:0;
 }
 
-.weekend-banner { text-align:center; padding:24px 16px; background:linear-gradient(135deg,#FFF9EC,#FFFBE8); border-radius:var(–radius); border:2px dashed var(–gold); margin-bottom:14px; }
-.weekend-banner .big { font-size:2rem; margin-bottom:6px; }
-.weekend-banner h3 { font-family:‘Baloo 2’,sans-serif; font-size:1.15rem; font-weight:800; color:var(–navy); }
-.weekend-banner p { font-size:0.82rem; color:var(–muted); margin-top:5px; }
+/* ─── TASK CARD ─── */
+.task-card{
+background:#fff;border-radius:14px;margin-bottom:7px;
+border-left:4px solid var(–tc,#DDD);
+overflow:hidden;transition:box-shadow .15s;
+box-shadow:0 2px 8px rgba(28,35,64,.06);
+}
+.task-card:hover{box-shadow:0 4px 18px rgba(28,35,64,.10)}
+.task-top{display:flex;align-items:flex-start;gap:10px;padding:11px 12px 9px}
+.task-time{
+min-width:78px;flex-shrink:0;
+font-size:.73rem;font-weight:800;color:#1C2340;line-height:1.3;
+}
+.task-time .t-end{color:#8A90A8;font-weight:600;font-size:.68rem}
+.badge{
+display:inline-flex;align-items:center;gap:3px;
+padding:2px 8px;border-radius:20px;
+font-size:.65rem;font-weight:800;
+background:var(–bb,#EEE);color:var(–bc,#666);
+white-space:nowrap;flex-shrink:0;
+}
+.task-body{flex:1;min-width:0}
+.task-name{font-size:.87rem;font-weight:800;color:#1C2340;margin-bottom:2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.task-detail{font-size:.74rem;color:#8A90A8;line-height:1.45}
+.task-detail strong{color:#1C2340}
+.tag{display:inline-block;border-radius:5px;padding:1px 6px;font-size:.62rem;font-weight:900;vertical-align:middle;margin-left:3px}
+.tag-cal{background:#FFF3CC;color:#B8860B}
+.tag-hw{background:#FFDDE8;color:#C0153B}
+.tag-hw2{background:#FFE8D4;color:#B84600}
+.tag-new{background:#DCF5E8;color:#0A7A45}
 
-.calendar-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(–gold); margin-right:4px; vertical-align:middle; }
+/* ─── STAR RATING per task ─── */
+.task-rating{
+display:flex;align-items:center;gap:4px;
+padding:6px 12px 9px 100px;
+border-top:1px dashed #F0EBE3;
+}
+.task-rating span{font-size:.68rem;font-weight:700;color:#8A90A8;margin-right:4px}
+.stars{display:flex;gap:2px}
+.star{font-size:1.1rem;cursor:pointer;transition:transform .1s;line-height:1;filter:grayscale(1) opacity(.35)}
+.star.lit{filter:none}
+.star:hover{transform:scale(1.2)}
 
-/* Timeline side indicator */
-.time-block-indicator {
-display: inline-block;
-width: 6px;
-height: 6px;
-border-radius: 50%;
-background: var(–row-color, #DDD);
-margin-right: 4px;
-vertical-align: middle;
+/* ─── SLEEP BANNER ─── */
+.sleep-banner{
+background:linear-gradient(135deg,#1C2340,#2D4070);
+border-radius:14px;padding:14px 16px;margin-bottom:7px;
+display:flex;align-items:center;gap:12px;
+border-left:4px solid #4A6CCC;
+}
+.sleep-banner .si{font-size:1.6rem}
+.sleep-banner .st{color:#fff}
+.sleep-banner .st strong{font-size:.92rem;font-family:‘Fredoka One’,cursive}
+.sleep-banner .st span{font-size:.73rem;color:rgba(255,255,255,.55);display:block;margin-top:2px}
+.sleep-pill{
+margin-left:auto;background:#4A6CCC;color:#fff;
+border-radius:10px;padding:5px 11px;font-size:.72rem;font-weight:800;white-space:nowrap;
+}
+
+/* ─── SECTION CARD ─── */
+.sec{background:#fff;border-radius:14px;padding:16px;margin-top:18px;box-shadow:0 2px 8px rgba(28,35,64,.06)}
+.sec-title{font-family:‘Fredoka One’,cursive;font-size:1.05rem;color:#1C2340;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+
+/* ─── DAILY EVAL ─── */
+.eval-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.eval-meter{background:#F5F0EA;border-radius:12px;padding:12px}
+.eval-meter label{font-size:.72rem;font-weight:800;color:#8A90A8;display:block;margin-bottom:6px}
+.stars-big{display:flex;gap:4px;justify-content:center}
+.star-big{font-size:1.5rem;cursor:pointer;filter:grayscale(1) opacity(.3);transition:all .15s}
+.star-big.lit{filter:none}
+.eval-note{background:#F5F0EA;border-radius:12px;padding:12px;grid-column:1/-1}
+.eval-note label{font-size:.72rem;font-weight:800;color:#8A90A8;display:block;margin-bottom:6px}
+.eval-note textarea{
+width:100%;border:none;background:#fff;border-radius:8px;
+padding:8px;font-family:‘Nunito’,sans-serif;font-size:.8rem;
+color:#1C2340;resize:none;outline:none;
+border:1.5px solid #E8E2D8;
+}
+.eval-total{
+background:linear-gradient(135deg,#FF6B35,#FF8C5A);
+border-radius:12px;padding:14px;text-align:center;color:#fff;
+}
+.eval-total .score-num{font-family:‘Fredoka One’,cursive;font-size:2.5rem;line-height:1}
+.eval-total .score-lbl{font-size:.72rem;font-weight:700;opacity:.8;margin-top:2px}
+.eval-summary{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.eval-sum-item{background:rgba(255,255,255,.18);border-radius:8px;padding:8px;text-align:center}
+.eval-sum-item .esv{font-size:1.2rem;font-weight:900}
+.eval-sum-item .esl{font-size:.62rem;opacity:.75}
+
+/* ─── CHECKLIST ─── */
+.checklist{list-style:none}
+.checklist li{
+display:flex;align-items:flex-start;gap:9px;
+padding:7px 0;border-bottom:1px solid #F5F0EA;
+font-size:.83rem;font-weight:600;color:#1C2340;
+}
+.checklist li:last-child{border-bottom:none}
+.cb{
+width:19px;height:19px;border:2px solid #FF6B35;
+border-radius:5px;flex-shrink:0;margin-top:1px;
+cursor:pointer;transition:all .2s;
+}
+.cb.checked{background:#FF6B35}
+.cb:hover{background:#FF6B35}
+.cb.hw-cb{border-color:#C0153B}
+.cb.hw-cb.checked{background:#C0153B}
+.cb.hw-cb:hover{background:#C0153B}
+
+/* ─── NOTES ─── */
+.note{background:#FFFAED;border:1px solid #FFD166;border-radius:12px;padding:12px;margin-top:10px}
+.note p{font-size:.8rem;color:#7A5800;line-height:1.6}
+.alert{background:#FFF0F4;border:1px solid #FFAAC5;border-radius:12px;padding:12px;margin-top:10px}
+.alert p{font-size:.8rem;color:#8A0030;line-height:1.6}
+.info{background:#EEF4FF;border:1px solid #AAC4FF;border-radius:12px;padding:12px;margin-top:10px}
+.info p{font-size:.8rem;color:#002880;line-height:1.6}
+
+/* ─── BTVN SPLIT CARD ─── */
+.btvn-split{
+background:#fff;border-radius:14px;margin-bottom:7px;
+border-left:4px solid #C0153B;
+box-shadow:0 2px 8px rgba(28,35,64,.06);
+}
+.btvn-header{
+background:linear-gradient(135deg,#FFF0F4,#FFE0EC);
+padding:9px 12px;display:flex;align-items:center;gap:8px;
+border-radius:10px 10px 0 0;
+}
+.btvn-header .bh-icon{font-size:1.1rem}
+.btvn-header strong{font-size:.82rem;font-weight:900;color:#8A0030}
+.btvn-header .bh-tag{margin-left:auto;background:#C0153B;color:#fff;border-radius:6px;padding:2px 8px;font-size:.65rem;font-weight:900}
+.btvn-parts{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.btvn-part{padding:10px 12px;border-right:1px solid #F5F0EA}
+.btvn-part:last-child{border-right:none}
+.bp-label{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.bp-label.p1{color:#C0153B}
+.bp-label.p2{color:#E05A00}
+.bp-time{font-size:.78rem;font-weight:800;color:#1C2340;margin-bottom:3px}
+.bp-desc{font-size:.72rem;color:#8A90A8;line-height:1.4}
+.btvn-part .star-row{display:flex;gap:2px;margin-top:5px}
+.btvn-part .star-sm{font-size:.9rem;cursor:pointer;filter:grayscale(1) opacity(.3);transition:all .1s}
+.btvn-part .star-sm.lit{filter:none}
+
+/* ─── ROW COLORS ─── */
+.c-wake  {–tc:#FFD166;–bb:#FFF3CC;–bc:#B8860B}
+.c-school{–tc:#4ECDC4;–bb:#E0F8F6;–bc:#0B8A7E}
+.c-sport {–tc:#FF6B35;–bb:#FFE8DF;–bc:#CC4400}
+.c-study {–tc:#845EF7;–bb:#EDE8FD;–bc:#5B3DC9}
+.c-hw    {–tc:#C0153B;–bb:#FFDDE8;–bc:#8A0030}
+.c-rest  {–tc:#06D6A0;–bb:#DCFAF2;–bc:#0A8A65}
+.c-family{–tc:#FF6B9D;–bb:#FFDDE8;–bc:#8A0030}
+.c-flex  {–tc:#A0A8C0;–bb:#F0F0F4;–bc:#5A6070}
+.c-class {–tc:#F4A300;–bb:#FFF3CC;–bc:#B8860B}
+.c-swim  {–tc:#00B8CC;–bb:#E0F8F6;–bc:#007788}
+.c-gym   {–tc:#FF6B35;–bb:#FFE8DF;–bc:#CC4400}
+.c-piano {–tc:#845EF7;–bb:#EDE8FD;–bc:#5B3DC9}
+.c-en    {–tc:#06D6A0;–bb:#DCFAF2;–bc:#0A8A65}
+
+/* ─── SUMMARY PAGE ─── */
+.sum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sum-card{border-radius:12px;padding:14px;text-align:center}
+.sum-card .si{font-size:1.5rem;margin-bottom:4px}
+.sum-card .sv{font-family:‘Fredoka One’,cursive;font-size:1.4rem;color:#1C2340}
+.sum-card .sl{font-size:.65rem;color:#8A90A8;font-weight:700}
+.bar-row{margin-bottom:8px}
+.bar-row .bl{display:flex;justify-content:space-between;font-size:.74rem;font-weight:700;margin-bottom:3px}
+.bar-track{height:9px;background:#F0EBE3;border-radius:5px;overflow:hidden}
+.bar-fill{height:100%;border-radius:5px}
+.habit-item{display:flex;align-items:flex-start;gap:12px;padding:11px 13px;border-radius:12px;border-left:5px solid var(–hc);background:var(–hb);margin-bottom:8px}
+.habit-icon{font-size:1.4rem;flex-shrink:0}
+.habit-name{font-size:.87rem;font-weight:800;color:#1C2340}
+.habit-desc{font-size:.72rem;color:#8A90A8;margin-top:2px;line-height:1.4}
+.reward-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.reward-card{border-radius:12px;padding:13px}
+.reward-card.earn{background:linear-gradient(135deg,#E8FBF5,#C8F5E8);border:1px solid #06D6A0}
+.reward-card.lose{background:linear-gradient(135deg,#FFF0F4,#FFDDE8);border:1px solid #FFAAC5}
+.reward-card h4{font-size:.73rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.reward-card.earn h4{color:#0A6A45}
+.reward-card.lose h4{color:#8A0030}
+.reward-item{font-size:.76rem;font-weight:600;padding:2px 0;color:#1C2340}
+.pts{font-weight:900;font-size:.8rem;float:right}
+.earn .pts{color:#0A6A45}
+.lose .pts{color:#8A0030}
+
+/* ─── WEEKLY SCORE DISPLAY ─── */
+.week-score-bar{
+display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:12px;
+}
+.wsc-col{text-align:center}
+.wsc-name{font-size:.6rem;font-weight:800;color:#8A90A8;margin-bottom:4px}
+.wsc-score{
+background:#F0EBE3;border-radius:8px;padding:6px 2px;
+font-family:‘Fredoka One’,cursive;font-size:1rem;color:#8A90A8;
+cursor:pointer;transition:all .2s;
+}
+.wsc-score.has-score{background:#FF6B35;color:#fff}
+
+@media(max-width:600px){
+.eval-grid{grid-template-columns:1fr}
+.eval-note{grid-column:auto}
+.btvn-parts{grid-template-columns:1fr}
+.btvn-part{border-right:none;border-bottom:1px solid #F5F0EA}
+.btvn-part:last-child{border-bottom:none}
+.sum-grid{grid-template-columns:1fr 1fr}
+.reward-grid{grid-template-columns:1fr}
+.week-score-bar{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 
 </head>
 <body>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 
 <div class="hero">
+  <div class="hero-circle1"></div>
+  <div class="hero-circle2"></div>
   <div class="hero-badge">📅 Từ lịch iPhone thực tế</div>
-  <h1>Tuần của <span>Bảo Lâm</span> 🏀</h1>
-  <p class="hero-sub">30/03 – 05/04/2026 · Cập nhật từ Calendar iPhone · v2.0</p>
-  <div class="hero-stats">
-    <div class="stat-chip"><div class="num">18</div><div class="lbl">Hoạt động cố định</div></div>
-    <div class="stat-chip"><div class="num">3</div><div class="lbl">Buổi bóng rổ</div></div>
-    <div class="stat-chip"><div class="num">2</div><div class="lbl">Buổi gym</div></div>
-    <div class="stat-chip"><div class="num">3</div><div class="lbl">Ca tiếng Anh</div></div>
+  <h1>Tuần của <em>Bảo Lâm</em> 🏀</h1>
+  <p class="hero-sub">30/03 – 05/04/2026 · v3.0 · Có đánh giá + theo dõi tiến độ</p>
+  <div class="hero-chips">
+    <div class="chip"><div class="cv">18</div><div class="cl">Lịch cố định</div></div>
+    <div class="chip"><div class="cv">3</div><div class="cl">Buổi bóng rổ</div></div>
+    <div class="chip"><div class="cv">2</div><div class="cl">Buổi gym</div></div>
+    <div class="chip"><div class="cv">9h</div><div class="cl">Ngủ/đêm</div></div>
   </div>
 </div>
 
-<!-- LEGEND -->
+<!-- ═══ LEGEND ═══ -->
 
 <div class="legend">
-  <div class="legend-item"><div class="dot" style="background:#FFD166"></div> Cố định (Calendar)</div>
-  <div class="legend-item"><div class="dot" style="background:#4ECDC4"></div> Học tại trường</div>
-  <div class="legend-item"><div class="dot" style="background:#FF6B35"></div> Thể thao</div>
-  <div class="legend-item"><div class="dot" style="background:#EF476F"></div> BTVN bắt buộc</div>
-  <div class="legend-item"><div class="dot" style="background:#845EF7"></div> Tự học</div>
-  <div class="legend-item"><div class="dot" style="background:#06D6A0"></div> Nghỉ ngơi</div>
-  <div class="legend-item"><div class="dot" style="background:#B2BEC3"></div> Linh hoạt</div>
+  <div class="leg"><div class="ldot" style="background:#F4A300"></div>Lịch cố định</div>
+  <div class="leg"><div class="ldot" style="background:#4ECDC4"></div>Học trường</div>
+  <div class="leg"><div class="ldot" style="background:#FF6B35"></div>Thể thao</div>
+  <div class="leg"><div class="ldot" style="background:#C0153B"></div>BTVN bắt buộc</div>
+  <div class="leg"><div class="ldot" style="background:#845EF7"></div>Tự học</div>
+  <div class="leg"><div class="ldot" style="background:#06D6A0"></div>Nghỉ ngơi</div>
+  <div class="leg"><div class="ldot" style="background:#A0A8C0"></div>Linh hoạt</div>
 </div>
 
-<!-- TABS -->
+<!-- ═══ TABS ═══ -->
 
 <div class="tabs-wrap">
   <div class="tabs">
-    <button class="tab active" onclick="showDay('t2')">T2 30/3</button>
-    <button class="tab" onclick="showDay('t3')">T3 31/3</button>
-    <button class="tab" onclick="showDay('t4')">T4 1/4</button>
-    <button class="tab" onclick="showDay('t5')">T5 2/4 🏀</button>
-    <button class="tab" onclick="showDay('t6')">T6 3/4 🏀</button>
-    <button class="tab" onclick="showDay('t7')">T7 4/4</button>
-    <button class="tab" onclick="showDay('cn')">CN 5/4 🏀</button>
-    <button class="tab" onclick="showDay('summary')">📊 Tổng Kết</button>
+    <button class="tab active" onclick="showDay('t2',this)">T2 30/3</button>
+    <button class="tab" onclick="showDay('t3',this)">T3 31/3</button>
+    <button class="tab" onclick="showDay('t4',this)">T4 1/4</button>
+    <button class="tab" onclick="showDay('t5',this)">T5 2/4 🏀</button>
+    <button class="tab" onclick="showDay('t6',this)">T6 3/4 🏀</button>
+    <button class="tab" onclick="showDay('t7',this)">T7 4/4</button>
+    <button class="tab" onclick="showDay('cn',this)">CN 5/4 🏀</button>
+    <button class="tab" onclick="showDay('sum',this)">📊 Tổng kết</button>
   </div>
 </div>
 
 <div class="content">
 
-<!-- ═══ THỨ 2 ═══ -->
+<!-- ══════════════════════════════
+     THỨ HAI
+══════════════════════════════ -->
 
 <div class="day-panel active" id="day-t2">
   <div class="day-header">
-    <div><div class="day-title">Thứ Hai 🌅</div><div class="day-date">30/3 · Gym + Mathexpress tối</div></div>
-    <div class="day-focus">Khởi động tuần!</div>
+    <div><div class="day-title">Thứ Hai 🌅</div><div class="day-sub">30/3 · Gym 16:15 + Mathexpress 18:00</div></div>
+    <div class="focus-pill">Khởi động tuần!</div>
   </div>
-  <table class="schedule">
-    <thead><tr><th>Giờ</th><th>Loại</th><th>Hoạt động</th></tr></thead>
-    <tbody>
-      <tr class="type-wake"><td class="time-cell">⏰ 5:30<span class="range">→ 6:00</span></td><td><span class="type-badge badge-wake">🌅 Dậy</span></td><td><div class="activity-name">Dậy – Vệ sinh – Đồng phục</div><div class="activity-detail">Uống 1 ly nước ngay. Ôn nhanh 5 từ vựng TA trong đầu.</div></td></tr>
-      <tr class="type-wake"><td class="time-cell">🍳 6:00<span class="range">→ 6:45</span></td><td><span class="type-badge badge-wake">🍽️ Sáng</span></td><td><div class="activity-name">Ăn sáng + Chuẩn bị cặp sách</div><div class="activity-detail">Kiểm tra sách vở T2: TANN, Mĩ thuật, GDKN, KHTN, GDTC.</div></td></tr>
-      <tr class="type-school fixed-event"><td class="time-cell">🏫 8:00<span class="range">→ 15:25</span></td><td><span class="type-badge badge-school">🏫 Trường</span></td><td><div class="activity-name">Học tại trường – 7 tiết <span class="fixed-tag">📅 Cố định</span></div><div class="activity-detail"><strong>TANN x2 · Mĩ thuật · GD Kỹ năng · KHTN x2 · GD Thể chất</strong><br>Thử thách: chủ động trả lời ≥1 câu hỏi thầy/cô.</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">😌 15:30<span class="range">→ 16:00</span></td><td><span class="type-badge badge-rest">😴 Nghỉ</span></td><td><div class="activity-name">Về nhà – Ăn nhẹ – Nghỉ ngơi</div><div class="activity-detail">Nạp năng lượng trước buổi gym. Uống đủ nước.</div></td></tr>
-      <tr class="type-gym fixed-event"><td class="time-cell">🏋️ 16:15<span class="range">→ 17:15</span></td><td><span class="type-badge badge-gym">🏋️ Gym</span></td><td><div class="activity-name">Lâm tập gym <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Tập đúng giờ. Uống nước đầy đủ. Sau tập ăn nhẹ bổ sung protein.</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">🚿 17:15<span class="range">→ 18:00</span></td><td><span class="type-badge badge-rest">🚿 Nghỉ</span></td><td><div class="activity-name">Tắm – Nghỉ ngơi – Ăn nhẹ</div><div class="activity-detail">Chuẩn bị tinh thần cho buổi học Mathexpress tối nay. Chuẩn bị sách vở Toán.</div></td></tr>
-      <tr class="type-class fixed-event"><td class="time-cell">📐 18:00<span class="range">→ 20:30</span></td><td><span class="type-badge badge-class">📐 Mathexpress</span></td><td><div class="activity-name">Lâm học Mathexpress <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Tập trung 100%. Ghi chép đầy đủ. <strong>Nhớ hỏi thầy/cô ngay khi không hiểu!</strong></div></td></tr>
-      <tr class="type-hw"><td class="time-cell">📝 20:30<span class="range">→ 21:00</span></td><td><span class="type-badge badge-hw">📝 BTVN Toán</span></td><td><div class="activity-name">Làm BTVN Mathexpress <span class="hw-tag">⚠️ Bắt buộc</span></div><div class="activity-detail"><strong>Hoàn thành bài tập về nhà Toán ngay trong đêm</strong> – khi kiến thức còn nóng. Đặt đồng hồ 25 phút. Câu nào khó để đánh dấu, hỏi T3.</div></td></tr>
-      <tr class="type-sleep"><td class="time-cell">🌙 21:30</td><td><span class="type-badge badge-sleep">🌙 Ngủ</span></td><td><div class="activity-name">Ngủ – Nghỉ ngơi hồi phục</div><div class="activity-detail">Hôm nay nhiều hoạt động. Ngủ sớm để cơ thể phục hồi sau gym.</div></td></tr>
-    </tbody>
-  </table>
-  <div class="section-card">
-    <div class="section-title">✅ Checklist Thứ Hai</div>
-    <ul class="checklist">
-      <li><div class="check-box"></div>Chủ động phát biểu ≥1 lần ở trường</li>
-      <li><div class="check-box"></div>Tập gym đủ buổi 16:15–17:15</li>
-      <li><div class="check-box"></div>Học Mathexpress đủ giờ, ghi chép bài</li>
-      <li><div class="check-box"></div><strong>BTVN Toán Mathexpress hoàn thành trước 21:30</strong></li>
-      <li><div class="check-box"></div>Uống đủ nước (≥6 ly)</li>
-      <li><div class="check-box"></div>Ngủ trước 21:30</li>
-    </ul>
-    <div class="alert-box">
-      <p>⚠️ <strong>Lưu ý bố mẹ:</strong> Thứ Hai lịch khá dày (gym + Mathexpress đến 20:30). Không nên ép làm thêm bài tập ngoài BTVN Mathexpress. Nếu con mệt sau BTVN → cho nghỉ luôn, không cần ép học thêm.</p>
+
+  <!-- tasks -->
+
+  <div class="task-card c-wake" data-id="t2-1">
+    <div class="task-top">
+      <div class="task-time">⏰ 5:30<div class="t-end">→ 6:00</div></div>
+      <span class="badge">🌅 Dậy</span>
+      <div class="task-body">
+        <div class="task-name">Dậy – Vệ sinh – Đồng phục</div>
+        <div class="task-detail">Uống 1 ly nước ngay. Ôn nhanh 5 từ TA trong đầu.</div>
+      </div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t2-1">
+      <span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span>
+    </div></div>
+  </div>
+
+  <div class="task-card c-wake" data-id="t2-2">
+    <div class="task-top">
+      <div class="task-time">🍳 6:00<div class="t-end">→ 6:45</div></div>
+      <span class="badge">🍽️ Sáng</span>
+      <div class="task-body">
+        <div class="task-name">Ăn sáng + Chuẩn bị cặp</div>
+        <div class="task-detail">Kiểm tra sách T2: TANN, Mĩ thuật, GDKN, KHTN, GDTC.</div>
+      </div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t2-2">
+      <span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span>
+    </div></div>
+  </div>
+
+  <div class="task-card c-school" data-id="t2-3">
+    <div class="task-top">
+      <div class="task-time">🏫 8:00<div class="t-end">→ 15:25</div></div>
+      <span class="badge">🏫 Trường</span>
+      <div class="task-body">
+        <div class="task-name">Học tại trường – 7 tiết <span class="tag tag-cal">📅 Cố định</span></div>
+        <div class="task-detail"><strong>TANN×2 · Mĩ thuật · GD Kỹ năng · KHTN×2 · GD Thể chất</strong><br>Thử thách: chủ động trả lời ≥1 câu hỏi thầy/cô.</div>
+      </div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t2-3">
+      <span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span>
+    </div></div>
+  </div>
+
+  <div class="task-card c-rest" data-id="t2-4">
+    <div class="task-top">
+      <div class="task-time">😌 15:30<div class="t-end">→ 16:00</div></div>
+      <span class="badge">😴 Nghỉ</span>
+      <div class="task-body">
+        <div class="task-name">Về nhà – Ăn nhẹ – Nghỉ 30'</div>
+        <div class="task-detail">Nạp năng lượng trước gym. Uống đủ nước.</div>
+      </div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t2-4">
+      <span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span>
+    </div></div>
+  </div>
+
+  <div class="task-card c-gym" data-id="t2-5">
+    <div class="task-top">
+      <div class="task-time">🏋️ 16:15<div class="t-end">→ 17:15</div></div>
+      <span class="badge">🏋️ Gym</span>
+      <div class="task-body">
+        <div class="task-name">Tập gym <span class="tag tag-cal">📅 Calendar</span></div>
+        <div class="task-detail">Tập đúng giờ. Uống nước liên tục. Sau tập ăn nhẹ bổ sung đạm.</div>
+      </div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t2-5">
+      <span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span>
+    </div></div>
+  </div>
+
+  <div class="task-card c-rest" data-id="t2-6">
+    <div class="task-top">
+      <div class="task-time">🚿 17:15<div class="t-end">→ 18:00</div></div>
+      <span class="badge">🚿 Nghỉ</span>
+      <div class="task-body">
+        <div class="task-name">Tắm – Ăn nhẹ – Chuẩn bị sách Toán</div>
+        <div class="task-detail">Chuẩn bị tinh thần cho Mathexpress. Mang đầy đủ sách vở Toán.</div>
+      </div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t2-6">
+      <span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span>
+    </div></div>
+  </div>
+
+  <div class="task-card c-class" data-id="t2-7">
+    <div class="task-top">
+      <div class="task-time">📐 18:00<div class="t-end">→ 20:30</div></div>
+      <span class="badge">📐 Mathexpress</span>
+      <div class="task-body">
+        <div class="task-name">Học Mathexpress <span class="tag tag-cal">📅 Calendar</span></div>
+        <div class="task-detail">Ghi chép bài đầy đủ. <strong>Hỏi ngay khi không hiểu!</strong> Đánh dấu bài khó để làm BTVN.</div>
+      </div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t2-7">
+      <span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span>
+    </div></div>
+  </div>
+
+  <!-- BTVN SPLIT – Mathexpress -->
+
+  <div class="btvn-split">
+    <div class="btvn-header">
+      <span class="bh-icon">📝</span>
+      <strong>BTVN Toán – Mathexpress (chia 2 phần)</strong>
+      <span class="bh-tag">⚠️ Bắt buộc</span>
+    </div>
+    <div class="btvn-parts">
+      <div class="btvn-part" data-id="t2-btvn1">
+        <div class="bp-label p1">📌 Phần 1 – Tối nay</div>
+        <div class="bp-time">20:30 → 21:00 (30 phút)</div>
+        <div class="bp-desc">Làm <strong>bài dễ + trung bình</strong> trước. Khi kiến thức còn nóng nhất. Đặt đồng hồ 30 phút.</div>
+        <div class="star-row" data-task="t2-btvn1">
+          <span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span>
+        </div>
+      </div>
+      <div class="btvn-part" data-id="t2-btvn2">
+        <div class="bp-label p2">🌅 Phần 2 – Sáng T3</div>
+        <div class="bp-time">6:00 → 6:25 (25 phút)</div>
+        <div class="bp-desc">Làm <strong>bài khó còn lại</strong> sau khi ngủ đủ giấc. Não đã phục hồi, giải khó tốt hơn.</div>
+        <div class="star-row" data-task="t2-btvn2">
+          <span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ═══ THỨ 3 ═══ -->
+  <div class="sleep-banner">
+    <span class="si">🌙</span>
+    <div class="st"><strong>Ngủ lúc 21:15</strong><span>Dậy 5:30 = 8h 15 phút ngủ ✅</span></div>
+    <div class="sleep-pill">8h15'</div>
+  </div>
+
+  <!-- Daily Eval -->
+
+  <div class="sec">
+    <div class="sec-title">📊 Đánh Giá Ngày – Thứ Hai</div>
+    <div class="eval-grid">
+      <div class="eval-meter"><label>🏫 Tập trung ở trường</label><div class="stars-big" data-day="t2-school"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>🏋️ Năng lượng tập gym</label><div class="stars-big" data-day="t2-gym"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>📐 Hiểu bài Mathexpress</label><div class="stars-big" data-day="t2-math"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>📝 Hoàn thành BTVN P.1</label><div class="stars-big" data-day="t2-hw"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-note">
+        <label>💬 Nhận xét của bố / mẹ hôm nay:</label>
+        <textarea rows="2" placeholder="Hôm nay con như thế nào? Ghi nhanh vào đây…" id="note-t2"></textarea>
+      </div>
+    </div>
+    <div class="eval-total" id="score-t2">
+      <div class="score-num" id="snum-t2">–</div>
+      <div class="score-lbl">Điểm trung bình ngày</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">✅ Checklist Thứ Hai</div>
+    <ul class="checklist">
+      <li><div class="cb" onclick="toggleCb(this)"></div>Dậy đúng 5:30, uống nước ngay</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Chủ động phát biểu ≥1 lần ở trường</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Tập gym đủ buổi 16:15–17:15</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Học Mathexpress tập trung, ghi chép đủ</li>
+      <li><div class="cb hw-cb" onclick="toggleCb(this)"></div><strong>BTVN Phần 1: bài dễ/trung bình (20:30–21:00)</strong></li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 21:15</li>
+    </ul>
+  </div>
+</div><!-- end t2 -->
+
+<!-- ══════════════════════════════
+     THỨ BA
+══════════════════════════════ -->
 
 <div class="day-panel" id="day-t3">
   <div class="day-header">
-    <div><div class="day-title">Thứ Ba 🎹</div><div class="day-date">31/3 · Học đàn + TA Talent tối</div></div>
-    <div class="day-focus">Nhẹ nhàng & Sáng tạo!</div>
+    <div><div class="day-title">Thứ Ba 🎹</div><div class="day-sub">31/3 · BTVN P.2 sáng + Học đàn + TA Talent</div></div>
+    <div class="focus-pill">Nhẹ & Sáng tạo!</div>
   </div>
-  <table class="schedule">
-    <thead><tr><th>Giờ</th><th>Loại</th><th>Hoạt động</th></tr></thead>
-    <tbody>
-      <tr class="type-wake"><td class="time-cell">⏰ 5:30<span class="range">→ 6:45</span></td><td><span class="type-badge badge-wake">🌅 Sáng</span></td><td><div class="activity-name">Dậy – Ăn sáng – Chuẩn bị</div><div class="activity-detail">Ôn lại BTVN Toán T2 nếu còn chỗ chưa chắc. Chuẩn bị sách T3.</div></td></tr>
-      <tr class="type-school fixed-event"><td class="time-cell">🏫 8:00<span class="range">→ 15:25</span></td><td><span class="type-badge badge-school">🏫 Trường</span></td><td><div class="activity-name">Học tại trường – 7 tiết <span class="fixed-tag">📅 Cố định</span></div><div class="activity-detail"><strong>Địa lý · Công dân · KHTN x2 · Toán · TAVN x2</strong><br>Ghi 1 điều thú vị học được hôm nay vào góc vở.</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">😌 15:30<span class="range">→ 16:20</span></td><td><span class="type-badge badge-rest">😴 Nghỉ</span></td><td><div class="activity-name">Về nhà – Ăn nhẹ – Nghỉ ngơi</div><div class="activity-detail">Nghỉ ngơi hoàn toàn trước khi học đàn. Không điện thoại.</div></td></tr>
-      <tr class="type-piano fixed-event"><td class="time-cell">🎹 16:30<span class="range">→ 17:30</span></td><td><span class="type-badge badge-piano">🎹 Học đàn</span></td><td><div class="activity-name">Lâm học đàn <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Tập trung vào bài đang học. Hỏi thầy/cô nếu có chỗ khó.</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">🍜 17:30<span class="range">→ 19:30</span></td><td><span class="type-badge badge-rest">🍜 Nghỉ + Ăn</span></td><td><div class="activity-name">Ăn tối + Nghỉ ngơi tự do</div><div class="activity-detail">Ăn no, nghỉ ngơi, uống nước. Chơi tự do nhẹ nhàng. Chuẩn bị cho học TA lúc 19:40.</div></td></tr>
-      <tr class="type-english fixed-event"><td class="time-cell">📖 19:40<span class="range">→ 21:20</span></td><td><span class="type-badge badge-english">🗣️ TA Talent 48</span></td><td><div class="activity-name">Lâm học TA Talent 48 <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Học tiếng Anh buổi tối. Duy trì năng lượng tốt. Ghi từ mới ra sổ tay riêng.</div></td></tr>
-      <tr class="type-sleep"><td class="time-cell">🌙 21:30</td><td><span class="type-badge badge-sleep">🌙 Ngủ</span></td><td><div class="activity-name">Ngủ ngay sau học</div><div class="activity-detail">Không xem điện thoại sau khi học xong. Ngủ để não ghi nhớ kiến thức.</div></td></tr>
-    </tbody>
-  </table>
-  <div class="section-card">
-    <div class="section-title">✅ Checklist Thứ Ba</div>
-    <ul class="checklist">
-      <li><div class="check-box"></div>Ghi 1 điều thú vị ở trường: ___________</li>
-      <li><div class="check-box"></div>Học đàn đúng giờ 16:30</li>
-      <li><div class="check-box"></div>Ăn tối đủ trước 19:30</li>
-      <li><div class="check-box"></div>Học TA Talent 48 đủ buổi, ghi từ mới</li>
-      <li><div class="check-box"></div>Ngủ trước 21:30</li>
-    </ul>
-    <div class="note-box">
-      <p>💡 <strong>Thứ Ba nhẹ hơn:</strong> Không có BTVN bắt buộc tối nay (trừ khi GV Talent 48 giao). Đây là ngày để Lâm thở và nạp năng lượng giữa tuần.</p>
+
+  <div class="task-card c-wake" data-id="t3-1">
+    <div class="task-top">
+      <div class="task-time">⏰ 5:30<div class="t-end">→ 6:00</div></div>
+      <span class="badge">🌅 Dậy</span>
+      <div class="task-body"><div class="task-name">Dậy – Vệ sinh – Uống nước</div><div class="task-detail">Bắt đầu ngày mới. Chuẩn bị sách vở T3.</div></div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t3-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div>
+  </div>
+
+  <!-- BTVN P2 sáng T3 -->
+
+  <div class="btvn-split">
+    <div class="btvn-header">
+      <span class="bh-icon">🌅</span>
+      <strong>BTVN Toán – Phần 2 (Sáng T3)</strong>
+      <span class="bh-tag" style="background:#E05A00">📌 Tiếp nối</span>
+    </div>
+    <div class="btvn-parts" style="grid-template-columns:1fr">
+      <div class="btvn-part" data-id="t3-btvn2">
+        <div class="bp-label p2">🌅 Phần 2 – 6:00 → 6:25 (25 phút)</div>
+        <div class="bp-desc">Làm <strong>bài khó còn lại</strong> từ tối qua. Não đã ngủ đủ giấc, giải toán khó hiệu quả hơn rất nhiều. Sau đó ăn sáng và đi học.</div>
+        <div class="star-row" style="margin-top:6px" data-task="t3-btvn2">
+          <span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ═══ THỨ 4 ═══ -->
+  <div class="task-card c-wake" data-id="t3-2">
+    <div class="task-top">
+      <div class="task-time">🍳 6:25<div class="t-end">→ 6:50</div></div>
+      <span class="badge">🍽️ Sáng</span>
+      <div class="task-body"><div class="task-name">Ăn sáng + Chuẩn bị</div><div class="task-detail">Ăn no. Kiểm tra sách T3: Địa, Công dân, KHTN, Toán, TAVN.</div></div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t3-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div>
+  </div>
+
+  <div class="task-card c-school" data-id="t3-3">
+    <div class="task-top">
+      <div class="task-time">🏫 8:00<div class="t-end">→ 15:25</div></div>
+      <span class="badge">🏫 Trường</span>
+      <div class="task-body"><div class="task-name">Học tại trường – 7 tiết <span class="tag tag-cal">📅 Cố định</span></div><div class="task-detail"><strong>Địa lý · Công dân · KHTN×2 · Toán · TAVN×2</strong><br>Ghi 1 điều thú vị học được hôm nay.</div></div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t3-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div>
+  </div>
+
+  <div class="task-card c-rest" data-id="t3-4">
+    <div class="task-top">
+      <div class="task-time">😌 15:30<div class="t-end">→ 16:20</div></div>
+      <span class="badge">😴 Nghỉ</span>
+      <div class="task-body"><div class="task-name">Về nhà – Nghỉ ngơi hoàn toàn</div><div class="task-detail">Ăn nhẹ, uống nước. Không điện thoại. Nghỉ trước khi học đàn.</div></div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t3-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div>
+  </div>
+
+  <div class="task-card c-piano" data-id="t3-5">
+    <div class="task-top">
+      <div class="task-time">🎹 16:30<div class="t-end">→ 17:30</div></div>
+      <span class="badge">🎹 Học đàn</span>
+      <div class="task-body"><div class="task-name">Học đàn <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail">Tập trung vào bài đang học. Hỏi thầy/cô chỗ khó.</div></div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t3-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div>
+  </div>
+
+  <div class="task-card c-family" data-id="t3-6">
+    <div class="task-top">
+      <div class="task-time">🍜 17:30<div class="t-end">→ 19:30</div></div>
+      <span class="badge">🍜 Gia đình</span>
+      <div class="task-body"><div class="task-name">Ăn tối + Thời gian tự do</div><div class="task-detail">Ăn no, nghỉ ngơi thoải mái. Uống nước. Chuẩn bị cho học TA 19:40.</div></div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t3-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div>
+  </div>
+
+  <div class="task-card c-en" data-id="t3-7">
+    <div class="task-top">
+      <div class="task-time">🗣️ 19:40<div class="t-end">→ 21:20</div></div>
+      <span class="badge">🗣️ TA Talent 48</span>
+      <div class="task-body"><div class="task-name">Học TA Talent 48 <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail">Ghi từ mới ra sổ tay riêng. Học đến 21:20 – ngủ ngay sau đó.</div></div>
+    </div>
+    <div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t3-7"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div>
+  </div>
+
+  <div class="sleep-banner">
+    <span class="si">🌙</span>
+    <div class="st"><strong>Ngủ lúc 21:30</strong><span>Dậy 5:30 = 8h 00 phút ngủ ✅</span></div>
+    <div class="sleep-pill">8h00'</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">📊 Đánh Giá Ngày – Thứ Ba</div>
+    <div class="eval-grid">
+      <div class="eval-meter"><label>📐 BTVN Toán P.2 hoàn thành</label><div class="stars-big" data-day="t3-hw2"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>🎹 Học đàn tập trung</label><div class="stars-big" data-day="t3-piano"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>🗣️ Học TA – ghi từ mới</label><div class="stars-big" data-day="t3-ta"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>🏫 Tập trung ở trường</label><div class="stars-big" data-day="t3-school"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-note"><label>💬 Nhận xét hôm nay:</label><textarea rows="2" placeholder="Ghi nhanh…" id="note-t3"></textarea></div>
+    </div>
+    <div class="eval-total" id="score-t3"><div class="score-num" id="snum-t3">–</div><div class="score-lbl">Điểm trung bình ngày</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">✅ Checklist Thứ Ba</div>
+    <ul class="checklist">
+      <li><div class="cb hw-cb" onclick="toggleCb(this)"></div><strong>BTVN Toán P.2: bài khó (6:00–6:25)</strong></li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ghi 1 điều thú vị học được ở trường</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Học đàn đúng giờ 16:30</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Học TA Talent 48, ghi từ mới</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ ngay sau 21:20 (không điện thoại)</li>
+    </ul>
+  </div>
+</div><!-- end t3 -->
+
+<!-- ══════════════════════════════
+     THỨ TƯ
+══════════════════════════════ -->
 
 <div class="day-panel" id="day-t4">
   <div class="day-header">
-    <div><div class="day-title">Thứ Tư 🏊</div><div class="day-date">1/4 · Học bơi chiều</div></div>
-    <div class="day-focus">Thể lực + Tự học!</div>
+    <div><div class="day-title">Thứ Tư 🏊</div><div class="day-sub">1/4 · Học bơi 17:00 – Ngày thở!</div></div>
+    <div class="focus-pill">Thể lực + Tự học!</div>
   </div>
-  <table class="schedule">
-    <thead><tr><th>Giờ</th><th>Loại</th><th>Hoạt động</th></tr></thead>
-    <tbody>
-      <tr class="type-wake"><td class="time-cell">⏰ 5:30<span class="range">→ 6:45</span></td><td><span class="type-badge badge-wake">🌅 Sáng</span></td><td><div class="activity-name">Dậy – Ăn sáng – Chuẩn bị</div><div class="activity-detail">Chuẩn bị cặp + túi đồ bơi. Mang theo đồ bơi đến trường!</div></td></tr>
-      <tr class="type-school fixed-event"><td class="time-cell">🏫 8:00<span class="range">→ 15:25</span></td><td><span class="type-badge badge-school">🏫 Trường</span></td><td><div class="activity-name">Học tại trường – 7 tiết <span class="fixed-tag">📅 Cố định</span></div><div class="activity-detail"><strong>Việt Nam học · Toán · TANN x2 · Tin học x2 · Ngữ văn</strong><br>Tin học: đặt câu hỏi khi không hiểu. Văn: chú ý ghi bài.</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">😌 15:30<span class="range">→ 16:45</span></td><td><span class="type-badge badge-rest">😴 Nghỉ + Ăn</span></td><td><div class="activity-name">Về nhà – Ăn nhẹ – Nghỉ cơ thể</div><div class="activity-detail">Ăn đủ năng lượng trước khi bơi. Uống nước. Không ăn quá no (tránh chuột rút).</div></td></tr>
-      <tr class="type-swim fixed-event"><td class="time-cell">🏊 17:00<span class="range">→ 18:30</span></td><td><span class="type-badge badge-swim">🏊 Học bơi</span></td><td><div class="activity-name">Lâm học bơi <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Tập trung kỹ thuật. Hỏi HLV khi chưa chắc. Đây là bổ trợ thể lực tốt cho bóng rổ!</div></td></tr>
-      <tr class="type-study"><td class="time-cell">📚 19:00<span class="range">→ 19:30</span></td><td><span class="type-badge badge-study">📚 Tự học</span></td><td><div class="activity-name">Ôn Toán nhẹ (25 phút)</div><div class="activity-detail"><strong>Xem lại bài Toán hôm nay</strong> – làm lại 1 bài khó nhất không nhìn vở. Sau đó nghỉ ngay.</div></td></tr>
-      <tr class="type-family"><td class="time-cell">❤️ 19:30<span class="range">→ 19:45</span></td><td><span class="type-badge badge-family">❤️ Bố-con</span></td><td><div class="activity-name">Kết nối bố – con (15 phút)</div><div class="activity-detail">Bố hỏi: <em>"Hôm nay học bơi, con tiến bộ được kỹ thuật gì?"</em></div></td></tr>
-      <tr class="type-flex"><td class="time-cell">🎯 19:45<span class="range">→ 20:30</span></td><td><span class="type-badge badge-flex">🎯 Tự do</span></td><td><div class="activity-name">Thời gian tự do</div><div class="activity-detail">Hôm nay đã tập bơi mệt. Nghỉ ngơi hoàn toàn – piano, nhạc, truyện.</div></td></tr>
-      <tr class="type-sleep"><td class="time-cell">🌙 21:00</td><td><span class="type-badge badge-sleep">🌙 Ngủ</span></td><td><div class="activity-name">Ngủ sớm – Hồi phục sau bơi</div><div class="activity-detail">Chuẩn bị đồ T5: túi bóng rổ + sách vở. Ngày mai có CLB bóng rổ!</div></td></tr>
-    </tbody>
-  </table>
-  <div class="section-card">
-    <div class="section-title">✅ Checklist Thứ Tư</div>
+
+  <div class="task-card c-wake" data-id="t4-1"><div class="task-top"><div class="task-time">⏰ 5:30<div class="t-end">→ 6:45</div></div><span class="badge">🌅 Sáng</span><div class="task-body"><div class="task-name">Dậy – Ăn sáng – Chuẩn bị</div><div class="task-detail">Chuẩn bị cặp + <strong>túi đồ bơi</strong>. Mang theo đồ bơi đến trường!</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t4-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-school" data-id="t4-2"><div class="task-top"><div class="task-time">🏫 8:00<div class="t-end">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="task-body"><div class="task-name">Học tại trường – 7 tiết <span class="tag tag-cal">📅 Cố định</span></div><div class="task-detail"><strong>Việt Nam học · Toán · TANN×2 · Tin học×2 · Ngữ văn</strong><br>Hỏi GV khi không hiểu. Chú ý Văn hôm nay.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t4-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-rest" data-id="t4-3"><div class="task-top"><div class="task-time">😌 15:30<div class="t-end">→ 16:45</div></div><span class="badge">😴 Nghỉ + Ăn</span><div class="task-body"><div class="task-name">Về nhà – Ăn nhẹ – Nghỉ ngơi</div><div class="task-detail">Ăn đủ trước bơi. Không ăn quá no (tránh chuột rút). Uống nước.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t4-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-swim" data-id="t4-4"><div class="task-top"><div class="task-time">🏊 17:00<div class="t-end">→ 18:30</div></div><span class="badge">🏊 Học bơi</span><div class="task-body"><div class="task-name">Học bơi <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail">Tập trung kỹ thuật. Hỏi HLV khi chưa chắc. Bơi giỏi = bổ trợ thể lực bóng rổ tốt!</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t4-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-study" data-id="t4-5"><div class="task-top"><div class="task-time">📚 19:00<div class="t-end">→ 19:25</div></div><span class="badge">📚 Tự học</span><div class="task-body"><div class="task-name">Ôn Toán nhẹ (25 phút)</div><div class="task-detail">Xem lại bài Toán hôm nay. Làm lại 1 bài khó nhất không nhìn vở.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t4-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-family" data-id="t4-6"><div class="task-top"><div class="task-time">❤️ 19:25<div class="t-end">→ 19:45</div></div><span class="badge">❤️ Bố-con</span><div class="task-body"><div class="task-name">Kết nối bố – con (20 phút)</div><div class="task-detail">Bố hỏi: <em>"Học bơi hôm nay, con cải thiện kỹ thuật nào?"</em> Chuẩn bị đồ bóng rổ cho T5.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t4-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="sleep-banner">
+    <span class="si">🌙</span>
+    <div class="st"><strong>Ngủ lúc 20:45</strong><span>Dậy 5:30 = 8h 45 phút ngủ ✅</span></div>
+    <div class="sleep-pill">8h45'</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">📊 Đánh Giá Ngày – Thứ Tư</div>
+    <div class="eval-grid">
+      <div class="eval-meter"><label>🏊 Kỹ thuật bơi</label><div class="stars-big" data-day="t4-swim"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>📚 Ôn Toán buổi tối</label><div class="stars-big" data-day="t4-study"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-note"><label>💬 Nhận xét hôm nay:</label><textarea rows="2" placeholder="Ghi nhanh…" id="note-t4"></textarea></div>
+    </div>
+    <div class="eval-total" id="score-t4"><div class="score-num" id="snum-t4">–</div><div class="score-lbl">Điểm trung bình ngày</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">✅ Checklist Thứ Tư</div>
     <ul class="checklist">
-      <li><div class="check-box"></div>Mang đồ bơi đầy đủ</li>
-      <li><div class="check-box"></div>Học bơi đủ buổi 17:00–18:30</li>
-      <li><div class="check-box"></div>Ôn Toán 25 phút sau bơi</li>
-      <li><div class="check-box"></div>Kể chuyện học bơi cho bố nghe</li>
-      <li><div class="check-box"></div>Chuẩn bị đồ bóng rổ cho T5</li>
-      <li><div class="check-box"></div>Ngủ trước 21:00</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Mang đồ bơi đầy đủ</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Học bơi đủ buổi 17:00–18:30</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ôn Toán 25 phút sau bơi</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Chuẩn bị giày bóng rổ cho T5</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 20:45</li>
     </ul>
   </div>
-</div>
+</div><!-- end t4 -->
 
-<!-- ═══ THỨ 5 ═══ -->
+<!-- ══════════════════════════════
+     THỨ NĂM
+══════════════════════════════ -->
 
 <div class="day-panel" id="day-t5">
   <div class="day-header">
-    <div><div class="day-title">Thứ Năm 🏀</div><div class="day-date">2/4 · Bóng rổ Vinschool + TA cô Phương</div></div>
-    <div class="day-focus" style="background:linear-gradient(135deg,#FF6B35,#FF8C5A)">🏀 Ngày CLB!</div>
+    <div><div class="day-title">Thứ Năm 🏀</div><div class="day-sub">2/4 · CLB Bóng rổ Vinschool + TA cô Phương</div></div>
+    <div class="focus-pill" style="background:#FF6B35">🏀 Ngày CLB!</div>
   </div>
-  <table class="schedule">
-    <thead><tr><th>Giờ</th><th>Loại</th><th>Hoạt động</th></tr></thead>
-    <tbody>
-      <tr class="type-wake"><td class="time-cell">⏰ 5:30<span class="range">→ 6:45</span></td><td><span class="type-badge badge-wake">🌅 Sáng</span></td><td><div class="activity-name">Dậy – Ăn sáng no – Chuẩn bị</div><div class="activity-detail">Hôm nay có CLB bóng rổ! Ăn đủ chất, uống nước nhiều, chuẩn bị giày bóng rổ.</div></td></tr>
-      <tr class="type-school fixed-event"><td class="time-cell">🏫 8:00<span class="range">→ 15:25</span></td><td><span class="type-badge badge-school">🏫 Trường</span></td><td><div class="activity-name">Học tại trường – 7 tiết <span class="fixed-tag">📅 Cố định</span></div><div class="activity-detail"><strong>TAVN x2 · Ngữ văn x2 · Công dân · Toán x2</strong><br>Chiều có CLB – học sáng thật tốt, không để đầu óc bận tâm.</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">😌 15:30<span class="range">→ 15:55</span></td><td><span class="type-badge badge-rest">😴 Nạp năng lượng</span></td><td><div class="activity-name">Ăn nhẹ + Uống nước + Khởi động nhẹ</div><div class="activity-detail">Chuối/bánh mì. Không ngủ. Vận động nhẹ để tránh chuột rút khi tập.</div></td></tr>
-      <tr class="type-sport fixed-event"><td class="time-cell">🏀 16:00<span class="range">→ 17:30</span></td><td><span class="type-badge badge-sport">🏀 CLB Bóng Rổ</span></td><td><div class="activity-name">Bóng rổ Vinschool ⭐ <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail"><strong>Thầy Bùi Văn Tuyên · Nhà đa năng</strong><br>Thử thách: thực hiện ít nhất 1 kỹ thuật tuần trước chưa làm được!</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">🚿 17:30<span class="range">→ 19:00</span></td><td><span class="type-badge badge-rest">🚿 Hồi phục</span></td><td><div class="activity-name">Về nhà – Tắm – Ăn tối – Nghỉ ngơi</div><div class="activity-detail">Ăn tối đủ đạm và rau. Uống nước nhiều. Nghỉ ngơi trước buổi học TA.</div></td></tr>
-      <tr class="type-english fixed-event"><td class="time-cell">📖 19:10<span class="range">→ 21:00</span></td><td><span class="type-badge badge-english">🗣️ TA cô Phương</span></td><td><div class="activity-name">Lâm học TA cô Phương <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Buổi tối sau bóng rổ sẽ mệt – cố gắng duy trì tập trung. Ghi từ mới ra sổ.</div></td></tr>
-      <tr class="type-sleep"><td class="time-cell">🌙 21:15</td><td><span class="type-badge badge-sleep">🌙 Ngủ ngay</span></td><td><div class="activity-name">Ngủ sớm – Hồi phục kép (gym + TA)</div><div class="activity-detail">Hôm nay vất vả nhất tuần. Ngủ ngay, không điện thoại.</div></td></tr>
-    </tbody>
-  </table>
-  <div class="section-card" style="border:2px solid var(--orange)">
-    <div class="section-title">🏀 Checklist Thứ Năm – Ngày CLB!</div>
+
+  <div class="task-card c-wake" data-id="t5-1"><div class="task-top"><div class="task-time">⏰ 5:30<div class="t-end">→ 6:45</div></div><span class="badge">🌅 Sáng</span><div class="task-body"><div class="task-name">Dậy – Ăn sáng no – Chuẩn bị</div><div class="task-detail">Hôm nay có CLB bóng rổ! Ăn đủ chất. Kiểm tra giày bóng rổ.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t5-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-school" data-id="t5-2"><div class="task-top"><div class="task-time">🏫 8:00<div class="t-end">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="task-body"><div class="task-name">Học tại trường – 7 tiết <span class="tag tag-cal">📅 Cố định</span></div><div class="task-detail"><strong>TAVN×2 · Ngữ văn×2 · Công dân · Toán×2</strong><br>Chiều có CLB – học tốt buổi sáng!</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t5-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-rest" data-id="t5-3"><div class="task-top"><div class="task-time">😌 15:30<div class="t-end">→ 15:55</div></div><span class="badge">😴 Nạp NL</span><div class="task-body"><div class="task-name">Ăn nhẹ + Uống nước + Khởi động nhẹ</div><div class="task-detail">Chuối/bánh mì. Không ngủ. Vận động nhẹ 5 phút tránh chuột rút.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t5-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-sport" data-id="t5-4"><div class="task-top"><div class="task-time">🏀 16:00<div class="t-end">→ 17:30</div></div><span class="badge">🏀 CLB Vinschool</span><div class="task-body"><div class="task-name">CLB Bóng rổ Vinschool ⭐ <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail"><strong>Thầy Bùi Văn Tuyên · Nhà đa năng</strong><br>Thử thách: thực hiện 1 kỹ thuật chưa làm được tuần trước!</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t5-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-rest" data-id="t5-5"><div class="task-top"><div class="task-time">🚿 17:30<div class="t-end">→ 19:00</div></div><span class="badge">🚿 Hồi phục</span><div class="task-body"><div class="task-name">Về nhà – Tắm – Ăn tối – Nghỉ ngơi</div><div class="task-detail">Ăn tối đủ đạm và rau. Uống nước nhiều. Nghỉ ngơi trước TA.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t5-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-en" data-id="t5-6"><div class="task-top"><div class="task-time">🗣️ 19:10<div class="t-end">→ 21:00</div></div><span class="badge">🗣️ TA cô Phương</span><div class="task-body"><div class="task-name">Học TA cô Phương <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail">Sau bóng rổ sẽ mệt – uống nước liên tục, ghi từ mới. Cố gắng duy trì tập trung!</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t5-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="sleep-banner">
+    <span class="si">🌙</span>
+    <div class="st"><strong>Ngủ lúc 21:15</strong><span>Dậy 5:30 = 8h 15 phút ngủ ✅</span></div>
+    <div class="sleep-pill">8h15'</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">📊 Đánh Giá Ngày – Thứ Năm</div>
+    <div class="eval-grid">
+      <div class="eval-meter"><label>🏀 Kỹ thuật CLB hôm nay</label><div class="stars-big" data-day="t5-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>🗣️ Học TA sau tập</label><div class="stars-big" data-day="t5-ta"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-note"><label>💬 Kỹ thuật mới học được hôm nay + nhận xét:</label><textarea rows="2" placeholder="Ví dụ: con làm được layup tay trái…" id="note-t5"></textarea></div>
+    </div>
+    <div class="eval-total" id="score-t5"><div class="score-num" id="snum-t5">–</div><div class="score-lbl">Điểm trung bình ngày</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">✅ Checklist Thứ Năm</div>
     <ul class="checklist">
-      <li><div class="check-box"></div>Ăn sáng no + uống nước đủ trước CLB</li>
-      <li><div class="check-box"></div>Thực hiện 1 kỹ thuật mới hôm nay: ___________</li>
-      <li><div class="check-box"></div>Tự đánh giá buổi tập: ⭐⭐⭐⭐⭐ (khoanh)</li>
-      <li><div class="check-box"></div>Học TA cô Phương đủ buổi, ghi từ mới</li>
-      <li><div class="check-box"></div>Kể chuyện CLB cho bố nghe</li>
-      <li><div class="check-box"></div>Ngủ trước 21:15</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ăn sáng no + uống nước đủ trước CLB</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Thực hiện 1 kỹ thuật mới: ___________</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Học TA cô Phương đủ buổi</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Kể chuyện CLB cho bố nghe</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 21:15</li>
     </ul>
   </div>
-</div>
+</div><!-- end t5 -->
 
-<!-- ═══ THỨ 6 ═══ -->
+<!-- ══════════════════════════════
+     THỨ SÁU
+══════════════════════════════ -->
 
 <div class="day-panel" id="day-t6">
   <div class="day-header">
-    <div><div class="day-title">Thứ Sáu 🏀🌙</div><div class="day-date">3/4 · Bóng rổ TH School tối</div></div>
-    <div class="day-focus">Kết thúc tuần học – Tập buổi tối!</div>
+    <div><div class="day-title">Thứ Sáu 🎵🏀</div><div class="day-sub">3/4 · Bóng rổ TH School 19:30 tối</div></div>
+    <div class="focus-pill">Kết thúc tuần học!</div>
   </div>
-  <table class="schedule">
-    <thead><tr><th>Giờ</th><th>Loại</th><th>Hoạt động</th></tr></thead>
-    <tbody>
-      <tr class="type-wake"><td class="time-cell">⏰ 5:30<span class="range">→ 6:45</span></td><td><span class="type-badge badge-wake">🌅 Sáng</span></td><td><div class="activity-name">Dậy – Ăn sáng – Chuẩn bị</div><div class="activity-detail">Cuối tuần sắp tới! Có Âm nhạc hôm nay – mang đồ dùng Âm nhạc nếu cần.</div></td></tr>
-      <tr class="type-school fixed-event"><td class="time-cell">🏫 8:00<span class="range">→ 15:25</span></td><td><span class="type-badge badge-school">🏫 Trường</span></td><td><div class="activity-name">Học tại trường – 7 tiết <span class="fixed-tag">📅 Cố định</span></div><div class="activity-detail"><strong>Lịch sử · GD Thể chất · Toán · Âm nhạc · Ngữ văn · TANN · TAVN</strong><br>Âm nhạc hôm nay – tận hưởng! Đây là môn Lâm thích.</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">😌 15:30<span class="range">→ 17:00</span></td><td><span class="type-badge badge-rest">😴 Nghỉ dài</span></td><td><div class="activity-name">Về nhà – Nghỉ ngơi – Ăn nhẹ</div><div class="activity-detail">1.5 tiếng nghỉ ngơi trước khi tập bóng rổ tối. Uống nhiều nước.</div></td></tr>
-      <tr class="type-study"><td class="time-cell">📚 17:00<span class="range">→ 17:30</span></td><td><span class="type-badge badge-study">📚 Ôn tuần</span></td><td><div class="activity-name">Ôn nhanh cuối tuần (30 phút)</div><div class="activity-detail">Xem lại vở 2 môn yếu nhất tuần này. Gạch chân chỗ chưa chắc để hỏi thầy T2.</div></td></tr>
-      <tr class="type-family"><td class="time-cell">❤️ 17:30<span class="range">→ 17:45</span></td><td><span class="type-badge badge-family">❤️ Bố-con</span></td><td><div class="activity-name">Kết nối bố – con: Tổng kết tuần</div><div class="activity-detail">Bố hỏi: <em>"Tuần này con tự hào nhất về điều gì?"</em> Bố chia sẻ điều bố tự hào về Lâm.</div></td></tr>
-      <tr class="type-family"><td class="time-cell">🍜 17:45<span class="range">→ 19:20</span></td><td><span class="type-badge badge-family">🍜 Gia đình</span></td><td><div class="activity-name">Ăn tối gia đình – Ăn đủ chất trước tập</div><div class="activity-detail">Ăn no và sớm trước 19:00. Uống nước đủ. Chuẩn bị giày bóng rổ cho buổi tối.</div></td></tr>
-      <tr class="type-sport fixed-event"><td class="time-cell">🏀 19:30<span class="range">→ 20:30</span></td><td><span class="type-badge badge-sport">🏀 TH School</span></td><td><div class="activity-name">Lâm tập bóng rổ TH School 🆕 <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Buổi tập mới bổ sung! Duy trì năng lượng tốt. Ghi lại 1 kỹ thuật học được.</div></td></tr>
-      <tr class="type-sleep"><td class="time-cell">🌙 21:00</td><td><span class="type-badge badge-sleep">🌙 Ngủ</span></td><td><div class="activity-name">Về nhà – Tắm – Ngủ ngay</div><div class="activity-detail">Ngủ đủ giấc để hồi phục. Sáng mai T7 có Văn Edufly lúc 9:00!</div></td></tr>
-    </tbody>
-  </table>
-  <div class="section-card">
-    <div class="section-title">✅ Checklist Thứ Sáu</div>
+
+  <div class="task-card c-wake" data-id="t6-1"><div class="task-top"><div class="task-time">⏰ 5:30<div class="t-end">→ 6:45</div></div><span class="badge">🌅 Sáng</span><div class="task-body"><div class="task-name">Dậy – Ăn sáng – Chuẩn bị</div><div class="task-detail">Âm nhạc hôm nay! Cuối tuần sắp tới.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t6-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-school" data-id="t6-2"><div class="task-top"><div class="task-time">🏫 8:00<div class="t-end">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="task-body"><div class="task-name">Học tại trường – 7 tiết <span class="tag tag-cal">📅 Cố định</span></div><div class="task-detail"><strong>Lịch sử · GD Thể chất · Toán · Âm nhạc · Ngữ văn · TANN · TAVN</strong><br>Âm nhạc = môn Lâm thích, tận hưởng!</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t6-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-rest" data-id="t6-3"><div class="task-top"><div class="task-time">😌 15:30<div class="t-end">→ 17:00</div></div><span class="badge">😴 Nghỉ dài</span><div class="task-body"><div class="task-name">Về nhà – Nghỉ ngơi hoàn toàn 90'</div><div class="task-detail">Nạp năng lượng trước bóng rổ tối. Uống nhiều nước.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t6-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-study" data-id="t6-4"><div class="task-top"><div class="task-time">📚 17:00<div class="t-end">→ 17:30</div></div><span class="badge">📚 Ôn tuần</span><div class="task-body"><div class="task-name">Ôn nhanh cuối tuần (30 phút)</div><div class="task-detail">Xem lại vở 2 môn yếu nhất tuần này. Gạch chân chỗ chưa chắc.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t6-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-family" data-id="t6-5"><div class="task-top"><div class="task-time">❤️ 17:30<div class="t-end">→ 17:45</div></div><span class="badge">❤️ Bố-con</span><div class="task-body"><div class="task-name">Kết nối bố – con: Tổng kết tuần</div><div class="task-detail">Bố hỏi: <em>"Tuần này con tự hào nhất về điều gì?"</em></div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t6-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-family" data-id="t6-6"><div class="task-top"><div class="task-time">🍜 17:45<div class="t-end">→ 19:20</div></div><span class="badge">🍜 Gia đình</span><div class="task-body"><div class="task-name">Ăn tối sớm + Chuẩn bị bóng rổ</div><div class="task-detail">Ăn no trước 19:00. Uống nước đủ. Thay đồ thể thao sẵn sàng.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t6-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-sport" data-id="t6-7"><div class="task-top"><div class="task-time">🏀 19:30<div class="t-end">→ 20:30</div></div><span class="badge">🏀 TH School</span><div class="task-body"><div class="task-name">Bóng rổ TH School <span class="tag tag-cal">📅 Calendar</span><span class="tag tag-new">🆕 Mới</span></div><div class="task-detail">Buổi tập mới! Ghi lại 1 kỹ thuật học được. Duy trì năng lượng tốt.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t6-7"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="sleep-banner">
+    <span class="si">🌙</span>
+    <div class="st"><strong>Ngủ lúc 21:00</strong><span>Dậy 5:30 = 8h 30 phút ngủ ✅</span></div>
+    <div class="sleep-pill">8h30'</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">📊 Đánh Giá Ngày – Thứ Sáu</div>
+    <div class="eval-grid">
+      <div class="eval-meter"><label>🏀 Bóng rổ TH School</label><div class="stars-big" data-day="t6-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>🎵 Năng lượng ở trường</label><div class="stars-big" data-day="t6-school"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-note"><label>💬 Nhận xét + Kỹ thuật TH School:</label><textarea rows="2" placeholder="Ghi nhanh…" id="note-t6"></textarea></div>
+    </div>
+    <div class="eval-total" id="score-t6"><div class="score-num" id="snum-t6">–</div><div class="score-lbl">Điểm trung bình ngày</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">✅ Checklist Thứ Sáu</div>
     <ul class="checklist">
-      <li><div class="check-box"></div>Ôn 2 môn yếu cuối tuần 30 phút</li>
-      <li><div class="check-box"></div>Tổng kết tuần với bố</li>
-      <li><div class="check-box"></div>Ăn tối đủ trước 19:00 (chuẩn bị tập tối)</li>
-      <li><div class="check-box"></div>Tập bóng rổ TH School 19:30–20:30</li>
-      <li><div class="check-box"></div>Ghi 1 kỹ thuật học được ở TH School: ___________</li>
-      <li><div class="check-box"></div>Ngủ trước 21:30 (T7 dậy học Văn lúc 9h)</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ôn 2 môn yếu 30 phút</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Tổng kết tuần với bố</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ăn tối sớm trước 19:00</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Tập bóng rổ TH School 19:30–20:30</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ghi 1 kỹ thuật học được: ___________</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 21:00</li>
     </ul>
   </div>
-</div>
+</div><!-- end t6 -->
 
-<!-- ═══ THỨ 7 ═══ -->
+<!-- ══════════════════════════════
+     THỨ BẢY
+══════════════════════════════ -->
 
 <div class="day-panel" id="day-t7">
   <div class="day-header">
-    <div><div class="day-title">Thứ Bảy 📝🏀🏋️</div><div class="day-date">4/4 · Văn Edufly + Bóng rổ True North + Gym + TA Talent</div></div>
-    <div class="day-focus" style="background:linear-gradient(135deg,#EF476F,#FF6B9D)">⚠️ Ngày bận nhất tuần!</div>
+    <div><div class="day-title">Thứ Bảy ⚡</div><div class="day-sub">4/4 · Văn Edufly + True North + Gym + TA Talent</div></div>
+    <div class="focus-pill" style="background:#C0153B">⚠️ Ngày bận nhất!</div>
   </div>
 
-  <div class="alert-box" style="margin-bottom:14px; background:linear-gradient(135deg,#FFF9EC,#FFF3CC); border-color:#FFD166;">
-    <p>⚠️ <strong>Thứ Bảy có 4 lịch cố định liên tiếp:</strong> Văn Edufly → Bóng rổ True North → Gym → TA Talent 48. Bố mẹ lưu ý quản lý năng lượng và bữa ăn của Lâm trong ngày!</p>
-  </div>
+  <div class="alert"><p>⚠️ <strong>Thứ Bảy có 4 lịch lớn:</strong> Văn Edufly → BTVN × 2 phần → Bóng rổ True North → Gym → TA Talent 48. Bố mẹ chú ý bữa ăn và nước uống cho Lâm suốt ngày!</p></div>
 
-  <table class="schedule">
-    <thead><tr><th>Giờ</th><th>Loại</th><th>Hoạt động</th></tr></thead>
-    <tbody>
-      <tr class="type-wake"><td class="time-cell">⏰ 7:30<span class="range">→ 8:45</span></td><td><span class="type-badge badge-wake">🌅 Sáng</span></td><td><div class="activity-name">Dậy – Ăn sáng đầy đủ – Chuẩn bị</div><div class="activity-detail">Ăn sáng no và đủ chất. Hôm nay lịch dày, cần năng lượng cao từ sáng. Chuẩn bị sách Văn + đồ thể thao.</div></td></tr>
-      <tr class="type-class fixed-event"><td class="time-cell">✍️ 9:00<span class="range">→ 11:00</span></td><td><span class="type-badge badge-class">✍️ Văn Edufly</span></td><td><div class="activity-name">Lâm học văn Edufly <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Tập trung ghi chép đầy đủ. <strong>Nhớ ghi lại BTVN thầy/cô giao!</strong> Hỏi ngay khi không hiểu.</div></td></tr>
-      <tr class="type-hw"><td class="time-cell">📝 11:00<span class="range">→ 12:00</span></td><td><span class="type-badge badge-hw">📝 BTVN Văn</span></td><td><div class="activity-name">Làm BTVN Văn Edufly <span class="hw-tag">⚠️ Bắt buộc</span></div><div class="activity-detail"><strong>Hoàn thành BTVN Ngữ văn ngay sau buổi học</strong> – khi kiến thức còn nóng, trước khi đi tập bóng rổ. Đặt đồng hồ 45–50 phút. Không để dồn tối.</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">🍜 12:00<span class="range">→ 14:15</span></td><td><span class="type-badge badge-rest">🍜 Ăn trưa + Nghỉ</span></td><td><div class="activity-name">Ăn trưa + Nghỉ trưa bắt buộc</div><div class="activity-detail">Ăn trưa đủ chất (đạm + tinh bột + rau). Nghỉ trưa ít nhất 45 phút. Cơ thể cần nạp lại trước khi tập bóng rổ lúc 14:30.</div></td></tr>
-      <tr class="type-sport fixed-event"><td class="time-cell">🏀 14:30<span class="range">→ 16:30</span></td><td><span class="type-badge badge-sport">🏀 True North</span></td><td><div class="activity-name">Lâm tập bóng rổ True North <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Tập cường độ cao. Uống nước liên tục. Ghi lại kỹ thuật nổi bật nhất buổi tập!</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">😌 16:30<span class="range">→ 17:10</span></td><td><span class="type-badge badge-rest">😴 Nghỉ nhanh</span></td><td><div class="activity-name">Ăn nhẹ – Uống nước – Nghỉ ngắn</div><div class="activity-detail">Chuối hoặc bánh mì. Thay đồ gym. Cơ thể cần 40 phút trước khi vào gym.</div></td></tr>
-      <tr class="type-gym fixed-event"><td class="time-cell">🏋️ 17:15<span class="range">→ 18:15</span></td><td><span class="type-badge badge-gym">🏋️ Gym</span></td><td><div class="activity-name">Lâm tập gym <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Buổi gym sau bóng rổ – <strong>tập nhẹ hơn bình thường, tránh chấn thương</strong>. Tập trung giãn cơ và nhẹ nhàng.</div></td></tr>
-      <tr class="type-rest"><td class="time-cell">🍜 18:15<span class="range">→ 19:45</span></td><td><span class="type-badge badge-rest">🍜 Ăn tối + Nghỉ</span></td><td><div class="activity-name">Tắm – Ăn tối – Nghỉ ngơi</div><div class="activity-detail">Ăn tối đủ chất hồi phục (thịt, trứng, rau). Nghỉ ngơi nhẹ nhàng trước buổi học TA.</div></td></tr>
-      <tr class="type-english fixed-event"><td class="time-cell">📖 19:50<span class="range">→ 21:30</span></td><td><span class="type-badge badge-english">🗣️ TA Talent 48</span></td><td><div class="activity-name">Lâm học TA Talent 48 <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Buổi học cuối ngày bận. Duy trì tinh thần. <strong>Uống nước liên tục.</strong> Ghi từ mới ra sổ tay.</div></td></tr>
-      <tr class="type-sleep"><td class="time-cell">🌙 22:00</td><td><span class="type-badge badge-sleep">🌙 Ngủ</span></td><td><div class="activity-name">Ngủ – Hồi phục toàn diện</div><div class="activity-detail">Hôm nay vất vả nhất tuần. Ngủ đủ giấc là ưu tiên số 1. Không điện thoại.</div></td></tr>
-    </tbody>
-  </table>
-  <div class="section-card">
-    <div class="section-title">✅ Checklist Thứ Bảy</div>
-    <ul class="checklist">
-      <li><div class="check-box"></div>Học Văn Edufly tập trung, ghi BTVN</li>
-      <li><div class="check-box"></div><strong>BTVN Văn Edufly hoàn thành trước 12:00</strong></li>
-      <li><div class="check-box"></div>Ăn trưa đủ + nghỉ trưa trước bóng rổ</li>
-      <li><div class="check-box"></div>Tập bóng rổ True North 14:30–16:30</li>
-      <li><div class="check-box"></div>Tập gym 17:15–18:15 (nhẹ nhàng)</li>
-      <li><div class="check-box"></div>Học TA Talent 48 đủ buổi</li>
-      <li><div class="check-box"></div>Uống nước đủ cả ngày (≥8 ly)</li>
-    </ul>
-    <div class="alert-box">
-      <p>⚠️ <strong>Lưu ý quan trọng:</strong> Thứ Bảy có tới 4 hoạt động lớn liên tiếp. Bố mẹ chú ý bữa ăn và nước uống của Lâm suốt ngày. Nếu Lâm có dấu hiệu kiệt sức trước buổi gym → có thể bỏ qua gym hoặc tập nhẹ nhất có thể.</p>
+  <div class="task-card c-wake" data-id="t7-1"><div class="task-top"><div class="task-time">⏰ 7:30<div class="t-end">→ 8:45</div></div><span class="badge">🌅 Sáng</span><div class="task-body"><div class="task-name">Dậy – Ăn sáng no – Chuẩn bị</div><div class="task-detail">Ăn sáng đủ chất. Chuẩn bị sách Văn + đồ thể thao cho chiều.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t7-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-class" data-id="t7-2"><div class="task-top"><div class="task-time">✍️ 9:00<div class="t-end">→ 11:00</div></div><span class="badge">✍️ Văn Edufly</span><div class="task-body"><div class="task-name">Học Văn Edufly <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail">Tập trung ghi chép. <strong>Ghi rõ BTVN thầy/cô giao!</strong> Hỏi ngay khi không hiểu.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t7-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <!-- BTVN Văn – chia 2 phần -->
+
+  <div class="btvn-split">
+    <div class="btvn-header">
+      <span class="bh-icon">✍️</span>
+      <strong>BTVN Văn – Edufly (chia 2 phần)</strong>
+      <span class="bh-tag">⚠️ Bắt buộc</span>
+    </div>
+    <div class="btvn-parts">
+      <div class="btvn-part" data-id="t7-btvn1">
+        <div class="bp-label p1">📌 Phần 1 – Ngay sau lớp</div>
+        <div class="bp-time">11:00 → 11:35 (35 phút)</div>
+        <div class="bp-desc"><strong>Phần đọc hiểu + câu hỏi ngắn.</strong> Làm khi kiến thức còn nóng. Xong mới ăn trưa!</div>
+        <div class="star-row" data-task="t7-btvn1">
+          <span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span>
+        </div>
+      </div>
+      <div class="btvn-part" data-id="t7-btvn2">
+        <div class="bp-label p2">🌙 Phần 2 – Sau nghỉ trưa</div>
+        <div class="bp-time">13:45 → 14:20 (35 phút)</div>
+        <div class="bp-desc"><strong>Phần viết / hoàn thiện.</strong> Não đã nghỉ ngơi → viết tốt hơn. Sau đó mới chuẩn bị đi bóng rổ.</div>
+        <div class="star-row" data-task="t7-btvn2">
+          <span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ═══ CHỦ NHẬT ═══ -->
+  <div class="task-card c-rest" data-id="t7-3"><div class="task-top"><div class="task-time">🍜 11:35<div class="t-end">→ 13:45</div></div><span class="badge">🍜 Ăn + Nghỉ</span><div class="task-body"><div class="task-name">Ăn trưa + Nghỉ trưa bắt buộc</div><div class="task-detail">Ăn trưa đủ chất (đạm + tinh bột + rau). Nghỉ trưa ≥1 tiếng. Cơ thể cần nạp lại.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t7-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-sport" data-id="t7-4"><div class="task-top"><div class="task-time">🏀 14:30<div class="t-end">→ 16:30</div></div><span class="badge">🏀 True North</span><div class="task-body"><div class="task-name">Bóng rổ True North <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail">Tập cường độ cao. Uống nước liên tục. Ghi lại kỹ thuật nổi bật nhất!</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t7-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-rest" data-id="t7-5"><div class="task-top"><div class="task-time">😌 16:30<div class="t-end">→ 17:10</div></div><span class="badge">😴 Nghỉ</span><div class="task-body"><div class="task-name">Ăn nhẹ – Uống nước – Thay đồ gym</div><div class="task-detail">Chuối/bánh mì. Cơ thể cần 40 phút nghỉ trước gym.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t7-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-gym" data-id="t7-6"><div class="task-top"><div class="task-time">🏋️ 17:15<div class="t-end">→ 18:15</div></div><span class="badge">🏋️ Gym</span><div class="task-body"><div class="task-name">Tập gym <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail">Sau bóng rổ – <strong>tập nhẹ hơn bình thường</strong>, ưu tiên giãn cơ, tránh chấn thương.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t7-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-rest" data-id="t7-7"><div class="task-top"><div class="task-time">🍜 18:15<div class="t-end">→ 19:45</div></div><span class="badge">🍜 Ăn tối</span><div class="task-body"><div class="task-name">Tắm – Ăn tối đủ đạm – Nghỉ ngơi</div><div class="task-detail">Ăn tối nhiều đạm (thịt/trứng/cá) để phục hồi cơ bắp. Uống nước đủ.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t7-7"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-en" data-id="t7-8"><div class="task-top"><div class="task-time">🗣️ 19:50<div class="t-end">→ 21:30</div></div><span class="badge">🗣️ TA Talent 48</span><div class="task-body"><div class="task-name">Học TA Talent 48 <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail">Buổi học cuối ngày bận. Uống nước liên tục. Ghi từ mới ra sổ.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="t7-8"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="sleep-banner">
+    <span class="si">🌙</span>
+    <div class="st"><strong>Ngủ lúc 22:00</strong><span>Dậy 7:00 (weekend) = 9h 00 phút ngủ ✅</span></div>
+    <div class="sleep-pill">9h00'</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">📊 Đánh Giá Ngày – Thứ Bảy</div>
+    <div class="eval-grid">
+      <div class="eval-meter"><label>✍️ Hiểu bài Văn Edufly</label><div class="stars-big" data-day="t7-van"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>📝 Hoàn thành BTVN Văn</label><div class="stars-big" data-day="t7-hw"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>🏀 Bóng rổ True North</label><div class="stars-big" data-day="t7-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>💪 Năng lượng cả ngày</label><div class="stars-big" data-day="t7-energy"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-note"><label>💬 Nhận xét T7 – ngày bận nhất:</label><textarea rows="2" placeholder="Lâm duy trì năng lượng thế nào?…" id="note-t7"></textarea></div>
+    </div>
+    <div class="eval-total" id="score-t7"><div class="score-num" id="snum-t7">–</div><div class="score-lbl">Điểm trung bình ngày</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">✅ Checklist Thứ Bảy</div>
+    <ul class="checklist">
+      <li><div class="cb" onclick="toggleCb(this)"></div>Học Văn Edufly tập trung, ghi BTVN</li>
+      <li><div class="cb hw-cb" onclick="toggleCb(this)"></div><strong>BTVN Văn P.1: đọc hiểu (11:00–11:35)</strong></li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ăn trưa + nghỉ trưa đủ</li>
+      <li><div class="cb hw-cb" onclick="toggleCb(this)"></div><strong>BTVN Văn P.2: phần viết (13:45–14:20)</strong></li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Tập bóng rổ True North 14:30–16:30</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Tập gym nhẹ 17:15–18:15</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Học TA Talent 48 đủ buổi</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Uống nước ≥8 ly cả ngày</li>
+    </ul>
+  </div>
+</div><!-- end t7 -->
+
+<!-- ══════════════════════════════
+     CHỦ NHẬT
+══════════════════════════════ -->
 
 <div class="day-panel" id="day-cn">
   <div class="day-header">
-    <div><div class="day-title">Chủ Nhật 🌿🏀</div><div class="day-date">5/4 · Bóng rổ Elite Bách Khoa tối</div></div>
-    <div class="day-focus" style="background:linear-gradient(135deg,#06D6A0,#4ECDC4)">Nghỉ ngơi & Sạc Pin!</div>
+    <div><div class="day-title">Chủ Nhật 🌿🏀</div><div class="day-sub">5/4 · Nghỉ ngơi + Bóng rổ Elite Bách Khoa 18:00</div></div>
+    <div class="focus-pill" style="background:#06D6A0;color:#fff">Sạc pin tuần mới!</div>
   </div>
-  <table class="schedule">
-    <thead><tr><th>Giờ</th><th>Loại</th><th>Hoạt động</th></tr></thead>
-    <tbody>
-      <tr class="type-wake"><td class="time-cell">⏰ 7:30<span class="range">→ 9:00</span></td><td><span class="type-badge badge-wake">🌅 Sáng tự do</span></td><td><div class="activity-name">Dậy tự nhiên – Ăn sáng gia đình</div><div class="activity-detail">Hôm qua T7 vất vả – ngủ đủ giấc. Ăn sáng cả nhà, không vội vàng.</div></td></tr>
-      <tr class="type-flex"><td class="time-cell">🎯 9:00<span class="range">→ 11:30</span></td><td><span class="type-badge badge-flex">🎯 Tự do</span></td><td><div class="activity-name">Thời gian tự do hoàn toàn</div><div class="activity-detail">Piano / Rap / Vẽ / Chơi với Bảo Linh / Xem clip bóng rổ yêu thích. Lâm tự chọn!</div></td></tr>
-      <tr class="type-family"><td class="time-cell">🍜 11:30<span class="range">→ 14:00</span></td><td><span class="type-badge badge-family">👨‍👩‍👧 Gia đình</span></td><td><div class="activity-name">Ăn trưa gia đình + Nghỉ trưa</div><div class="activity-detail">Bữa trưa cùng cả nhà. Nghỉ trưa đầy đủ – buổi tối còn bóng rổ Elite!</div></td></tr>
-      <tr class="type-study"><td class="time-cell">📚 14:30<span class="range">→ 15:30</span></td><td><span class="type-badge badge-study">📚 Chuẩn bị tuần mới</span></td><td><div class="activity-name">Chuẩn bị cho tuần mới (1 tiếng)</div><div class="activity-detail">Sắp xếp cặp sách T2. Xem TKB tuần tới. Đọc trước 1 bài Toán sẽ học. <strong>= +điểm thưởng ngay!</strong></div></td></tr>
-      <tr class="type-family"><td class="time-cell">❤️ 15:30<span class="range">→ 16:00</span></td><td><span class="type-badge badge-family">❤️ Bố-con</span></td><td><div class="activity-name">Tổng kết tuần + Trao thưởng (30 phút)</div><div class="activity-detail"><strong>Đếm tổng điểm tuần.</strong> Bố trao thưởng nếu đủ điểm. Đặt mục tiêu tuần tới cùng nhau.</div></td></tr>
-      <tr class="type-flex"><td class="time-cell">🎯 16:00<span class="range">→ 17:45</span></td><td><span class="type-badge badge-flex">🎯 Tự do</span></td><td><div class="activity-name">Thời gian tự do trước tập tối</div><div class="activity-detail">Nghỉ ngơi, chơi nhẹ. Ăn nhẹ lúc ~17:30 trước khi đi tập bóng rổ tối.</div></td></tr>
-      <tr class="type-sport fixed-event"><td class="time-cell">🏀 18:00<span class="range">→ 19:30</span></td><td><span class="type-badge badge-sport">🏀 Elite Bách Khoa</span></td><td><div class="activity-name">Lâm tập bóng rổ Elite Bách Khoa <span class="fixed-tag">📅 Calendar</span></div><div class="activity-detail">Buổi tập Chủ Nhật! Đây là buổi 3 trong tuần – duy trì phong độ. Tập vui, không áp lực.</div></td></tr>
-      <tr class="type-sleep"><td class="time-cell">🌙 21:00</td><td><span class="type-badge badge-sleep">🌙 Ngủ sớm</span></td><td><div class="activity-name">Ngủ sớm – Sẵn sàng tuần mới</div><div class="activity-detail">Ngủ trước 21:00. Thứ Hai bắt đầu lại lúc 5:30!</div></td></tr>
-    </tbody>
-  </table>
-  <div class="section-card">
-    <div class="section-title">✅ Checklist Chủ Nhật</div>
+
+  <div class="task-card c-rest" data-id="cn-1"><div class="task-top"><div class="task-time">⏰ 7:00<div class="t-end">→ 9:00</div></div><span class="badge">🌅 Sáng tự do</span><div class="task-body"><div class="task-name">Dậy tự nhiên – Ăn sáng gia đình</div><div class="task-detail">Hôm qua T7 vất vả – ngủ đủ. Ăn sáng cả nhà, không vội.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="cn-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-flex" data-id="cn-2"><div class="task-top"><div class="task-time">🎯 9:00<div class="t-end">→ 11:30</div></div><span class="badge">🎯 Tự do</span><div class="task-body"><div class="task-name">Thời gian hoàn toàn tự do</div><div class="task-detail">Piano / Rap / Vẽ / Chơi với Bảo Linh. Lâm tự chọn!</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="cn-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-family" data-id="cn-3"><div class="task-top"><div class="task-time">🍜 11:30<div class="t-end">→ 14:00</div></div><span class="badge">👨‍👩‍👧 Gia đình</span><div class="task-body"><div class="task-name">Ăn trưa gia đình + Nghỉ trưa</div><div class="task-detail">Bữa trưa cả nhà. Nghỉ trưa đầy đủ – buổi tối còn bóng rổ Elite.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="cn-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-study" data-id="cn-4"><div class="task-top"><div class="task-time">📚 14:30<div class="t-end">→ 15:30</div></div><span class="badge">📚 Chuẩn bị</span><div class="task-body"><div class="task-name">Chuẩn bị tuần mới (1 tiếng)</div><div class="task-detail">Sắp xếp cặp sách T2. Xem TKB tuần tới. Đọc trước 1 bài Toán sẽ học.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="cn-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-family" data-id="cn-5"><div class="task-top"><div class="task-time">❤️ 15:30<div class="t-end">→ 16:00</div></div><span class="badge">❤️ Bố-con</span><div class="task-body"><div class="task-name">Tổng kết tuần + Trao thưởng (30 phút)</div><div class="task-detail"><strong>Đếm tổng điểm tuần.</strong> Bố trao thưởng nếu đủ điểm. Đặt mục tiêu tuần tới cùng nhau.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="cn-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-flex" data-id="cn-6"><div class="task-top"><div class="task-time">🎯 16:00<div class="t-end">→ 17:45</div></div><span class="badge">🎯 Tự do</span><div class="task-body"><div class="task-name">Thời gian tự do + Ăn nhẹ</div><div class="task-detail">Nghỉ ngơi, chơi nhẹ. Ăn nhẹ ~17:30 trước khi đi tập bóng rổ tối.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="cn-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="task-card c-sport" data-id="cn-7"><div class="task-top"><div class="task-time">🏀 18:00<div class="t-end">→ 19:30</div></div><span class="badge">🏀 Elite Bách Khoa</span><div class="task-body"><div class="task-name">Bóng rổ Elite Bách Khoa <span class="tag tag-cal">📅 Calendar</span></div><div class="task-detail">Buổi 3 trong tuần! Tập vui, không áp lực. Duy trì phong độ.</div></div></div><div class="task-rating"><span>Đánh giá:</span><div class="stars" data-task="cn-7"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+
+  <div class="sleep-banner">
+    <span class="si">🌙</span>
+    <div class="st"><strong>Ngủ lúc 20:45</strong><span>Dậy 5:30 (T2) = 8h 45 phút ngủ ✅</span></div>
+    <div class="sleep-pill">8h45'</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">📊 Đánh Giá Ngày – Chủ Nhật</div>
+    <div class="eval-grid">
+      <div class="eval-meter"><label>🏀 Bóng rổ Elite</label><div class="stars-big" data-day="cn-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-meter"><label>📚 Chuẩn bị tuần mới</label><div class="stars-big" data-day="cn-prep"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="eval-note"><label>💬 Nhận xét Chủ Nhật + mục tiêu tuần tới:</label><textarea rows="2" placeholder="Tuần sau con muốn cải thiện điều gì?…" id="note-cn"></textarea></div>
+    </div>
+    <div class="eval-total" id="score-cn"><div class="score-num" id="snum-cn">–</div><div class="score-lbl">Điểm trung bình ngày</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">✅ Checklist Chủ Nhật</div>
     <ul class="checklist">
-      <li><div class="check-box"></div>Thời gian tự do sáng – nghỉ ngơi đủ</li>
-      <li><div class="check-box"></div>Chuẩn bị cặp sách + TKB tuần tới</li>
-      <li><div class="check-box"></div>Đọc trước 1 bài Toán</li>
-      <li><div class="check-box"></div>Tổng kết tuần + nhận thưởng với bố</li>
-      <li><div class="check-box"></div>Tập bóng rổ Elite Bách Khoa 18:00–19:30</li>
-      <li><div class="check-box"></div>Ngủ trước 21:00</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Dậy tự nhiên, không đặt báo thức</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Chuẩn bị cặp sách + TKB tuần tới</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Tổng kết tuần + nhận thưởng với bố</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Tập bóng rổ Elite 18:00–19:30</li>
+      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 20:45</li>
     </ul>
   </div>
-</div>
+</div><!-- end cn -->
 
-<!-- ═══ TỔNG KẾT ═══ -->
+<!-- ══════════════════════════════
+     TỔNG KẾT
+══════════════════════════════ -->
 
-<div class="day-panel" id="day-summary">
+<div class="day-panel" id="day-sum">
   <div class="day-header"><div><div class="day-title">📊 Tổng Kết Tuần</div></div></div>
 
-  <!-- Lịch cố định tổng hợp -->
+  <!-- Weekly scores -->
 
-  <div class="section-card">
-    <div class="section-title">📅 Toàn Bộ Lịch Cố Định Từ iPhone</div>
-    <table class="schedule">
-      <thead><tr><th>Ngày</th><th>Thời gian</th><th>Hoạt động</th></tr></thead>
-      <tbody>
-        <tr class="type-gym fixed-event"><td class="time-cell">T2</td><td><span class="type-badge badge-gym">🏋️</span></td><td><div class="activity-name">Tập gym · 16:15–17:15</div></td></tr>
-        <tr class="type-class fixed-event"><td class="time-cell">T2</td><td><span class="type-badge badge-class">📐</span></td><td><div class="activity-name">Mathexpress · 18:00–20:30 <span class="hw-tag">BTVN ngay sau</span></div></td></tr>
-        <tr class="type-piano fixed-event"><td class="time-cell">T3</td><td><span class="type-badge badge-piano">🎹</span></td><td><div class="activity-name">Học đàn · 16:30–17:30</div></td></tr>
-        <tr class="type-english fixed-event"><td class="time-cell">T3</td><td><span class="type-badge badge-english">🗣️</span></td><td><div class="activity-name">TA Talent 48 · 19:40–21:20</div></td></tr>
-        <tr class="type-swim fixed-event"><td class="time-cell">T4</td><td><span class="type-badge badge-swim">🏊</span></td><td><div class="activity-name">Học bơi · 17:00–18:30</div></td></tr>
-        <tr class="type-sport fixed-event"><td class="time-cell">T5</td><td><span class="type-badge badge-sport">🏀</span></td><td><div class="activity-name">Bóng rổ Vinschool · 16:00–17:30</div></td></tr>
-        <tr class="type-english fixed-event"><td class="time-cell">T5</td><td><span class="type-badge badge-english">🗣️</span></td><td><div class="activity-name">TA cô Phương · 19:10–21:00</div></td></tr>
-        <tr class="type-sport fixed-event"><td class="time-cell">T6</td><td><span class="type-badge badge-sport">🏀</span></td><td><div class="activity-name">Bóng rổ TH School · 19:30–20:30 🆕</div></td></tr>
-        <tr class="type-class fixed-event"><td class="time-cell">T7</td><td><span class="type-badge badge-class">✍️</span></td><td><div class="activity-name">Văn Edufly · 9:00–11:00 <span class="hw-tag">BTVN ngay sau</span></div></td></tr>
-        <tr class="type-sport fixed-event"><td class="time-cell">T7</td><td><span class="type-badge badge-sport">🏀</span></td><td><div class="activity-name">Bóng rổ True North · 14:30–16:30</div></td></tr>
-        <tr class="type-gym fixed-event"><td class="time-cell">T7</td><td><span class="type-badge badge-gym">🏋️</span></td><td><div class="activity-name">Tập gym · 17:15–18:15</div></td></tr>
-        <tr class="type-english fixed-event"><td class="time-cell">T7</td><td><span class="type-badge badge-english">🗣️</span></td><td><div class="activity-name">TA Talent 48 · 19:50–21:30</div></td></tr>
-        <tr class="type-sport fixed-event"><td class="time-cell">CN</td><td><span class="type-badge badge-sport">🏀</span></td><td><div class="activity-name">Bóng rổ Elite Bách Khoa · 18:00–19:30</div></td></tr>
-      </tbody>
-    </table>
+  <div class="sec">
+    <div class="sec-title">📈 Điểm Đánh Giá Cả Tuần</div>
+    <p style="font-size:.76rem;color:#8A90A8;margin-bottom:10px">Điểm tự động tính từ đánh giá hàng ngày. Bấm vào các ngày để xem chi tiết.</p>
+    <div class="week-score-bar">
+      <div class="wsc-col"><div class="wsc-name">T2</div><div class="wsc-score" id="ws-t2" onclick="showDay('t2',document.querySelectorAll('.tab')[0])">–</div></div>
+      <div class="wsc-col"><div class="wsc-name">T3</div><div class="wsc-score" id="ws-t3" onclick="showDay('t3',document.querySelectorAll('.tab')[1])">–</div></div>
+      <div class="wsc-col"><div class="wsc-name">T4</div><div class="wsc-score" id="ws-t4" onclick="showDay('t4',document.querySelectorAll('.tab')[2])">–</div></div>
+      <div class="wsc-col"><div class="wsc-name">T5</div><div class="wsc-score" id="ws-t5" onclick="showDay('t5',document.querySelectorAll('.tab')[3])">–</div></div>
+      <div class="wsc-col"><div class="wsc-name">T6</div><div class="wsc-score" id="ws-t6" onclick="showDay('t6',document.querySelectorAll('.tab')[4])">–</div></div>
+      <div class="wsc-col"><div class="wsc-name">T7</div><div class="wsc-score" id="ws-t7" onclick="showDay('t7',document.querySelectorAll('.tab')[5])">–</div></div>
+      <div class="wsc-col"><div class="wsc-name">CN</div><div class="wsc-score" id="ws-cn" onclick="showDay('cn',document.querySelectorAll('.tab')[6])">–</div></div>
+    </div>
+    <div style="text-align:center;margin-top:16px">
+      <div style="font-family:'Fredoka One',cursive;font-size:.8rem;color:#8A90A8;margin-bottom:4px">Điểm trung bình tuần</div>
+      <div style="font-family:'Fredoka One',cursive;font-size:2.8rem;color:#FF6B35" id="week-avg">–</div>
+      <div style="font-size:.72rem;color:#8A90A8">/ 5.0 sao</div>
+    </div>
   </div>
 
-  <!-- BTVN Strategy -->
+  <!-- Sleep summary -->
 
-  <div class="section-card" style="border:2px solid #EF476F;">
-    <div class="section-title">📝 Chiến Lược BTVN – 2 Môn Cố Định</div>
-    <div style="display:flex;flex-direction:column;gap:12px;">
-      <div style="background:linear-gradient(135deg,#FFE0EC,#FDEAEF);border-radius:12px;padding:14px;border-left:5px solid #EF476F;">
-        <div style="font-size:0.9rem;font-weight:900;color:#8A0A28;margin-bottom:6px;">📐 BTVN Toán – Mathexpress (Thứ Hai)</div>
-        <div style="font-size:0.8rem;color:#5A0A1A;line-height:1.6;">
-          <strong>Thời điểm làm:</strong> Ngay sau khi về nhà từ Mathexpress (20:30 – 21:00)<br>
-          <strong>Lý do:</strong> Kiến thức còn nóng, não đang "mở" – làm BTVN lúc này hiệu quả nhất<br>
-          <strong>Quy tắc:</strong> Đặt đồng hồ 25 phút. Câu khó → đánh dấu, không ngồi mãi<br>
-          <strong>Bố mẹ hỗ trợ:</strong> Nhắc Lâm lúc 20:30. Không cần ngồi cùng, chỉ cần check kết quả
+  <div class="sec">
+    <div class="sec-title">🌙 Tổng Hợp Giờ Ngủ</div>
+    <div style="display:flex;flex-direction:column;gap:6px;font-size:.82rem;">
+      <div style="display:flex;justify-content:space-between;padding:7px 10px;background:#F5F0EA;border-radius:9px;font-weight:700"><span>T2 30/3 · Ngủ 21:15</span><span style="color:#1C8A60">8h 15' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:7px 10px;background:#F5F0EA;border-radius:9px;font-weight:700"><span>T3 31/3 · Ngủ 21:30</span><span style="color:#1C8A60">8h 00' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:7px 10px;background:#F5F0EA;border-radius:9px;font-weight:700"><span>T4 1/4 · Ngủ 20:45</span><span style="color:#1C8A60">8h 45' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:7px 10px;background:#F5F0EA;border-radius:9px;font-weight:700"><span>T5 2/4 · Ngủ 21:15</span><span style="color:#1C8A60">8h 15' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:7px 10px;background:#F5F0EA;border-radius:9px;font-weight:700"><span>T6 3/4 · Ngủ 21:00</span><span style="color:#1C8A60">8h 30' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:7px 10px;background:#F5F0EA;border-radius:9px;font-weight:700"><span>T7 4/4 · Ngủ 22:00 · Dậy 7:00</span><span style="color:#1C8A60">9h 00' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:7px 10px;background:#F5F0EA;border-radius:9px;font-weight:700"><span>CN 5/4 · Ngủ 20:45 · Dậy 5:30</span><span style="color:#1C8A60">8h 45' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:9px 12px;background:linear-gradient(135deg,#1C2340,#2D4070);border-radius:9px;font-weight:900;color:#fff"><span>Trung bình cả tuần</span><span style="color:#FFD166">8h 32' ✅</span></div>
+    </div>
+  </div>
+
+  <!-- BTVN strategy -->
+
+  <div class="sec" style="border:2px solid #C0153B">
+    <div class="sec-title">📝 Chiến Lược BTVN – Chia 2 Phần</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:#FFF0F4;border-radius:12px;padding:13px;border-left:4px solid #C0153B">
+        <div style="font-size:.86rem;font-weight:900;color:#8A0030;margin-bottom:6px">📐 Mathexpress – Thứ Hai</div>
+        <div style="font-size:.76rem;color:#5A0A1A;line-height:1.65">
+          <strong>P.1 (20:30–21:00):</strong> Bài dễ + trung bình – kiến thức còn nóng<br>
+          <strong>P.2 (T3 6:00–6:25):</strong> Bài khó – sau khi ngủ, não tươi tắn hơn<br>
+          💡 Lý do chia: Tránh thức khuya sau ngày gym + học 2.5 tiếng
         </div>
       </div>
-      <div style="background:linear-gradient(135deg,#FFE0EC,#FDEAEF);border-radius:12px;padding:14px;border-left:5px solid #EF476F;">
-        <div style="font-size:0.9rem;font-weight:900;color:#8A0A28;margin-bottom:6px;">✍️ BTVN Văn – Edufly (Thứ Bảy)</div>
-        <div style="font-size:0.8rem;color:#5A0A1A;line-height:1.6;">
-          <strong>Thời điểm làm:</strong> 11:00 – 12:00 (ngay sau khi tan lớp Edufly)<br>
-          <strong>Lý do:</strong> Buổi chiều có 3 lịch liên tiếp (bóng rổ + gym + TA). Không còn thời gian nếu để sau<br>
-          <strong>Quy tắc:</strong> Làm xong BTVN → mới được ăn trưa và nghỉ. Đây là điều kiện bắt buộc<br>
-          <strong>Bố mẹ hỗ trợ:</strong> Nhắc Lâm ngồi vào bàn ngay khi về từ Edufly, trước khi ăn trưa
+      <div style="background:#FFF0F4;border-radius:12px;padding:13px;border-left:4px solid #C0153B">
+        <div style="font-size:.86rem;font-weight:900;color:#8A0030;margin-bottom:6px">✍️ Văn Edufly – Thứ Bảy</div>
+        <div style="font-size:.76rem;color:#5A0A1A;line-height:1.65">
+          <strong>P.1 (11:00–11:35):</strong> Đọc hiểu + câu hỏi ngắn – ngay sau lớp<br>
+          <strong>P.2 (13:45–14:20):</strong> Phần viết – sau nghỉ trưa, trước khi đi bóng rổ<br>
+          💡 Lý do chia: T7 chiều có bóng rổ + gym + TA – không còn thời gian
         </div>
       </div>
     </div>
@@ -550,117 +1002,178 @@ vertical-align: middle;
 
   <!-- Stats -->
 
-  <div class="section-card">
-    <div class="section-title">📈 Thống Kê Tuần</div>
-    <div class="summary-grid">
-      <div class="sum-card" style="background:#FFE8DF"><div class="icon">🏀</div><div class="val">3</div><div class="lbl">Buổi bóng rổ</div></div>
-      <div class="sum-card" style="background:#FFE8DF"><div class="icon">🏋️</div><div class="val">2</div><div class="lbl">Buổi gym</div></div>
-      <div class="sum-card" style="background:#E0F8F6"><div class="icon">🏊</div><div class="val">1</div><div class="lbl">Buổi bơi</div></div>
-      <div class="sum-card" style="background:#DCFAF2"><div class="icon">🗣️</div><div class="val">3</div><div class="lbl">Ca tiếng Anh</div></div>
-      <div class="sum-card" style="background:#EDE8FD"><div class="icon">📐</div><div class="val">1</div><div class="lbl">Mathexpress</div></div>
-      <div class="sum-card" style="background:#FFF3CC"><div class="icon">✍️</div><div class="val">1</div><div class="lbl">Văn Edufly</div></div>
-    </div>
-
-```
-<div style="margin-top:16px;">
-  <div class="bar-row"><div class="bar-label"><span>🏀 Thể thao (Bóng rổ + Gym + Bơi)</span><span style="color:var(--muted)">~9 tiếng</span></div><div class="bar-track"><div class="bar-fill" style="width:40%;background:#FF6B35"></div></div></div>
-  <div class="bar-row"><div class="bar-label"><span>🏫 Học tại trường</span><span style="color:var(--muted)">~37 tiếng</span></div><div class="bar-track"><div class="bar-fill" style="width:60%;background:#4ECDC4"></div></div></div>
-  <div class="bar-row"><div class="bar-label"><span>📚 Học thêm (Toán, Văn, TA, Đàn)</span><span style="color:var(--muted)">~15 tiếng</span></div><div class="bar-track"><div class="bar-fill" style="width:35%;background:#845EF7"></div></div></div>
-  <div class="bar-row"><div class="bar-label"><span>😴 Nghỉ ngơi + Tự do</span><span style="color:var(--muted)">~20 tiếng</span></div><div class="bar-track"><div class="bar-fill" style="width:28%;background:#06D6A0"></div></div></div>
-</div>
-```
-
-  </div>
-
-  <!-- Reward system -->
-
-  <div class="section-card">
-    <div class="section-title">🏆 Hệ Thống Điểm – "Mùa Giải Bảo Lâm"</div>
-    <div class="reward-grid">
-      <div class="reward-card earn">
-        <h4>⭐ Kiếm Điểm</h4>
-        <div class="reward-item">Dậy đúng giờ <span class="points">+5đ</span></div>
-        <div class="reward-item">BTVN Mathexpress trước 21:30 <span class="points">+20đ</span></div>
-        <div class="reward-item">BTVN Văn trước 12:00 T7 <span class="points">+20đ</span></div>
-        <div class="reward-item">Chủ động phát biểu ở trường <span class="points">+10đ</span></div>
-        <div class="reward-item">Hoàn thành tập thể thao <span class="points">+10đ</span></div>
-        <div class="reward-item">Ghi từ vựng mới đủ <span class="points">+10đ</span></div>
-        <div class="reward-item">Kỹ thuật mới ở CLB <span class="points">+20đ</span></div>
-        <div class="reward-item">Ngủ đúng giờ <span class="points">+5đ</span></div>
-      </div>
-      <div class="reward-card lose">
-        <h4>❌ Trừ Điểm</h4>
-        <div class="reward-item">BTVN Toán không làm tối T2 <span class="points">-25đ</span></div>
-        <div class="reward-item">BTVN Văn không làm sáng T7 <span class="points">-25đ</span></div>
-        <div class="reward-item">Điện thoại quá giờ <span class="points">-10đ</span></div>
-        <div class="reward-item">Bỏ buổi tập không lý do <span class="points">-15đ</span></div>
-        <div class="reward-item">Nói chuyện thiếu lễ phép <span class="points">-10đ</span></div>
-      </div>
-    </div>
-    <div class="note-box" style="margin-top:12px;">
-      <p><strong>🎯 Đổi thưởng Chủ Nhật:</strong><br>
-      <strong>≥ 150đ</strong> = Chọn món ăn tối Chủ Nhật + 1h chơi game tự do<br>
-      <strong>≥ 200đ</strong> = Trên + Hoạt động đặc biệt với bố (bơi/café/điện tử)<br>
-      <strong>≥ 250đ</strong> = Trên + Được mua 1 thứ liên quan bóng rổ (bóng/áo/phụ kiện)</p>
+  <div class="sec">
+    <div class="sec-title">📈 Thống Kê Tuần</div>
+    <div class="sum-grid">
+      <div class="sum-card" style="background:#FFE8DF"><div class="si">🏀</div><div class="sv">3</div><div class="sl">Buổi bóng rổ</div></div>
+      <div class="sum-card" style="background:#FFE8DF"><div class="si">🏋️</div><div class="sv">2</div><div class="sl">Buổi gym</div></div>
+      <div class="sum-card" style="background:#E0F8F6"><div class="si">🏊</div><div class="sv">1</div><div class="sl">Buổi bơi</div></div>
+      <div class="sum-card" style="background:#DCFAF2"><div class="si">🗣️</div><div class="sv">3</div><div class="sl">Ca tiếng Anh</div></div>
+      <div class="sum-card" style="background:#FFF3CC"><div class="si">📝</div><div class="sv">4</div><div class="sl">Phần BTVN</div></div>
+      <div class="sum-card" style="background:#E8EBF2"><div class="si">🌙</div><div class="sv">8.5h</div><div class="sl">Ngủ TB/đêm</div></div>
     </div>
   </div>
 
   <!-- Habits -->
 
-  <div class="section-card">
-    <div class="section-title">🔥 3 Thói Quen Vàng Cần Xây Dựng</div>
-    <div class="habits-list">
-      <div class="habit-item" style="--h-color:#EF476F; --h-bg:#FDEAEF;">
-        <div class="habit-icon">📝</div>
-        <div><div class="habit-name">Habit 1: BTVN ngay lập tức, không để dồn</div><div class="habit-desc">Mathexpress xong → làm BTVN ngay. Văn Edufly xong → làm BTVN ngay. Quy tắc vàng: "Làm xong bài mới nghỉ, không phải nghỉ xong mới làm bài."</div></div>
-      </div>
-      <div class="habit-item" style="--h-color:#845EF7; --h-bg:#F0EBFF;">
-        <div class="habit-icon">💧</div>
-        <div><div class="habit-name">Habit 2: Uống nước liên tục – đặc biệt ngày thể thao</div><div class="habit-desc">Mang bình nước đi học và đi tập mỗi ngày. Uống trước/trong/sau mọi buổi tập. Não và cơ bắp đều cần nước để hoạt động tốt nhất!</div></div>
-      </div>
-      <div class="habit-item" style="--h-color:#06D6A0; --h-bg:#EAFAF5;">
-        <div class="habit-icon">🙋</div>
-        <div><div class="habit-name">Habit 3: Chủ động hỏi khi không hiểu</div><div class="habit-desc">Tại trường, tại Mathexpress, tại Edufly, tại CLB bóng rổ – bất cứ đâu không hiểu → hỏi ngay, không im lặng. Người hỏi là người dũng cảm và tiến bộ nhanh nhất!</div></div>
-      </div>
-    </div>
+  <div class="sec">
+    <div class="sec-title">🔥 3 Thói Quen Vàng</div>
+    <div class="habit-item" style="--hc:#C0153B;--hb:#FFF0F4"><div class="habit-icon">📝</div><div><div class="habit-name">Habit 1: BTVN ngay – không để dồn</div><div class="habit-desc">Mathexpress xong → làm P.1 ngay. Văn Edufly xong → làm P.1 ngay. Quy tắc vàng: "Làm xong bài mới nghỉ!"</div></div></div>
+    <div class="habit-item" style="--hc:#06D6A0;--hb:#EAFAF5"><div class="habit-icon">💧</div><div><div class="habit-name">Habit 2: Uống nước liên tục suốt ngày</div><div class="habit-desc">Mang bình nước đi học + đi tập mỗi ngày. Đặc biệt quan trọng các ngày T5 và T7 có nhiều lịch thể thao.</div></div></div>
+    <div class="habit-item" style="--hc:#845EF7;--hb:#F0EBFF"><div class="habit-icon">🙋</div><div><div class="habit-name">Habit 3: Hỏi ngay khi không hiểu</div><div class="habit-desc">Tại trường, tại Mathexpress, tại Edufly, tại CLB – không im lặng khi chưa hiểu. Người hỏi là người tiến bộ nhanh nhất!</div></div></div>
   </div>
 
-  <!-- Parent notes -->
+  <!-- Reward -->
 
-  <div class="section-card">
-    <div class="section-title">📝 Lưu Ý Quan Trọng Cho Bố Mẹ</div>
-    <div class="note-box">
-      <p>
-      <strong>① Thứ Bảy là ngày bận nhất – quản lý năng lượng là ưu tiên số 1.</strong> Đảm bảo Lâm ăn đủ bữa sáng, trưa và có đồ ăn nhẹ giữa các buổi. Thiếu năng lượng = dễ chấn thương khi tập.<br><br>
-      <strong>② Hai quy tắc BTVN không thương lượng:</strong> Toán Mathexpress làm tối T2, Văn Edufly làm sáng T7 ngay sau lớp. Không để dồn sang tối hay ngày khác.<br><br>
-      <strong>③ Thứ Tư và Thứ Ba là ngày "thở"</strong> – không nên thêm lịch vào 2 ngày này để Lâm có không gian hồi phục giữa tuần.<br><br>
-      <strong>④ Lịch bóng rổ 3 buổi/tuần</strong> là tần suất lý tưởng. Nếu có thể, sau mỗi buổi tập nên hỏi Lâm 1 kỹ thuật học được – giúp não ghi nhớ tốt hơn.<br><br>
-      <strong>⑤ Thời gian bố-con mỗi tối</strong> – dù bận đến đâu, 10 phút lắng nghe Lâm kể chuyện ngày hôm nay là đầu tư quan trọng nhất.
-      </p>
+  <div class="sec">
+    <div class="sec-title">🏆 Hệ Thống Thưởng Cuối Tuần</div>
+    <div class="reward-grid">
+      <div class="reward-card earn">
+        <h4>⭐ Kiếm Điểm</h4>
+        <div class="reward-item">Dậy đúng giờ <span class="pts">+5đ</span></div>
+        <div class="reward-item">BTVN Toán P.1 đêm T2 <span class="pts">+15đ</span></div>
+        <div class="reward-item">BTVN Toán P.2 sáng T3 <span class="pts">+15đ</span></div>
+        <div class="reward-item">BTVN Văn P.1 sáng T7 <span class="pts">+15đ</span></div>
+        <div class="reward-item">BTVN Văn P.2 trưa T7 <span class="pts">+15đ</span></div>
+        <div class="reward-item">Phát biểu ở trường <span class="pts">+10đ</span></div>
+        <div class="reward-item">Hoàn thành tập thể thao <span class="pts">+10đ</span></div>
+        <div class="reward-item">Kỹ thuật mới ở CLB <span class="pts">+20đ</span></div>
+        <div class="reward-item">Ngủ đúng giờ <span class="pts">+5đ</span></div>
+      </div>
+      <div class="reward-card lose">
+        <h4>❌ Trừ Điểm</h4>
+        <div class="reward-item">BTVN không làm đúng hạn <span class="pts">-20đ</span></div>
+        <div class="reward-item">Điện thoại quá giờ <span class="pts">-10đ</span></div>
+        <div class="reward-item">Bỏ buổi tập không lý do <span class="pts">-15đ</span></div>
+        <div class="reward-item">Nói chuyện thiếu lễ phép <span class="pts">-10đ</span></div>
+        <div class="reward-item">Ngủ muộn hơn 30' quy định <span class="pts">-5đ</span></div>
+      </div>
     </div>
-    <div style="margin-top:14px;padding:14px;background:linear-gradient(135deg,#EDE8FD,#D8CDFC);border-radius:12px;border:1px solid #845EF7;">
-      <p style="font-size:0.84rem;color:#3D2A9E;line-height:1.7;">
-        <strong>🔑 Nói với Lâm mỗi ngày:</strong><br>
-        ✦ <em>"Con là người có kỷ luật – con làm BTVN ngay khi về."</em><br>
-        ✦ <em>"Con là người chơi bóng rổ giỏi – mỗi buổi con đều tiến bộ."</em><br>
-        ✦ <em>"Con là người dám hỏi khi không hiểu."</em><br>
-        ✦ <em>"Con là người không bỏ cuộc – dù tuần này bận đến đâu."</em>
-      </p>
+    <div class="note" style="margin-top:12px">
+      <p><strong>🎯 Đổi thưởng Chủ Nhật:</strong><br>
+      <strong>≥ 150đ</strong> = Chọn món ăn tối + 1h game tự do<br>
+      <strong>≥ 200đ</strong> = Trên + Hoạt động đặc biệt với bố<br>
+      <strong>≥ 250đ</strong> = Trên + Mua 1 thứ liên quan bóng rổ</p>
     </div>
   </div>
 
 </div><!-- end summary -->
-
 </div><!-- end content -->
 
 <script>
-function showDay(id) {
-  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('day-' + id).classList.add('active');
-  event.target.classList.add('active');
-  window.scrollTo({top:0, behavior:'smooth'});
+// ── DATA STORE ──
+const ratings = {};
+const dayScores = {};
+
+// ── TAB SWITCHING ──
+function showDay(id, btn) {
+  document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('day-'+id).classList.add('active');
+  if(btn) btn.classList.add('active');
+  else document.querySelectorAll('.tab')[['t2','t3','t4','t5','t6','t7','cn','sum'].indexOf(id)].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
+
+// ── TASK STAR RATINGS ──
+document.querySelectorAll('.stars').forEach(container=>{
+  const task = container.dataset.task;
+  container.querySelectorAll('.star').forEach(star=>{
+    star.addEventListener('click',()=>{
+      const val = parseInt(star.dataset.v);
+      ratings[task] = val;
+      container.querySelectorAll('.star').forEach(s=>{
+        s.classList.toggle('lit', parseInt(s.dataset.v) <= val);
+      });
+    });
+    star.addEventListener('mouseenter',()=>{
+      const val = parseInt(star.dataset.v);
+      container.querySelectorAll('.star').forEach(s=>{
+        s.classList.toggle('lit', parseInt(s.dataset.v) <= val);
+      });
+    });
+    star.addEventListener('mouseleave',()=>{
+      const saved = ratings[task]||0;
+      container.querySelectorAll('.star').forEach(s=>{
+        s.classList.toggle('lit', parseInt(s.dataset.v) <= saved);
+      });
+    });
+  });
+});
+
+// ── BTVN SMALL STARS ──
+document.querySelectorAll('.star-row').forEach(container=>{
+  const task = container.dataset.task;
+  container.querySelectorAll('.star-sm').forEach(star=>{
+    star.addEventListener('click',()=>{
+      const val = parseInt(star.dataset.v);
+      ratings[task] = val;
+      container.querySelectorAll('.star-sm').forEach(s=>{
+        s.classList.toggle('lit', parseInt(s.dataset.v) <= val);
+      });
+      updateDayScore();
+    });
+  });
+});
+
+// ── DAY EVALUATION STARS ──
+document.querySelectorAll('.stars-big').forEach(container=>{
+  const key = container.dataset.day;
+  const day = key.split('-')[0];
+  container.querySelectorAll('.star-big').forEach(star=>{
+    star.addEventListener('click',()=>{
+      const val = parseInt(star.dataset.v);
+      ratings['day-'+key] = val;
+      container.querySelectorAll('.star-big').forEach(s=>{
+        s.classList.toggle('lit', parseInt(s.dataset.v) <= val);
+      });
+      updateDayScore(day);
+    });
+    star.addEventListener('mouseenter',()=>{
+      const val = parseInt(star.dataset.v);
+      container.querySelectorAll('.star-big').forEach(s=>{
+        s.classList.toggle('lit', parseInt(s.dataset.v) <= val);
+      });
+    });
+    star.addEventListener('mouseleave',()=>{
+      const saved = ratings['day-'+key]||0;
+      container.querySelectorAll('.star-big').forEach(s=>{
+        s.classList.toggle('lit', parseInt(s.dataset.v) <= saved);
+      });
+    });
+  });
+});
+
+// ── CALCULATE DAY SCORE ──
+function updateDayScore(day) {
+  const days = day ? [day] : ['t2','t3','t4','t5','t6','t7','cn'];
+  days.forEach(d=>{
+    const keys = Object.keys(ratings).filter(k=>k.startsWith('day-'+d+'-'));
+    if(!keys.length) return;
+    const avg = keys.reduce((s,k)=>s+ratings[k],0)/keys.length;
+    dayScores[d] = avg;
+    const num = document.getElementById('snum-'+d);
+    if(num) num.textContent = avg.toFixed(1)+' ⭐';
+    // update week bar
+    const ws = document.getElementById('ws-'+d);
+    if(ws){ ws.textContent=avg.toFixed(1); ws.classList.add('has-score'); }
+  });
+  // week avg
+  const vals = Object.values(dayScores);
+  if(vals.length){
+    const wa = vals.reduce((a,b)=>a+b,0)/vals.length;
+    const el = document.getElementById('week-avg');
+    if(el) el.textContent = wa.toFixed(1)+' ⭐';
+  }
+}
+
+// ── CHECKLIST ──
+function toggleCb(el){
+  el.classList.toggle('checked');
+}
+
+// init
+updateDayScore();
 </script>
 
 </body>
