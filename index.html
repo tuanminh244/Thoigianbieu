@@ -4,141 +4,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kế Hoạch Tuần – Bảo Lâm 🏀 v4</title>
+<title>Kế Hoạch Tuần – Bảo Lâm 6–12/4/2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Nunito',sans-serif;background:#F6F2ED;color:#1C2340;min-height:100vh;-webkit-font-smoothing:antialiased}
+body{font-family:'Nunito',sans-serif;background:#F5F1EB;color:#1C2340;-webkit-font-smoothing:antialiased}
 
-/* HERO */
-.hero{background:#1C2340;padding:30px 20px 26px;position:relative;overflow:hidden}
-.hc1{position:absolute;top:-50px;right:-40px;width:170px;height:170px;border-radius:50%;background:rgba(255,107,53,.15);pointer-events:none}
-.hc2{position:absolute;bottom:-60px;left:20px;width:140px;height:140px;border-radius:50%;background:rgba(255,209,102,.10);pointer-events:none}
+/* ── HERO ── */
+.hero{background:#1C2340;padding:28px 18px 24px;position:relative;overflow:hidden}
+.hc1{position:absolute;top:-45px;right:-35px;width:160px;height:160px;border-radius:50%;background:rgba(255,107,53,.15);pointer-events:none}
+.hc2{position:absolute;bottom:-55px;left:15px;width:130px;height:130px;border-radius:50%;background:rgba(255,209,102,.10);pointer-events:none}
 .hbadge{display:inline-flex;align-items:center;gap:5px;background:#FF6B35;border-radius:20px;padding:3px 12px;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#fff;margin-bottom:10px}
-.hero h1{font-family:‘Fredoka One’,cursive;font-size:1.95rem;color:#fff;line-height:1.1;margin-bottom:4px}
+.hero h1{font-family:‘Fredoka One’,cursive;font-size:1.85rem;color:#fff;line-height:1.1;margin-bottom:4px}
 .hero h1 em{color:#FF6B35;font-style:normal}
-.hero-sub{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:18px}
-.chips{display:flex;gap:9px;flex-wrap:wrap}
-.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:7px 12px;text-align:center}
-.chip .cv{font-size:1.2rem;font-weight:900;color:#FFD166;line-height:1}
-.chip .cl{font-size:.6rem;color:rgba(255,255,255,.48);margin-top:2px}
+.hero-sub{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:16px}
+.hero-chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:7px 11px;text-align:center}
+.chip .cv{font-size:1.15rem;font-weight:900;color:#FFD166;line-height:1}
+.chip .cl{font-size:.59rem;color:rgba(255,255,255,.48);margin-top:2px}
 
-/* LEGEND */
-.legend{display:flex;flex-wrap:wrap;gap:7px;padding:10px 16px;background:#fff;border-bottom:2px solid #EDE8E0}
-.leg{display:flex;align-items:center;gap:4px;font-size:.68rem;font-weight:700;color:#8A90A8}
+/* ── DEADLINE STRIP ── */
+.deadline-strip{background:#C0153B;padding:10px 16px;display:flex;align-items:center;gap:8px}
+.deadline-strip .di{font-size:1.2rem}
+.deadline-strip p{font-size:.76rem;font-weight:800;color:#fff;line-height:1.4}
+
+/* ── LEGEND ── */
+.legend{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:#fff;border-bottom:1px solid #E8E2D8}
+.leg{display:flex;align-items:center;gap:4px;font-size:.67rem;font-weight:700;color:#8A90A8}
 .ldot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 
-/* TABS */
-.tabs-wrap{overflow-x:auto;background:#fff;padding:0 10px;border-bottom:2px solid #EDE8E0;position:sticky;top:0;z-index:20;-webkit-overflow-scrolling:touch}
+/* ── TABS ── */
+.tabs-wrap{overflow-x:auto;background:#fff;padding:0 10px;border-bottom:2px solid #E8E2D8;position:sticky;top:0;z-index:20;-webkit-overflow-scrolling:touch}
 .tabs{display:flex;min-width:max-content}
-.tab{padding:11px 13px;font-size:.78rem;font-weight:800;color:#8A90A8;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:‘Nunito’,sans-serif}
+.tab{padding:10px 13px;font-size:.76rem;font-weight:800;color:#8A90A8;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:‘Nunito’,sans-serif}
 .tab.active{color:#FF6B35;border-bottom-color:#FF6B35}
 
-/* CONTENT */
-.content{max-width:820px;margin:0 auto;padding:18px 13px 70px}
-.day-panel{display:none}.day-panel.active{display:block}
+/* ── CONTENT ── */
+.content{max-width:820px;margin:0 auto;padding:16px 12px 70px}
+.dp{display:none}.dp.active{display:block}
 
-/* Day header */
-.dh{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px}
-.dtitle{font-family:‘Fredoka One’,cursive;font-size:1.6rem;color:#1C2340;line-height:1}
-.dsub{font-size:.7rem;color:#8A90A8;font-weight:600;margin-top:3px}
-.fpill{background:#FF6B35;color:#fff;border-radius:20px;padding:4px 13px;font-size:.7rem;font-weight:800;white-space:nowrap;flex-shrink:0}
+/* ── DAY HEADER ── */
+.dh{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:14px}
+.dtitle{font-family:‘Fredoka One’,cursive;font-size:1.55rem;color:#1C2340;line-height:1}
+.dsub{font-size:.69rem;color:#8A90A8;font-weight:600;margin-top:3px}
+.fpill{border-radius:20px;padding:4px 12px;font-size:.69rem;font-weight:800;white-space:nowrap;flex-shrink:0}
+.fpill-orange{background:#FF6B35;color:#fff}
+.fpill-red{background:#C0153B;color:#fff}
+.fpill-green{background:#06D6A0;color:#fff}
+.fpill-purple{background:#7B2FF7;color:#fff}
+.fpill-pink{background:#FF6B9D;color:#fff}
 
-/* TASK CARD */
-.tc{background:#fff;border-radius:13px;margin-bottom:6px;border-left:4px solid var(–tcol,#DDD);box-shadow:0 2px 7px rgba(28,35,64,.06);overflow:hidden;transition:box-shadow .15s}
-.tc:hover{box-shadow:0 4px 16px rgba(28,35,64,.10)}
-.tc-top{display:flex;align-items:flex-start;gap:9px;padding:10px 11px 8px}
-.tc-time{min-width:76px;flex-shrink:0;font-size:.72rem;font-weight:800;color:#1C2340;line-height:1.3}
-.tc-time .tend{color:#8A90A8;font-weight:600;font-size:.66rem}
-.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:20px;font-size:.63rem;font-weight:800;background:var(–bb,#EEE);color:var(–bc,#666);white-space:nowrap;flex-shrink:0}
+/* ── TIME BLOCK LABELS ── */
+.time-label{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:#8A90A8;margin:12px 0 5px 4px}
+
+/* ── TASK CARD ── */
+.tc{background:#fff;border-radius:12px;margin-bottom:5px;border-left:4px solid var(–tcol,#DDD);box-shadow:0 2px 6px rgba(28,35,64,.06);overflow:hidden}
+.tc-top{display:flex;align-items:flex-start;gap:8px;padding:9px 10px 8px}
+.tc-time{min-width:72px;flex-shrink:0;font-size:.7rem;font-weight:800;color:#1C2340;line-height:1.3}
+.tc-time .tend{color:#8A90A8;font-weight:600;font-size:.64rem}
+.badge{display:inline-flex;align-items:center;gap:2px;padding:2px 7px;border-radius:20px;font-size:.62rem;font-weight:800;background:var(–bb,#EEE);color:var(–bc,#666);white-space:nowrap;flex-shrink:0}
 .tc-body{flex:1;min-width:0}
-.tc-name{font-size:.85rem;font-weight:800;color:#1C2340;margin-bottom:2px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
-.tc-det{font-size:.72rem;color:#8A90A8;line-height:1.45}
+.tc-name{font-size:.84rem;font-weight:800;color:#1C2340;margin-bottom:2px;flex-wrap:wrap;display:flex;align-items:center;gap:4px}
+.tc-det{font-size:.71rem;color:#8A90A8;line-height:1.45}
 .tc-det strong{color:#1C2340}
-.tag{display:inline-block;border-radius:5px;padding:1px 5px;font-size:.6rem;font-weight:900;vertical-align:middle;margin-left:3px}
+.tc-det ul{margin-left:12px;margin-top:3px}
+.tc-det li{margin-bottom:1px}
+.tag{display:inline-block;border-radius:5px;padding:1px 5px;font-size:.59rem;font-weight:900;vertical-align:middle}
 .t-cal{background:#FFF3CC;color:#B8860B}
 .t-hw{background:#FFDDE8;color:#C0153B}
-.t-hw2{background:#FFE8D4;color:#B84600}
+.t-exam{background:#EDE8FD;color:#5020AA}
+.t-dead{background:#FFE0E0;color:#8A0000}
+.t-lms{background:#E8F0FF;color:#0040AA}
 .t-new{background:#DCF5E8;color:#0A7A45}
-.t-exam{background:#FFE0F5;color:#8A0070}
-.t-rem{background:#E8F0FF;color:#0040AA}
 
-/* STAR RATING */
-.tc-rate{display:flex;align-items:center;gap:4px;padding:5px 10px 8px 88px;border-top:1px dashed #EDE8E0}
-.tc-rate span{font-size:.65rem;font-weight:700;color:#8A90A8;margin-right:3px}
-.stars{display:flex;gap:2px}
-.star{font-size:1.05rem;cursor:pointer;filter:grayscale(1) opacity(.3);transition:transform .1s;line-height:1}
-.star.lit{filter:none}
-.star:hover{transform:scale(1.2)}
+/* ── TASK EVAL ── */
+.tc-eval{padding:6px 10px 8px;border-top:1px dashed #EDE8E0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.eval-row{display:flex;align-items:center;gap:4px}
+.eval-row span{font-size:.63rem;font-weight:700;color:#8A90A8}
+.cb-wrap{display:flex;gap:5px}
+.cb-opt{display:flex;align-items:center;gap:3px;cursor:pointer;font-size:.65rem;font-weight:700;color:#8A90A8}
+.cb-opt input{width:13px;height:13px;accent-color:#FF6B35;cursor:pointer}
+.diff-wrap{display:flex;gap:4px}
+.diff-btn{font-size:.65rem;font-weight:800;padding:2px 7px;border-radius:10px;border:1.5px solid #E8E2D8;cursor:pointer;background:#fff;color:#8A90A8;transition:all .15s;font-family:‘Nunito’,sans-serif}
+.diff-btn:hover,.diff-btn.sel{background:#FF6B35;color:#fff;border-color:#FF6B35}
+.diff-btn.sel-easy{background:#06D6A0;color:#fff;border-color:#06D6A0}
+.diff-btn.sel-medium{background:#FFD166;color:#1C2340;border-color:#FFD166}
+.diff-btn.sel-hard{background:#EF476F;color:#fff;border-color:#EF476F}
 
-/* SLEEP BANNER */
-.sleep-ban{background:linear-gradient(135deg,#1C2340,#2D4070);border-radius:13px;padding:12px 14px;margin-bottom:6px;display:flex;align-items:center;gap:10px;border-left:4px solid #4A6CCC}
-.sleep-ban .si{font-size:1.5rem}
-.sleep-ban .st{color:#fff}.sleep-ban .st strong{font-size:.88rem;font-family:‘Fredoka One’,cursive}
-.sleep-ban .st span{font-size:.7rem;color:rgba(255,255,255,.5);display:block;margin-top:1px}
-.sleep-pill{margin-left:auto;background:#4A6CCC;color:#fff;border-radius:9px;padding:4px 10px;font-size:.7rem;font-weight:800;white-space:nowrap}
+/* ── SPECIAL BANNERS ── */
+.sleep-ban{background:linear-gradient(135deg,#1C2340,#2D4070);border-radius:12px;padding:11px 13px;margin-bottom:5px;display:flex;align-items:center;gap:9px;border-left:4px solid #4A6CCC}
+.sleep-ban .si{font-size:1.4rem}
+.sleep-ban .st{color:#fff}
+.sleep-ban .st strong{font-size:.85rem;font-family:‘Fredoka One’,cursive}
+.sleep-ban .st span{font-size:.68rem;color:rgba(255,255,255,.5);display:block;margin-top:1px}
+.sleep-pill{margin-left:auto;background:#4A6CCC;color:#fff;border-radius:8px;padding:4px 9px;font-size:.68rem;font-weight:800;white-space:nowrap}
 
-/* ALERT / NOTE */
-.sec{background:#fff;border-radius:13px;padding:15px;margin-top:16px;box-shadow:0 2px 7px rgba(28,35,64,.06)}
-.sec-title{font-family:‘Fredoka One’,cursive;font-size:1rem;color:#1C2340;margin-bottom:11px;display:flex;align-items:center;gap:6px}
-.note{background:#FFFAED;border:1px solid #FFD166;border-radius:11px;padding:11px;margin-top:8px}
-.note p{font-size:.78rem;color:#7A5800;line-height:1.6}
-.alert{background:#FFF0F4;border:1px solid #FFAAC5;border-radius:11px;padding:11px;margin-top:8px}
-.alert p{font-size:.78rem;color:#8A0030;line-height:1.6}
-.info{background:#EEF4FF;border:1px solid #AAC4FF;border-radius:11px;padding:11px;margin-top:8px}
-.info p{font-size:.78rem;color:#002880;line-height:1.6}
-.exam-banner{background:linear-gradient(135deg,#7B2FF7,#4A6CCC);border-radius:13px;padding:13px 14px;margin-bottom:6px;display:flex;align-items:center;gap:10px;border-left:4px solid #FFD166}
-.exam-banner .ei{font-size:1.5rem}
-.exam-banner .et{color:#fff}.exam-banner .et strong{font-size:.88rem;font-family:‘Fredoka One’,cursive}
-.exam-banner .et span{font-size:.7rem;color:rgba(255,255,255,.6);display:block;margin-top:1px}
-.exam-pill{margin-left:auto;background:#FFD166;color:#1C2340;border-radius:9px;padding:4px 10px;font-size:.7rem;font-weight:800;white-space:nowrap}
-.bday-banner{background:linear-gradient(135deg,#FF6B9D,#FF9B35);border-radius:13px;padding:12px 14px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
-.bday-banner .bi{font-size:1.5rem}
-.bday-banner .bt{color:#fff}.bday-banner .bt strong{font-size:.85rem;font-family:‘Fredoka One’,cursive}
-.bday-banner .bt span{font-size:.7rem;color:rgba(255,255,255,.65);display:block}
+.alarm-ban{border-radius:12px;padding:10px 12px;margin-bottom:5px;display:flex;align-items:flex-start;gap:8px;border-left:4px solid var(–abc,#EF476F);background:var(–abg,#FFF0F4)}
+.alarm-ban .ai{font-size:1.3rem;flex-shrink:0}
+.alarm-ban .at strong{font-size:.8rem;font-weight:900;color:#1C2340;display:block;margin-bottom:2px}
+.alarm-ban .at span{font-size:.7rem;color:#5A0030;line-height:1.4}
+.alarm-ban.green{–abc:#06D6A0;–abg:#EAFAF5}
+.alarm-ban.green .at span{color:#0A4A35}
+.alarm-ban.purple{–abc:#7B2FF7;–abg:#F0EBFF}
+.alarm-ban.purple .at span{color:#3D0AA0}
+.alarm-ban.orange{–abc:#FF6B35;–abg:#FFF5F0}
+.alarm-ban.orange .at span{color:#7A2800}
+.alarm-ban.pink{–abc:#FF6B9D;–abg:#FFF0F6}
 
-/* BTVN SPLIT */
-.btvn-split{background:#fff;border-radius:13px;margin-bottom:6px;border-left:4px solid #C0153B;box-shadow:0 2px 7px rgba(28,35,64,.06)}
-.btvn-head{background:linear-gradient(135deg,#FFF0F4,#FFE0EC);padding:8px 11px;display:flex;align-items:center;gap:7px;border-radius:9px 9px 0 0}
-.btvn-head strong{font-size:.8rem;font-weight:900;color:#8A0030}
-.btvn-head .btag{margin-left:auto;background:#C0153B;color:#fff;border-radius:5px;padding:1px 7px;font-size:.63rem;font-weight:900}
+/* ── BTVN SPLIT ── */
+.btvn-split{background:#fff;border-radius:12px;margin-bottom:5px;border-left:4px solid #C0153B;box-shadow:0 2px 6px rgba(28,35,64,.06)}
+.btvn-head{background:linear-gradient(135deg,#FFF0F4,#FFE0EC);padding:7px 11px;display:flex;align-items:center;gap:6px;border-radius:8px 8px 0 0}
+.btvn-head strong{font-size:.78rem;font-weight:900;color:#8A0030}
+.btvn-head .btag{margin-left:auto;background:#C0153B;color:#fff;border-radius:5px;padding:1px 6px;font-size:.6rem;font-weight:900}
 .btvn-parts{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.btvn-part{padding:9px 11px;border-right:1px solid #EDE8E0}
-.btvn-part:last-child{border-right:none}
-.bp-lbl{font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
-.bp-lbl.p1{color:#C0153B}.bp-lbl.p2{color:#E05A00}
-.bp-time{font-size:.76rem;font-weight:800;color:#1C2340;margin-bottom:3px}
-.bp-desc{font-size:.7rem;color:#8A90A8;line-height:1.4}
-.star-row{display:flex;gap:2px;margin-top:5px}
-.star-sm{font-size:.88rem;cursor:pointer;filter:grayscale(1) opacity(.3);transition:all .1s}
-.star-sm.lit{filter:none}
+.bvp{padding:8px 11px;border-right:1px solid #EDE8E0}
+.bvp:last-child{border-right:none}
+.bvp-lbl{font-size:.63rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.bvp-lbl.p1{color:#C0153B}.bvp-lbl.p2{color:#E05A00}
+.bvp-time{font-size:.74rem;font-weight:800;color:#1C2340;margin-bottom:2px}
+.bvp-desc{font-size:.69rem;color:#8A90A8;line-height:1.4}
 
-/* EVAL */
-.eval-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:11px}
-.eval-m{background:#F5F0EA;border-radius:11px;padding:11px}
-.eval-m label{font-size:.7rem;font-weight:800;color:#8A90A8;display:block;margin-bottom:5px}
-.stars-big{display:flex;gap:3px;justify-content:center}
-.star-big{font-size:1.4rem;cursor:pointer;filter:grayscale(1) opacity(.28);transition:all .15s}
+/* ── SEC CARD ── */
+.sec{background:#fff;border-radius:12px;padding:14px;margin-top:15px;box-shadow:0 2px 6px rgba(28,35,64,.06)}
+.sec-title{font-family:‘Fredoka One’,cursive;font-size:.98rem;color:#1C2340;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+
+/* ── DAY EVAL ── */
+.day-eval-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.dem{background:#F5F0EA;border-radius:10px;padding:10px}
+.dem label{font-size:.68rem;font-weight:800;color:#8A90A8;display:block;margin-bottom:5px}
+.stars-big{display:flex;gap:3px}
+.star-big{font-size:1.3rem;cursor:pointer;filter:grayscale(1) opacity(.28);transition:all .15s}
 .star-big.lit{filter:none}
-.eval-note{background:#F5F0EA;border-radius:11px;padding:11px;grid-column:1/-1}
-.eval-note label{font-size:.7rem;font-weight:800;color:#8A90A8;display:block;margin-bottom:5px}
-.eval-note textarea{width:100%;border:none;background:#fff;border-radius:7px;padding:7px;font-family:‘Nunito’,sans-serif;font-size:.78rem;color:#1C2340;resize:none;outline:none;border:1.5px solid #E8E2D8}
-.eval-total{background:linear-gradient(135deg,#FF6B35,#FF8C5A);border-radius:11px;padding:13px;text-align:center;color:#fff}
-.eval-total .snum{font-family:‘Fredoka One’,cursive;font-size:2.4rem;line-height:1}
-.eval-total .slbl{font-size:.7rem;font-weight:700;opacity:.8;margin-top:2px}
+.den{background:#F5F0EA;border-radius:10px;padding:10px;grid-column:1/-1}
+.den label{font-size:.68rem;font-weight:800;color:#8A90A8;display:block;margin-bottom:4px}
+.den textarea{width:100%;border:none;background:#fff;border-radius:7px;padding:7px;font-family:‘Nunito’,sans-serif;font-size:.78rem;color:#1C2340;resize:none;outline:none;border:1.5px solid #E8E2D8}
+.mood-row{display:flex;gap:8px;margin-top:8px}
+.mood-btn{font-size:1.4rem;cursor:pointer;opacity:.3;transition:all .2s;border:none;background:none}
+.mood-btn.sel{opacity:1;transform:scale(1.2)}
+.day-score-box{background:linear-gradient(135deg,#FF6B35,#FF8C5A);border-radius:10px;padding:12px;text-align:center;color:#fff}
+.day-score-num{font-family:‘Fredoka One’,cursive;font-size:2.2rem;line-height:1}
+.day-score-lbl{font-size:.68rem;opacity:.8;margin-top:1px}
 
-/* CHECKLIST */
+/* ── CHECKLIST ── */
 .checklist{list-style:none}
-.checklist li{display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:1px solid #EDE8E0;font-size:.82rem;font-weight:600;color:#1C2340}
+.checklist li{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid #EDE8E0;font-size:.8rem;font-weight:600;color:#1C2340}
 .checklist li:last-child{border-bottom:none}
-.cb{width:18px;height:18px;border:2px solid #FF6B35;border-radius:5px;flex-shrink:0;margin-top:1px;cursor:pointer;transition:all .2s}
-.cb:hover,.cb.checked{background:#FF6B35}
-.cb.hw-cb{border-color:#C0153B}
-.cb.hw-cb:hover,.cb.hw-cb.checked{background:#C0153B}
-.cb.exam-cb{border-color:#7B2FF7}
-.cb.exam-cb:hover,.cb.exam-cb.checked{background:#7B2FF7}
+.cb2{width:18px;height:18px;border:2px solid #FF6B35;border-radius:5px;flex-shrink:0;margin-top:1px;cursor:pointer;transition:all .2s}
+.cb2:hover,.cb2.ck{background:#FF6B35}
+.cb2.hw{border-color:#C0153B}
+.cb2.hw:hover,.cb2.hw.ck{background:#C0153B}
+.cb2.ex{border-color:#7B2FF7}
+.cb2.ex:hover,.cb2.ex.ck{background:#7B2FF7}
 
-/* ROW COLORS */
+/* ── NOTE / ALERT ── */
+.note{background:#FFFAED;border:1px solid #FFD166;border-radius:10px;padding:10px;margin-top:8px}
+.note p{font-size:.76rem;color:#7A5800;line-height:1.6}
+.alert2{background:#FFF0F4;border:1px solid #FFAAC5;border-radius:10px;padding:10px;margin-top:8px}
+.alert2 p{font-size:.76rem;color:#8A0030;line-height:1.6}
+
+/* ── ROW COLORS ── */
 .c-wake{–tcol:#FFD166;–bb:#FFF3CC;–bc:#B8860B}
 .c-school{–tcol:#4ECDC4;–bb:#E0F8F6;–bc:#0B8A7E}
 .c-sport{–tcol:#FF6B35;–bb:#FFE8DF;–bc:#CC4400}
@@ -153,54 +177,41 @@ body{font-family:'Nunito',sans-serif;background:#F6F2ED;color:#1C2340;min-height
 .c-piano{–tcol:#845EF7;–bb:#EDE8FD;–bc:#5B3DC9}
 .c-en{–tcol:#06D6A0;–bb:#DCFAF2;–bc:#0A8A65}
 .c-exam{–tcol:#7B2FF7;–bb:#EDE8FD;–bc:#5020AA}
+.c-dead{–tcol:#C0153B;–bb:#FFDDE8;–bc:#8A0030}
+.c-lms{–tcol:#0040AA;–bb:#E8F0FF;–bc:#0020AA}
 
-/* SUMMARY */
-.sum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.sum-card{border-radius:11px;padding:13px;text-align:center}
-.sum-card .si{font-size:1.5rem;margin-bottom:4px}
-.sum-card .sv{font-family:‘Fredoka One’,cursive;font-size:1.3rem;color:#1C2340}
-.sum-card .sl{font-size:.63rem;color:#8A90A8;font-weight:700}
-.bar-row{margin-bottom:8px}
-.bar-row .bl{display:flex;justify-content:space-between;font-size:.72rem;font-weight:700;margin-bottom:3px}
-.bar-track{height:9px;background:#EDE8E0;border-radius:5px;overflow:hidden}
-.bar-fill{height:100%;border-radius:5px}
-.habit-item{display:flex;align-items:flex-start;gap:11px;padding:10px 12px;border-radius:11px;border-left:5px solid var(–hc);background:var(–hb);margin-bottom:7px}
-.habit-icon{font-size:1.35rem;flex-shrink:0}
-.habit-name{font-size:.85rem;font-weight:800;color:#1C2340}
-.habit-desc{font-size:.7rem;color:#8A90A8;margin-top:2px;line-height:1.4}
-.rwd-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.rwd-card{border-radius:11px;padding:12px}
-.rwd-card.earn{background:linear-gradient(135deg,#E8FBF5,#C8F5E8);border:1px solid #06D6A0}
-.rwd-card.lose{background:linear-gradient(135deg,#FFF0F4,#FFDDE8);border:1px solid #FFAAC5}
-.rwd-card h4{font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
-.rwd-card.earn h4{color:#0A6A45}.rwd-card.lose h4{color:#8A0030}
-.rwd-item{font-size:.74rem;font-weight:600;padding:2px 0;color:#1C2340}
-.pts{font-weight:900;font-size:.78rem;float:right}
-.earn .pts{color:#0A6A45}.lose .pts{color:#8A0030}
-
-/* Week score bar */
-.wsb{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:11px}
+/* ── SUMMARY ── */
+.sum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.scard{border-radius:11px;padding:12px;text-align:center}
+.scard .si{font-size:1.4rem;margin-bottom:3px}
+.scard .sv{font-family:‘Fredoka One’,cursive;font-size:1.25rem;color:#1C2340}
+.scard .sl{font-size:.6rem;color:#8A90A8;font-weight:700}
+.wsb{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:10px}
 .wsc{text-align:center}
-.wsc .wn{font-size:.58rem;font-weight:800;color:#8A90A8;margin-bottom:3px}
-.wsc .ws{background:#EDE8E0;border-radius:7px;padding:5px 2px;font-family:‘Fredoka One’,cursive;font-size:.95rem;color:#8A90A8;cursor:pointer;transition:all .2s}
+.wsc .wn{font-size:.57rem;font-weight:800;color:#8A90A8;margin-bottom:3px}
+.wsc .ws{background:#EDE8E0;border-radius:7px;padding:5px 2px;font-family:‘Fredoka One’,cursive;font-size:.92rem;color:#8A90A8;cursor:pointer;transition:all .2s}
 .wsc .ws.has{background:#FF6B35;color:#fff}
 
-/* EXAM TIMELINE */
-.exam-timeline{display:flex;flex-direction:column;gap:7px;margin-top:10px}
-.etl-item{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border-radius:10px;background:#F5F0EA}
-.etl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px}
-.etl-date{font-size:.72rem;font-weight:900;color:#1C2340;white-space:nowrap;min-width:48px}
-.etl-desc{font-size:.74rem;color:#1C2340;line-height:1.4}
-.etl-desc strong{font-weight:800}
+/* ── TIMELINE ── */
+.timeline{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.tli{display:flex;align-items:flex-start;gap:9px;padding:8px 11px;border-radius:9px;background:#F5F0EA}
+.tli-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.tli-date{font-size:.7rem;font-weight:900;color:#1C2340;white-space:nowrap;min-width:50px}
+.tli-desc{font-size:.72rem;color:#1C2340;line-height:1.4}
+
+/* ── HABIT CARD ── */
+.habit-item{display:flex;align-items:flex-start;gap:10px;padding:9px 11px;border-radius:10px;border-left:5px solid var(–hc);background:var(–hb);margin-bottom:6px}
+.habit-icon{font-size:1.3rem;flex-shrink:0}
+.habit-name{font-size:.83rem;font-weight:800;color:#1C2340}
+.habit-desc{font-size:.69rem;color:#8A90A8;margin-top:2px;line-height:1.4}
 
 @media(max-width:600px){
-.eval-grid{grid-template-columns:1fr}
-.eval-note{grid-column:auto}
+.day-eval-grid{grid-template-columns:1fr}
+.den{grid-column:auto}
 .btvn-parts{grid-template-columns:1fr}
-.btvn-part{border-right:none;border-bottom:1px solid #EDE8E0}
-.btvn-part:last-child{border-bottom:none}
+.bvp{border-right:none;border-bottom:1px solid #EDE8E0}
+.bvp:last-child{border-bottom:none}
 .sum-grid{grid-template-columns:1fr 1fr}
-.rwd-grid{grid-template-columns:1fr}
 .wsb{grid-template-columns:repeat(4,1fr)}
 }
 </style>
@@ -212,16 +223,22 @@ body{font-family:'Nunito',sans-serif;background:#F6F2ED;color:#1C2340;min-height
 
 <div class="hero">
   <div class="hc1"></div><div class="hc2"></div>
-  <div class="hbadge">📅 iPhone Calendar + Reminder · v4.0</div>
-  <h1>Tuần của <em>Bảo Lâm</em> 🏀</h1>
-  <p class="hero-sub">06/04 – 12/04/2026 · Gym T2/T6/CN · Bơi T4/T7 · Ôn thi TA HK2</p>
-  <div class="chips">
-    <div class="chip"><div class="cv">20</div><div class="cl">Lịch cố định</div></div>
+  <div class="hbadge">📅 Calendar + Reminder + LMS</div>
+  <h1>Kế Hoạch của <em>Bảo Lâm</em> 🏀</h1>
+  <p class="hero-sub">06/04 – 12/04/2026 · Lớp 6A7 · Vinschool Times City</p>
+  <div class="hero-chips">
+    <div class="chip"><div class="cv">11</div><div class="cl">Ngày đến thi TA</div></div>
     <div class="chip"><div class="cv">3</div><div class="cl">Buổi bóng rổ</div></div>
     <div class="chip"><div class="cv">3</div><div class="cl">Buổi gym</div></div>
-    <div class="chip"><div class="cv">2</div><div class="cl">Buổi bơi</div></div>
     <div class="chip"><div class="cv">9h</div><div class="cl">Ngủ/đêm</div></div>
   </div>
+</div>
+
+<!-- DEADLINE STRIP -->
+
+<div class="deadline-strip">
+  <span class="di">🚨</span>
+  <p>KHẨN: Quiz Địa lí hạn chót 24h đêm T2 06/04 · Toán bài 66–89 nộp T3 07/04 · Thi TA HK2: 17/04</p>
 </div>
 
 <!-- LEGEND -->
@@ -229,9 +246,9 @@ body{font-family:'Nunito',sans-serif;background:#F6F2ED;color:#1C2340;min-height
 <div class="legend">
   <div class="leg"><div class="ldot" style="background:#F4A300"></div>Cố định/Calendar</div>
   <div class="leg"><div class="ldot" style="background:#4ECDC4"></div>Học trường</div>
-  <div class="leg"><div class="ldot" style="background:#FF6B35"></div>Thể thao</div>
+  <div class="leg"><div class="ldot" style="background:#FF6B35"></div>Thể thao/Gym</div>
   <div class="leg"><div class="ldot" style="background:#C0153B"></div>BTVN bắt buộc</div>
-  <div class="leg"><div class="ldot" style="background:#7B2FF7"></div>Ôn thi/Reminder</div>
+  <div class="leg"><div class="ldot" style="background:#7B2FF7"></div>Ôn thi/LMS</div>
   <div class="leg"><div class="ldot" style="background:#06D6A0"></div>Nghỉ ngơi</div>
   <div class="leg"><div class="ldot" style="background:#A0A8C0"></div>Linh hoạt</div>
 </div>
@@ -240,11 +257,11 @@ body{font-family:'Nunito',sans-serif;background:#F6F2ED;color:#1C2340;min-height
 
 <div class="tabs-wrap">
   <div class="tabs">
-    <button class="tab active" onclick="showDay('t2',this)">T2 6/4 ⚠️</button>
-    <button class="tab" onclick="showDay('t3',this)">T3 7/4</button>
+    <button class="tab active" onclick="showDay('t2',this)">T2 6/4 🚨</button>
+    <button class="tab" onclick="showDay('t3',this)">T3 7/4 📐</button>
     <button class="tab" onclick="showDay('t4',this)">T4 8/4 🏊</button>
     <button class="tab" onclick="showDay('t5',this)">T5 9/4 🏀</button>
-    <button class="tab" onclick="showDay('t6',this)">T6 10/4 🏀</button>
+    <button class="tab" onclick="showDay('t6',this)">T6 10/4 🏋️</button>
     <button class="tab" onclick="showDay('t7',this)">T7 11/4</button>
     <button class="tab" onclick="showDay('cn',this)">CN 12/4 🎂</button>
     <button class="tab" onclick="showDay('sum',this)">📊 Tổng kết</button>
@@ -253,386 +270,498 @@ body{font-family:'Nunito',sans-serif;background:#F6F2ED;color:#1C2340;min-height
 
 <div class="content">
 
-<!-- ═══════ THỨ HAI 6/4 ═══════ -->
+<!-- ══════════ THỨ HAI 6/4 ══════════ -->
 
-<div class="day-panel active" id="day-t2">
+<div class="dp active" id="day-t2">
   <div class="dh">
-    <div><div class="dtitle">Thứ Hai 🌅</div><div class="dsub">6/4 · Gym 16:15 + Mathexpress 18:00 · ⚠️ HẠN CHÓT Quiz Địa lí!</div></div>
-    <div class="fpill">Khởi động tuần!</div>
+    <div><div class="dtitle">Thứ Hai 🌅</div><div class="dsub">6/4 · Gym 16:15 + Mathexpress 18:00 · ⚠️ 2 deadline hôm nay!</div></div>
+    <div class="fpill fpill-red">🚨 Ngày khẩn!</div>
   </div>
 
-  <!-- Exam alert -->
-
-  <div class="exam-banner">
-    <span class="ei">⚠️</span>
-    <div class="et"><strong>HẠN CHÓT Quiz Địa lí – Trước 24h đêm nay!</strong><span>📌 Reminder: Vào LMS → Quiz HK2 Hệ số 1 Lần 2 · 14 câu · 30 phút</span></div>
-    <div class="exam-pill">24h00</div>
+  <div class="alarm-ban" style="--abc:#C0153B;--abg:#FFF0F4">
+    <span class="ai">⚠️</span>
+    <div class="at"><strong>HẠN CHÓT: Quiz Địa lí – Trước 24h đêm nay!</strong><span>Vào LMS → QUIZ LẤY ĐIỂM HỆ SỐ 1 LẦN 2 · Môn Địa lí · 14 câu · 30 phút · GV Nguyễn Hữu Thắng<br>💡 Điểm tính TRUNG BÌNH CỘNG các lượt làm – cố gắng làm tốt nhất!</span></div>
   </div>
 
-  <div class="tc c-wake" data-id="t2-1"><div class="tc-top"><div class="tc-time">⏰ 5:30<div class="tend">→ 6:00</div></div><span class="badge">🌅 Dậy</span><div class="tc-body"><div class="tc-name">Dậy – Vệ sinh – Đồng phục</div><div class="tc-det">Uống 1 ly nước ngay. Nhớ hôm nay có hạn Quiz Địa lí!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t2-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">⏰ Buổi sáng</div>
 
-  <div class="tc c-wake" data-id="t2-2"><div class="tc-top"><div class="tc-time">🍳 6:00<div class="tend">→ 6:45</div></div><span class="badge">🍽️ Sáng</span><div class="tc-body"><div class="tc-name">Ăn sáng + Chuẩn bị cặp sách</div><div class="tc-det">Kiểm tra sách vở T2. Mang điện thoại/máy tính bảng để làm Quiz sau buổi gym.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t2-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-wake">
+    <div class="tc-top"><div class="tc-time">5:30<div class="tend">→ 6:00</div></div><span class="badge">🌅 Dậy</span><div class="tc-body"><div class="tc-name">Dậy – Vệ sinh – Đồng phục</div><div class="tc-det">Uống 1 ly nước ngay. Nhớ hôm nay có 2 deadline cần xử lý!</div></div></div>
+    <div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div>
+  </div>
 
-  <div class="tc c-school" data-id="t2-3"><div class="tc-top"><div class="tc-time">🏫 8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅</span></div><div class="tc-det"><strong>TANN×2 · Mĩ thuật · GD Kỹ năng · KHTN×2 · GD Thể chất</strong><br>Chủ động trả lời ≥1 câu hỏi. Ghi nhớ bài Địa lí để làm Quiz tối nay!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t2-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-school">
+    <div class="tc-top"><div class="tc-time">8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅 Cố định</span></div><div class="tc-det"><strong>TANN×2 · Mĩ thuật · GD Kỹ năng · KHTN×2 · GD Thể chất</strong><br>Trong giờ Địa lí nếu có: xem lại Chương 5 – Nước trên Trái Đất. Chủ động phát biểu ≥1 lần!</div></div></div>
+    <div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div>
+  </div>
 
-  <div class="tc c-rest" data-id="t2-4"><div class="tc-top"><div class="tc-time">😌 15:30<div class="tend">→ 16:00</div></div><span class="badge">😴 Nghỉ</span><div class="tc-body"><div class="tc-name">Về nhà – Ăn nhẹ – Nạp năng lượng</div><div class="tc-det">Chuẩn bị cho gym. Uống đủ nước.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t2-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌆 Buổi chiều</div>
 
-  <div class="tc c-gym" data-id="t2-5"><div class="tc-top"><div class="tc-time">🏋️ 16:15<div class="tend">→ 17:15</div></div><span class="badge">🏋️ Gym</span><div class="tc-body"><div class="tc-name">Tập gym <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập đúng giờ. Uống nước liên tục. Sau tập ăn nhẹ bổ sung đạm.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t2-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-rest">
+    <div class="tc-top"><div class="tc-time">15:30<div class="tend">→ 16:10</div></div><span class="badge">😴 Nghỉ</span><div class="tc-body"><div class="tc-name">Về nhà – Ăn nhẹ – Nạp năng lượng cho gym</div><div class="tc-det">Uống nước đủ. Ăn nhẹ (chuối/bánh mì). Chuẩn bị đồ gym.</div></div></div>
+    <div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div>
+  </div>
 
-  <div class="tc c-exam" data-id="t2-6"><div class="tc-top"><div class="tc-time">🌍 17:20<div class="tend">→ 17:55</div></div><span class="badge">🌍 Quiz Địa lí</span><div class="tc-body"><div class="tc-name">Làm Quiz Địa lí HK2 <span class="tag t-rem">📌 Reminder</span><span class="tag t-exam">⚠️ HẠN CHÓT</span></div><div class="tc-det"><strong>Vào LMS → QUIZ LẤY ĐIỂM HỆ SỐ 1 LẦN 2</strong><br>14 câu · 30 phút · Ôn nhanh Chương 5 – Nước trên Trái Đất trước khi làm!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t2-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-gym">
+    <div class="tc-top"><div class="tc-time">16:15<div class="tend">→ 17:15</div></div><span class="badge">🏋️ Gym</span><div class="tc-body"><div class="tc-name">Tập gym <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Uống nước liên tục. Sau tập ăn nhẹ đạm. Không kéo dài quá giờ – cần thời gian làm Quiz!</div></div></div>
+    <div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div>
+  </div>
 
-  <div class="tc c-rest" data-id="t2-7"><div class="tc-top"><div class="tc-time">🚿 17:55<div class="tend">→ 18:00</div></div><span class="badge">🚿 Chuẩn bị</span><div class="tc-body"><div class="tc-name">Tắm + Chuẩn bị sách Toán cho Mathexpress</div><div class="tc-det">Ăn nhẹ thêm. Chuẩn bị đầy đủ sách vở Toán. Uống nước.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t2-7"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-exam">
+    <div class="tc-top"><div class="tc-time">17:15<div class="tend">→ 17:55</div></div><span class="badge">🌍 Quiz Địa lí</span><div class="tc-body"><div class="tc-name">🚨 Làm Quiz Địa lí HK2 Lần 2 <span class="tag t-dead">⚠️ HẠN CHÓT</span></div><div class="tc-det">
+      <ul>
+        <li><strong>Vào LMS → CÁC BÀI KIỂM TRA LẤY ĐIỂM HỆ SỐ 1 → QUIZ LẦN 2</strong></li>
+        <li>Ôn nhanh 5' Chương 5: Nước trên Trái Đất → Sông/Hồ/Biển/Đại dương</li>
+        <li>14 câu · 30 phút · Không bỏ câu nào</li>
+        <li>Hoàn thành trước 18:00 để kịp Mathexpress!</li>
+      </ul>
+    </div></div></div>
+    <div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div>
+  </div>
 
-  <div class="tc c-class" data-id="t2-8"><div class="tc-top"><div class="tc-time">📐 18:00<div class="tend">→ 20:30</div></div><span class="badge">📐 Mathexpress</span><div class="tc-body"><div class="tc-name">Học Mathexpress <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Ghi chép đầy đủ. <strong>Hỏi ngay khi không hiểu!</strong> Đánh dấu bài khó để làm P.2 sáng mai.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t2-8"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌙 Buổi tối</div>
 
-  <!-- BTVN Toán split -->
+  <div class="tc c-class">
+    <div class="tc-top"><div class="tc-time">18:00<div class="tend">→ 20:30</div></div><span class="badge">📐 Mathexpress</span><div class="tc-body"><div class="tc-name">Học Mathexpress <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập trung ghi chép. <strong>Hỏi ngay khi không hiểu!</strong> Tuần 34: Bài 14.5 · 15.1 · 15.2. Đánh dấu bài khó để làm P.2 sáng T3.</div></div></div>
+    <div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Hiểu bài:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Tốt</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó hiểu</button></div></div></div>
+  </div>
 
   <div class="btvn-split">
-    <div class="btvn-head"><span>📝</span><strong>BTVN Toán – Mathexpress (chia 2 phần)</strong><span class="btag">⚠️ Bắt buộc</span></div>
+    <div class="btvn-head"><span>📝</span><strong>BTVN Toán: Bài 66–89 Ôn tập HK2 (chia 2 phần)</strong><span class="btag">⚠️ Hạn T3</span></div>
     <div class="btvn-parts">
-      <div class="btvn-part" data-id="t2-bv1"><div class="bp-lbl p1">📌 P.1 – Tối nay</div><div class="bp-time">20:30 → 21:00 (30')</div><div class="bp-desc"><strong>Bài dễ + trung bình.</strong> Kiến thức còn nóng. Đặt đồng hồ 30 phút.</div><div class="star-row" data-task="t2-bv1"><span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span></div></div>
-      <div class="btvn-part" data-id="t2-bv2"><div class="bp-lbl p2">🌅 P.2 – Sáng T3</div><div class="bp-time">6:00 → 6:25 (25')</div><div class="bp-desc"><strong>Bài khó còn lại.</strong> Sau ngủ đủ giấc, não tươi hơn → giải khó tốt hơn.</div><div class="star-row" data-task="t2-bv2"><span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span></div></div>
+      <div class="bvp"><div class="bvp-lbl p1">📌 P.1 – Tối nay</div><div class="bvp-time">20:30 → 21:05 (35')</div><div class="bvp-desc"><strong>Bài 66–77</strong> (12 bài). Kiến thức Mathexpress còn nóng. Đặt đồng hồ 35'. Bài khó → đánh dấu để làm P.2.</div></div>
+      <div class="bvp"><div class="bvp-lbl p2">🌅 P.2 – Sáng T3</div><div class="bvp-time">6:00 → 6:30 (30')</div><div class="bvp-desc"><strong>Bài 78–89</strong> (12 bài). Não đã nghỉ ngơi → làm bài khó hiệu quả hơn. Xong trước khi ăn sáng!</div></div>
     </div>
   </div>
 
-  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:15</strong><span>Dậy 5:30 → 8h 15' ngủ ✅</span></div><div class="sleep-pill">8h15'</div></div>
+  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:15</strong><span>Dậy 5:30 sáng T3 → 8h 15' ngủ ✅</span></div><div class="sleep-pill">8h15'</div></div>
 
   <div class="sec">
     <div class="sec-title">📊 Đánh Giá Ngày – Thứ Hai</div>
-    <div class="eval-grid">
-      <div class="eval-m"><label>🏫 Tập trung ở trường</label><div class="stars-big" data-day="t2-school"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🏋️ Năng lượng tập gym</label><div class="stars-big" data-day="t2-gym"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🌍 Hoàn thành Quiz Địa lí</label><div class="stars-big" data-day="t2-quiz"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>📐 Hiểu bài Mathexpress</label><div class="stars-big" data-day="t2-math"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-note"><label>💬 Nhận xét của bố/mẹ:</label><textarea rows="2" placeholder="Hôm nay con như thế nào?…"></textarea></div>
+    <div class="day-eval-grid">
+      <div class="dem"><label>🏫 Tập trung ở trường</label><div class="stars-big" data-day="t2-s"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🌍 Quiz Địa lí hoàn thành</label><div class="stars-big" data-day="t2-q"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🏋️ Năng lượng gym</label><div class="stars-big" data-day="t2-g"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>📐 Hiểu bài Mathexpress</label><div class="stars-big" data-day="t2-m"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="den"><label>💬 Nhận xét bố/mẹ:</label><textarea rows="2" placeholder="Hôm nay con thế nào? Làm được Quiz Địa lí chưa?…"></textarea>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:6px"><span style="font-size:.68rem;font-weight:700;color:#8A90A8">Tâm trạng:</span><div class="mood-row"><button class="mood-btn" onclick="setMood(this)">😊</button><button class="mood-btn" onclick="setMood(this)">😐</button><button class="mood-btn" onclick="setMood(this)">😓</button></div></div>
+      </div>
     </div>
-    <div class="eval-total" id="score-t2"><div class="snum" id="snum-t2">–</div><div class="slbl">Điểm trung bình ngày</div></div>
+    <div class="day-score-box" id="score-t2"><div class="day-score-num" id="snum-t2">–</div><div class="day-score-lbl">Điểm trung bình ngày</div></div>
   </div>
 
   <div class="sec"><div class="sec-title">✅ Checklist Thứ Hai</div>
     <ul class="checklist">
-      <li><div class="cb" onclick="toggleCb(this)"></div>Dậy đúng 5:30, uống nước ngay</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Tập gym đủ buổi 16:15–17:15</li>
-      <li><div class="cb exam-cb" onclick="toggleCb(this)"></div><strong>Làm Quiz Địa lí HK2 trên LMS trước 24h!</strong></li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Học Mathexpress tập trung, ghi chép đủ</li>
-      <li><div class="cb hw-cb" onclick="toggleCb(this)"></div><strong>BTVN Toán P.1: bài dễ/TB (20:30–21:00)</strong></li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 21:15</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Dậy 5:30, uống nước ngay</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Chủ động phát biểu ≥1 lần ở trường</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Tập gym đủ buổi 16:15–17:15</li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>🌍 Quiz Địa lí LMS – Hoàn thành trước 17:55 (hạn 24h đêm!)</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Học Mathexpress tập trung, ghi chép đủ</li>
+      <li><div class="cb2 hw" onclick="toggleCb(this)"></div><strong>📝 BTVN Toán P.1: Bài 66–77 (20:30–21:05)</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ngủ trước 21:15</li>
     </ul>
-    <div class="alert"><p>⚠️ <strong>Lưu ý:</strong> Hôm nay có tới 3 việc quan trọng sau giờ học: gym → Quiz Địa lí → Mathexpress. Bố mẹ nhắc Lâm làm Quiz ngay sau gym (17:20), không bỏ lỡ hạn chót!</p></div>
   </div>
 </div>
 
-<!-- ═══════ THỨ BA 7/4 ═══════ -->
+<!-- ══════════ THỨ BA 7/4 ══════════ -->
 
-<div class="day-panel" id="day-t3">
+<div class="dp" id="day-t3">
   <div class="dh">
-    <div><div class="dtitle">Thứ Ba 🎹</div><div class="dsub">7/4 · BTVN P.2 sáng + Học đàn + TA Talent 48</div></div>
-    <div class="fpill">Nhẹ nhàng!</div>
+    <div><div class="dtitle">Thứ Ba 🎹</div><div class="dsub">7/4 · BTVN P.2 sáng · Học đàn 16:30 · TA Talent 48 19:40 · 📐 Nộp bài 66–89!</div></div>
+    <div class="fpill fpill-orange">Deadline Toán!</div>
   </div>
 
-  <div class="btvn-split">
-    <div class="btvn-head"><span>🌅</span><strong>BTVN Toán – Phần 2 (Sáng T3 tiếp nối)</strong><span class="btag" style="background:#E05A00">📌 Tiếp nối</span></div>
-    <div class="btvn-parts" style="grid-template-columns:1fr"><div class="btvn-part" data-id="t3-bv2"><div class="bp-lbl p2">🌅 P.2 – 6:00 → 6:25</div><div class="bp-desc">Làm <strong>bài khó còn lại</strong> từ tối qua. Não đã ngủ đủ – giải toán khó hiệu quả hơn. Sau đó ăn sáng và đi học!</div><div class="star-row" data-task="t3-bv2"><span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span></div></div></div>
+  <div class="btvn-split" style="margin-bottom:6px">
+    <div class="btvn-head"><span>🌅</span><strong>BTVN Toán P.2 – Tiếp nối từ tối T2</strong><span class="btag" style="background:#E05A00">📌 Ngay khi dậy</span></div>
+    <div class="btvn-parts" style="grid-template-columns:1fr">
+      <div class="bvp"><div class="bvp-lbl p2">P.2 – 6:00 → 6:30</div><div class="bvp-desc">Làm <strong>bài 78–89</strong> (12 bài). Não sau giấc ngủ → xử lý bài khó tốt hơn. <strong>Nộp trước khi đi học!</strong></div></div>
+    </div>
   </div>
 
-  <div class="tc c-wake" data-id="t3-1"><div class="tc-top"><div class="tc-time">🍳 6:25<div class="tend">→ 6:50</div></div><span class="badge">🍽️ Sáng</span><div class="tc-body"><div class="tc-name">Ăn sáng + Chuẩn bị T3</div><div class="tc-det">Kiểm tra sách T3: Địa, Công dân, KHTN, Toán, TAVN.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t3-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">⏰ Buổi sáng</div>
+  <div class="tc c-wake"><div class="tc-top"><div class="tc-time">6:30<div class="tend">→ 6:55</div></div><span class="badge">🍽️ Sáng</span><div class="tc-body"><div class="tc-name">Ăn sáng + Chuẩn bị cặp</div><div class="tc-det">Kiểm tra sách T3: Địa lý, Công dân, KHTN, Toán, TAVN. Nhớ mang sách Ngữ văn!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-school" data-id="t3-2"><div class="tc-top"><div class="tc-time">🏫 8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅</span></div><div class="tc-det"><strong>Địa lý · Công dân · KHTN×2 · Toán · TAVN×2</strong><br>Ghi 1 điều thú vị học được hôm nay.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t3-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-school"><div class="tc-top"><div class="tc-time">8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅</span></div><div class="tc-det"><strong>Địa lý · Công dân · KHTN×2 · Toán · TAVN×2</strong><br>Ngữ văn tuần 34: Viết đoạn văn ghi lại cảm xúc bài thơ có yếu tố tự sự. Ghi đề cương soạn bài!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-rest" data-id="t3-3"><div class="tc-top"><div class="tc-time">😌 15:30<div class="tend">→ 16:20</div></div><span class="badge">😴 Nghỉ</span><div class="tc-body"><div class="tc-name">Về nhà – Nghỉ ngơi hoàn toàn</div><div class="tc-det">Ăn nhẹ, uống nước. Không điện thoại. Chuẩn bị cho học đàn.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t3-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌆 Buổi chiều</div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">15:30<div class="tend">→ 16:20</div></div><span class="badge">😴 Nghỉ</span><div class="tc-body"><div class="tc-name">Về nhà – Nghỉ ngơi hoàn toàn</div><div class="tc-det">Ăn nhẹ, uống nước. Không điện thoại, không học. Chuẩn bị cho học đàn.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-piano" data-id="t3-4"><div class="tc-top"><div class="tc-time">🎹 16:30<div class="tend">→ 17:30</div></div><span class="badge">🎹 Học đàn</span><div class="tc-body"><div class="tc-name">Học đàn <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập trung vào bài đang học. Hỏi thầy/cô chỗ khó ngay trong buổi.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t3-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-piano"><div class="tc-top"><div class="tc-time">16:30<div class="tend">→ 17:30</div></div><span class="badge">🎹 Học đàn</span><div class="tc-body"><div class="tc-name">Học đàn <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập trung vào bài đang học. Hỏi thầy/cô ngay khi có chỗ khó. Tận hưởng!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-family" data-id="t3-5"><div class="tc-top"><div class="tc-time">🍜 17:30<div class="tend">→ 19:30</div></div><span class="badge">🍜 Gia đình</span><div class="tc-body"><div class="tc-name">Ăn tối + Nghỉ ngơi tự do</div><div class="tc-det">Ăn no, nghỉ ngơi thoải mái trước TA. Uống nước đủ.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t3-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌙 Buổi tối</div>
+  <div class="tc c-study"><div class="tc-top"><div class="tc-time">17:45<div class="tend">→ 18:10</div></div><span class="badge">📚 Ôn TA</span><div class="tc-body"><div class="tc-name">Ôn TA HK2 – Unit 1: My world (25') <span class="tag t-exam">Thi 17/4</span></div><div class="tc-det">
+    <ul>
+      <li>Flashcard 20 từ vựng Unit 1 – che đáp án, kiểm tra</li>
+      <li>Xem lại cấu trúc Present Simple vs Continuous</li>
+      <li>Làm 5 câu Use of English trong Workbook Unit 1</li>
+    </ul>
+  </div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-en" data-id="t3-6"><div class="tc-top"><div class="tc-time">🗣️ 19:40<div class="tend">→ 21:20</div></div><span class="badge">🗣️ TA Talent 48</span><div class="tc-body"><div class="tc-name">Học TA Talent 48 <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Ghi từ mới ra sổ tay. Hỏi thầy/cô từ nào không nhớ. Ngủ ngay sau học!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t3-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-lms"><div class="tc-top"><div class="tc-time">18:15<div class="tend">→ 18:35</div></div><span class="badge">💻 LMS</span><div class="tc-body"><div class="tc-name">Ngữ văn: Quiz tự học tuần 34 trên LMS <span class="tag t-lms">LMS</span></div><div class="tc-det">Vào lms.vinschool.edu.vn → Quiz tuần 34 Ngữ văn. Đọc kỹ trước khi chọn đáp án. ~20 phút.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:30</strong><span>Dậy 5:30 → 8h 00' ngủ ✅</span></div><div class="sleep-pill">8h00'</div></div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">18:35<div class="tend">→ 19:35</div></div><span class="badge">🍜 Ăn tối</span><div class="tc-body"><div class="tc-name">Ăn tối + Nghỉ ngơi trước TA</div><div class="tc-det">Ăn no. Uống nước. Nghỉ ngơi 30–40' – não cần nạp lại trước buổi học TA dài.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
+
+  <div class="tc c-en"><div class="tc-top"><div class="tc-time">19:40<div class="tend">→ 21:20</div></div><span class="badge">🗣️ TA Talent 48</span><div class="tc-body"><div class="tc-name">Học TA Talent 48 <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Ghi từ mới ra sổ tay riêng. Hỏi thầy/cô từ nào không nhớ. Ngủ ngay sau học!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
+
+  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:30</strong><span>Dậy 5:30 sáng T4 → 8h 00' ngủ ✅</span></div><div class="sleep-pill">8h00'</div></div>
 
   <div class="sec"><div class="sec-title">📊 Đánh Giá Ngày – Thứ Ba</div>
-    <div class="eval-grid">
-      <div class="eval-m"><label>📐 BTVN Toán P.2 hoàn thành</label><div class="stars-big" data-day="t3-hw"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🎹 Học đàn tập trung</label><div class="stars-big" data-day="t3-piano"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🗣️ Học TA – ghi từ mới</label><div class="stars-big" data-day="t3-ta"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🏫 Tập trung ở trường</label><div class="stars-big" data-day="t3-school"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-note"><label>💬 Nhận xét:</label><textarea rows="2" placeholder="Ghi nhanh…"></textarea></div>
+    <div class="day-eval-grid">
+      <div class="dem"><label>📐 BTVN Toán P.2 xong</label><div class="stars-big" data-day="t3-hw"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🎹 Học đàn tập trung</label><div class="stars-big" data-day="t3-piano"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🗣️ Học TA – ghi từ mới</label><div class="stars-big" data-day="t3-ta"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>💻 Quiz Ngữ văn LMS</label><div class="stars-big" data-day="t3-lms"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="den"><label>💬 Nhận xét:</label><textarea rows="2" placeholder="Hoàn thành bài 66–89 chưa? Ghi chú nhanh…"></textarea><div style="display:flex;align-items:center;gap:8px;margin-top:6px"><span style="font-size:.68rem;font-weight:700;color:#8A90A8">Tâm trạng:</span><div class="mood-row"><button class="mood-btn" onclick="setMood(this)">😊</button><button class="mood-btn" onclick="setMood(this)">😐</button><button class="mood-btn" onclick="setMood(this)">😓</button></div></div></div>
     </div>
-    <div class="eval-total" id="score-t3"><div class="snum" id="snum-t3">–</div><div class="slbl">Điểm TB ngày</div></div>
+    <div class="day-score-box" id="score-t3"><div class="day-score-num" id="snum-t3">–</div><div class="day-score-lbl">Điểm TB ngày</div></div>
   </div>
+
   <div class="sec"><div class="sec-title">✅ Checklist Thứ Ba</div>
     <ul class="checklist">
-      <li><div class="cb hw-cb" onclick="toggleCb(this)"></div><strong>BTVN Toán P.2: bài khó (6:00–6:25)</strong></li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ghi 1 điều thú vị ở trường hôm nay</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Học đàn đúng giờ 16:30–17:30</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Học TA Talent 48, ghi từ mới đủ</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ ngay sau 21:20</li>
+      <li><div class="cb2 hw" onclick="toggleCb(this)"></div><strong>📝 BTVN Toán P.2: Bài 78–89 (6:00–6:30) – Nộp hôm nay!</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ghi 1 điều thú vị học được ở trường</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Học đàn đúng giờ 16:30–17:30</li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>Ôn TA HK2 Unit 1: 20 từ vựng + 5 câu UoE (17:45–18:10)</strong></li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>Quiz Ngữ văn tuần 34 trên LMS (18:15–18:35)</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Học TA Talent 48, ghi từ mới</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ngủ trước 21:30</li>
     </ul>
   </div>
 </div>
 
-<!-- ═══════ THỨ TƯ 8/4 ═══════ -->
+<!-- ══════════ THỨ TƯ 8/4 ══════════ -->
 
-<div class="day-panel" id="day-t4">
+<div class="dp" id="day-t4">
   <div class="dh">
-    <div><div class="dtitle">Thứ Tư 🏊</div><div class="dsub">8/4 · Bơi 16:15 – Ngày thở giữa tuần!</div></div>
-    <div class="fpill">Bơi + Tự học!</div>
+    <div><div class="dtitle">Thứ Tư 🏊</div><div class="dsub">8/4 · Bơi 16:15 + Bóng rổ TH 18:00 · Quiz Khoa học 8.3+8.4</div></div>
+    <div class="fpill fpill-green">Bơi + Bóng rổ!</div>
   </div>
 
-  <div class="tc c-wake" data-id="t4-1"><div class="tc-top"><div class="tc-time">⏰ 5:30<div class="tend">→ 6:45</div></div><span class="badge">🌅 Sáng</span><div class="tc-body"><div class="tc-name">Dậy – Ăn sáng – Chuẩn bị</div><div class="tc-det">Chuẩn bị cặp + <strong>túi đồ bơi</strong>. Mang theo đồ bơi đến trường!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t4-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="alarm-ban green">
+    <span class="ai">🔬</span>
+    <div class="at"><strong>Nhắc nhở: Quiz Khoa học 8.3 + 8.4 trên LMS – Làm trước tiết học!</strong><span>Bài 8.3: Khảo sát acid và kiềm (tiếp) · Bài 8.4: Nhận biết phản ứng hóa học<br>Lớp bổ trợ Khoa học: T4 15:45–16:30 (có thể xung đột với bơi 16:15 – kiểm tra với bố mẹ)</span></div>
+  </div>
 
-  <div class="tc c-school" data-id="t4-2"><div class="tc-top"><div class="tc-time">🏫 8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅</span></div><div class="tc-det"><strong>Việt Nam học · Toán · TANN×2 · Tin học×2 · Ngữ văn</strong><br>Chú ý Văn hôm nay. Hỏi GV khi không hiểu.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t4-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">⏰ Buổi sáng</div>
+  <div class="tc c-wake"><div class="tc-top"><div class="tc-time">5:30<div class="tend">→ 6:50</div></div><span class="badge">🌅 Sáng</span><div class="tc-body"><div class="tc-name">Dậy – Ôn nhanh KHTN – Ăn sáng – Chuẩn bị</div><div class="tc-det">Xem lại 5' định nghĩa Acid/Kiềm + nhận biết phản ứng hóa học. Chuẩn bị túi bơi + đồ bóng rổ!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-rest" data-id="t4-3"><div class="tc-top"><div class="tc-time">😌 15:30<div class="tend">→ 16:10</div></div><span class="badge">😴 Nghỉ + Ăn</span><div class="tc-body"><div class="tc-name">Về nhà – Ăn nhẹ – Chuẩn bị bơi</div><div class="tc-det">Ăn đủ nhưng không quá no (tránh chuột rút). Uống nước. Thay đồ bơi.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t4-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-lms"><div class="tc-top"><div class="tc-time">6:50<div class="tend">→ 7:15</div></div><span class="badge">💻 Quiz KHTN</span><div class="tc-body"><div class="tc-name">Quiz Khoa học 8.3 + 8.4 trên LMS <span class="tag t-lms">LMS</span><span class="tag t-dead">Làm trước tiết!</span></div><div class="tc-det">
+    <ul>
+      <li>8.3: Khảo sát acid và kiềm – chú ý chất chỉ thị màu, pH</li>
+      <li>8.4: Nhận biết phản ứng hóa học – dấu hiệu nhận biết</li>
+      <li>Vào LMS làm quiz trước khi đến trường!</li>
+    </ul>
+  </div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-swim" data-id="t4-4"><div class="tc-top"><div class="tc-time">🏊 16:15<div class="tend">→ 17:45</div></div><span class="badge">🏊 Học bơi</span><div class="tc-body"><div class="tc-name">Học bơi <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập trung kỹ thuật. Hỏi HLV chỗ chưa chắc. Bơi tốt = thể lực bóng rổ tốt!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t4-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-school"><div class="tc-top"><div class="tc-time">8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅</span></div><div class="tc-det"><strong>Việt Nam học · Toán · TANN×2 · Tin học×2 · Ngữ văn</strong><br>Toán: Bài 14.5 diện tích toàn phần HHP. Tin học: Chương 3 – Kiến trúc Quyết định. Ghi chép đủ!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-study" data-id="t4-5"><div class="tc-top"><div class="tc-time">📚 18:30<div class="tend">→ 19:00</div></div><span class="badge">📚 Tự học</span><div class="tc-body"><div class="tc-name">Ôn Toán nhẹ + Ôn TA HK2 (30')</div><div class="tc-det">Xem lại bài Toán hôm nay. <strong>Ôn từ vựng TA Unit 1-3</strong> (chuẩn bị thi HK2 ngày 17/4).</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t4-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌆 Buổi chiều – thể thao liên tiếp!</div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">15:30<div class="tend">→ 16:10</div></div><span class="badge">😴 Nạp NL</span><div class="tc-body"><div class="tc-name">Ăn nhẹ + Uống nước + Thay đồ bơi</div><div class="tc-det">Không ăn quá no trước bơi (tránh chuột rút). Chuối hoặc bánh mì nhẹ. Uống nước đủ.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-family" data-id="t4-6"><div class="tc-top"><div class="tc-time">❤️ 19:00<div class="tend">→ 19:20</div></div><span class="badge">❤️ Bố-con</span><div class="tc-body"><div class="tc-name">Kết nối bố – con (20')</div><div class="tc-det">Bố hỏi: <em>"Hôm nay học bơi, con cải thiện kỹ thuật nào rồi?"</em> Chuẩn bị đồ bóng rổ cho T5.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t4-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-swim"><div class="tc-top"><div class="tc-time">16:15<div class="tend">→ 17:15</div></div><span class="badge">🏊 Học bơi</span><div class="tc-body"><div class="tc-name">Học bơi <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập trung kỹ thuật. Hỏi HLV chỗ chưa chắc. Bơi ếch tuần này: <strong>kỹ thuật quạt tay phối hợp kỹ năng ngụp thở (7–10m)</strong>.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Kỹ thuật hôm nay:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Tốt</button><button class="diff-btn" onclick="setDiff(this,'medium')">Khá</button><button class="diff-btn" onclick="setDiff(this,'hard')">Cần luyện</button></div></div></div></div>
 
-  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:00</strong><span>Dậy 5:30 → 8h 30' ngủ ✅</span></div><div class="sleep-pill">8h30'</div></div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">17:15<div class="tend">→ 17:55</div></div><span class="badge">😴 Nghỉ giữa</span><div class="tc-body"><div class="tc-name">Nghỉ giữa 2 môn thể thao (40')</div><div class="tc-det">Ăn nhẹ bổ sung đạm. Uống nước nhiều. Thay đồ bóng rổ. Không tập nặng tiếp ngay!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
+
+  <div class="tc c-sport"><div class="tc-top"><div class="tc-time">18:00<div class="tend">→ 19:30</div></div><span class="badge">🏀 Bóng rổ TH</span><div class="tc-body"><div class="tc-name">Bóng rổ TH School <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Khởi động kỹ trước khi tập (cơ đã mệt sau bơi!). Tập trung 1 kỹ thuật mới hôm nay. Uống nước liên tục.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Kỹ thuật:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Tốt</button><button class="diff-btn" onclick="setDiff(this,'medium')">Khá</button><button class="diff-btn" onclick="setDiff(this,'hard')">Cần luyện</button></div></div></div></div>
+
+  <div class="time-label">🌙 Buổi tối</div>
+  <div class="tc c-study"><div class="tc-top"><div class="tc-time">19:45<div class="tend">→ 20:10</div></div><span class="badge">📚 Ôn TA</span><div class="tc-body"><div class="tc-name">Ôn TA HK2 – Unit 2: Sports (25') <span class="tag t-exam">Thi 17/4</span></div><div class="tc-det">
+    <ul>
+      <li>Ôn 20 từ vựng Unit 2 – Sports (dùng Workbook tr.30–35)</li>
+      <li>Xem lại thì Hiện tại đơn + Hiện tại tiếp diễn</li>
+      <li>Làm 3 câu UoE Unit 2 trong Workbook</li>
+    </ul>
+  </div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
+
+  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:00</strong><span>Dậy 5:30 sáng T5 → 8h 30' ngủ ✅ (T4 tập nhiều cần ngủ đủ!)</span></div><div class="sleep-pill">8h30'</div></div>
 
   <div class="sec"><div class="sec-title">📊 Đánh Giá Ngày – Thứ Tư</div>
-    <div class="eval-grid">
-      <div class="eval-m"><label>🏊 Kỹ thuật bơi hôm nay</label><div class="stars-big" data-day="t4-swim"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>📚 Ôn TA HK2</label><div class="stars-big" data-day="t4-study"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-note"><label>💬 Nhận xét:</label><textarea rows="2" placeholder="Ghi nhanh…"></textarea></div>
+    <div class="day-eval-grid">
+      <div class="dem"><label>💻 Quiz KHTN 8.3+8.4</label><div class="stars-big" data-day="t4-quiz"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🏊 Kỹ thuật bơi</label><div class="stars-big" data-day="t4-swim"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🏀 Bóng rổ TH School</label><div class="stars-big" data-day="t4-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>📚 Ôn TA Unit 2</label><div class="stars-big" data-day="t4-ta"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="den"><label>💬 Nhận xét:</label><textarea rows="2" placeholder="Kỹ thuật mới học được: … · Năng lượng sau 2 môn thể thao: …"></textarea><div style="display:flex;align-items:center;gap:8px;margin-top:6px"><span style="font-size:.68rem;font-weight:700;color:#8A90A8">Tâm trạng:</span><div class="mood-row"><button class="mood-btn" onclick="setMood(this)">😊</button><button class="mood-btn" onclick="setMood(this)">😐</button><button class="mood-btn" onclick="setMood(this)">😓</button></div></div></div>
     </div>
-    <div class="eval-total" id="score-t4"><div class="snum" id="snum-t4">–</div><div class="slbl">Điểm TB ngày</div></div>
+    <div class="day-score-box" id="score-t4"><div class="day-score-num" id="snum-t4">–</div><div class="day-score-lbl">Điểm TB ngày</div></div>
   </div>
+
   <div class="sec"><div class="sec-title">✅ Checklist Thứ Tư</div>
     <ul class="checklist">
-      <li><div class="cb" onclick="toggleCb(this)"></div>Mang đồ bơi đầy đủ</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Học bơi đủ buổi 16:15–17:45</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ôn TA HK2 Unit 1-3 (30')</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Chuẩn bị giày bóng rổ cho T5</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 21:00</li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>Quiz KHTN 8.3+8.4 LMS – Hoàn thành trước 8h!</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Mang đủ đồ bơi + đồ bóng rổ</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Học bơi 16:15–17:15, hỏi HLV kỹ thuật</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Nghỉ đủ 40' giữa bơi và bóng rổ</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Bóng rổ TH School 18:00–19:30</li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>Ôn TA Unit 2: 20 từ + 3 câu UoE (19:45–20:10)</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ngủ trước 21:00</li>
     </ul>
-    <div class="info"><p>📖 <strong>Nhắc nhở ôn thi TA HK2:</strong> Thi ngày 17/4 (còn 9 ngày). Mỗi tối từ giờ ôn ít nhất 20–30' Unit vocabulary. Hôm nay ôn Unit 1 + 2.</p></div>
+    <div class="alert2"><p>⚠️ T4 có bơi + bóng rổ liên tiếp. Bố mẹ nhắc Lâm <strong>uống đủ nước cả ngày (≥8 ly)</strong> và khởi động kỹ trước bóng rổ khi cơ đã mệt sau bơi.</p></div>
   </div>
 </div>
 
-<!-- ═══════ THỨ NĂM 9/4 ═══════ -->
+<!-- ══════════ THỨ NĂM 9/4 ══════════ -->
 
-<div class="day-panel" id="day-t5">
+<div class="dp" id="day-t5">
   <div class="dh">
-    <div><div class="dtitle">Thứ Năm 🏀</div><div class="dsub">9/4 · CLB Bóng rổ 16:00 · Đề LMS TA · TA cô Phương 19:10</div></div>
-    <div class="fpill" style="background:#FF6B35">🏀 Ngày CLB + LMS!</div>
+    <div><div class="dtitle">Thứ Năm 🏀</div><div class="dsub">9/4 · CLB Bóng rổ 16:00 · Đề thử LMS TA · TA cô Phương 19:10</div></div>
+    <div class="fpill fpill-orange">CLB + Đề thử TA!</div>
   </div>
 
-  <div class="exam-banner" style="border-left-color:#06D6A0">
-    <span class="ei">🎯</span>
-    <div class="et"><strong>Làm đề thử LMS Tiếng Anh lần 1 hôm nay!</strong><span>📌 Reminder: STAGE 6 END-OF-YEAR REVISION · L: 25' · R+UoE: 35' · W: 35'</span></div>
-    <div class="exam-pill" style="background:#06D6A0;color:#1C2340">LMS</div>
+  <div class="alarm-ban purple">
+    <span class="ai">🎯</span>
+    <div class="at"><strong>Reminder hôm nay: Làm đề thử LMS TA lần 1!</strong><span>Vào LMS → Module "STAGE 6 END-OF-YEAR REVISION" · L:25' + R+UoE:35' + W:35' = ~95' tổng<br>Làm sau bóng rổ (17:40–19:00) hoặc sau TA cô Phương nếu còn sức. Tính giờ nghiêm túc!</span></div>
   </div>
 
-  <div class="tc c-wake" data-id="t5-1"><div class="tc-top"><div class="tc-time">⏰ 5:30<div class="tend">→ 6:45</div></div><span class="badge">🌅 Sáng</span><div class="tc-body"><div class="tc-name">Dậy – Ăn sáng no – Chuẩn bị</div><div class="tc-det">Hôm nay có CLB bóng rổ! Ăn đủ chất. Kiểm tra giày bóng rổ.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t5-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">⏰ Buổi sáng</div>
+  <div class="tc c-wake"><div class="tc-top"><div class="tc-time">5:30<div class="tend">→ 6:50</div></div><span class="badge">🌅 Sáng</span><div class="tc-body"><div class="tc-name">Dậy – Ăn sáng no – Chuẩn bị</div><div class="tc-det">Hôm nay có CLB bóng rổ! Ăn đủ chất. Kiểm tra giày bóng rổ. Uống nước ngay khi dậy.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-school" data-id="t5-2"><div class="tc-top"><div class="tc-time">🏫 8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅</span></div><div class="tc-det"><strong>TAVN×2 · Ngữ văn×2 · Công dân · Toán×2</strong><br>Chiều có CLB – tập trung học tốt buổi sáng!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t5-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-school"><div class="tc-top"><div class="tc-time">8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅</span></div><div class="tc-det"><strong>TAVN×2 · Ngữ văn×2 · Công dân · Toán×2</strong><br>Toán: Bài 15.1 Thang xác suất – ghi chép đầy đủ. Ngữ văn: Thuyết trình hình ảnh minh họa bài thơ (Tiết 119).</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-rest" data-id="t5-3"><div class="tc-top"><div class="tc-time">😌 15:30<div class="tend">→ 15:55</div></div><span class="badge">😴 Nạp NL</span><div class="tc-body"><div class="tc-name">Ăn nhẹ + Uống nước + Khởi động nhẹ</div><div class="tc-det">Chuối/bánh mì. Không ngủ. Khởi động 5' tránh chuột rút khi tập.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t5-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌆 Chiều – CLB Bóng rổ!</div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">15:30<div class="tend">→ 15:55</div></div><span class="badge">😴 Nạp NL</span><div class="tc-body"><div class="tc-name">Ăn nhẹ + Uống nước + Khởi động nhẹ</div><div class="tc-det">Chuối/bánh mì. Không ngủ. Vận động nhẹ 5' tránh chuột rút khi tập CLB.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-sport" data-id="t5-4"><div class="tc-top"><div class="tc-time">🏀 16:00<div class="tend">→ 17:30</div></div><span class="badge">🏀 CLB Vinschool</span><div class="tc-body"><div class="tc-name">CLB Bóng rổ Vinschool ⭐ <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det"><strong>Thầy Bùi Văn Tuyên · Nhà đa năng</strong><br>Thử thách: thực hiện 1 kỹ thuật chưa làm được tuần trước!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t5-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-sport"><div class="tc-top"><div class="tc-time">16:00<div class="tend">→ 17:30</div></div><span class="badge">🏀 CLB Vinschool</span><div class="tc-body"><div class="tc-name">CLB Bóng rổ Vinschool ⭐ <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det"><strong>Thầy Bùi Văn Tuyên · Nhà đa năng</strong><br>Thử thách hôm nay: thực hiện 1 kỹ thuật chưa làm được tuần trước! Ghi lại sau buổi tập.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Kỹ thuật:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Xuất sắc</button><button class="diff-btn" onclick="setDiff(this,'medium')">Tốt</button><button class="diff-btn" onclick="setDiff(this,'hard')">Cần luyện</button></div></div></div></div>
 
-  <div class="tc c-exam" data-id="t5-5"><div class="tc-top"><div class="tc-time">🎯 17:40<div class="tend">→ 19:00</div></div><span class="badge">🎯 Đề LMS TA</span><div class="tc-body"><div class="tc-name">Làm đề thử LMS TA lần 1 <span class="tag t-rem">📌 Reminder</span></div><div class="tc-det"><strong>Vào LMS → STAGE 6 END-OF-YEAR REVISION</strong><br>Tính giờ nghiêm túc: Listening 25' · R+UoE 35' · Writing 35'. Xem đáp án và note lỗi sai sau đó!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t5-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-exam"><div class="tc-top"><div class="tc-time">17:40<div class="tend">→ 19:00</div></div><span class="badge">🎯 Đề LMS TA</span><div class="tc-body"><div class="tc-name">Làm đề thử LMS TA lần 1 <span class="tag t-lms">LMS</span><span class="tag t-exam">Reminder 9/4</span></div><div class="tc-det">
+    <ul>
+      <li><strong>LMS → STAGE 6 END-OF-YEAR REVISION</strong></li>
+      <li>Listening: 25 phút – đặt đồng hồ, nghe nghiêm túc</li>
+      <li>Reading + Use of English: 35 phút</li>
+      <li>Writing: 35 phút – viết đủ ý, dùng từ nối</li>
+      <li>Sau làm: Xem đáp án, ghi 3 lỗi sai chính vào sổ!</li>
+    </ul>
+  </div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-en" data-id="t5-6"><div class="tc-top"><div class="tc-time">🗣️ 19:10<div class="tend">→ 21:00</div></div><span class="badge">🗣️ TA cô Phương</span><div class="tc-body"><div class="tc-name">Học TA cô Phương <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Sau bóng rổ + LMS sẽ mệt – uống nước liên tục. Ghi từ mới. Cố duy trì tập trung!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t5-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-en"><div class="tc-top"><div class="tc-time">19:10<div class="tend">→ 21:00</div></div><span class="badge">🗣️ TA cô Phương</span><div class="tc-body"><div class="tc-name">Học TA cô Phương <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Sau bóng rổ + đề LMS sẽ mệt – uống nước liên tục. Ghi từ mới ra sổ. Cố duy trì tập trung 50 phút đầu!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:15</strong><span>Dậy 5:30 → 8h 15' ngủ ✅</span></div><div class="sleep-pill">8h15'</div></div>
+  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:15</strong><span>Dậy 5:30 sáng T6 → 8h 15' ngủ ✅</span></div><div class="sleep-pill">8h15'</div></div>
 
   <div class="sec"><div class="sec-title">📊 Đánh Giá Ngày – Thứ Năm</div>
-    <div class="eval-grid">
-      <div class="eval-m"><label>🏀 Kỹ thuật CLB hôm nay</label><div class="stars-big" data-day="t5-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🎯 Đề LMS TA lần 1</label><div class="stars-big" data-day="t5-lms"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🗣️ Học TA cô Phương</label><div class="stars-big" data-day="t5-ta"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>💪 Năng lượng cả ngày</label><div class="stars-big" data-day="t5-energy"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-note"><label>💬 Kỹ thuật mới CLB + điểm LMS:</label><textarea rows="2" placeholder="Kỹ thuật học được: … · LMS điểm: …"></textarea></div>
+    <div class="day-eval-grid">
+      <div class="dem"><label>🏀 Kỹ thuật CLB hôm nay</label><div class="stars-big" data-day="t5-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🎯 Đề thử TA LMS lần 1</label><div class="stars-big" data-day="t5-lms"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🗣️ Học TA cô Phương</label><div class="stars-big" data-day="t5-ta"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>💪 Năng lượng cả ngày</label><div class="stars-big" data-day="t5-e"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="den"><label>💬 Kỹ thuật CLB học được + Điểm đề LMS:</label><textarea rows="2" placeholder="Kỹ thuật mới: … · Điểm LMS (ước tính): … · 3 lỗi sai chính: …"></textarea><div style="display:flex;align-items:center;gap:8px;margin-top:6px"><span style="font-size:.68rem;font-weight:700;color:#8A90A8">Tâm trạng:</span><div class="mood-row"><button class="mood-btn" onclick="setMood(this)">😊</button><button class="mood-btn" onclick="setMood(this)">😐</button><button class="mood-btn" onclick="setMood(this)">😓</button></div></div></div>
     </div>
-    <div class="eval-total" id="score-t5"><div class="snum" id="snum-t5">–</div><div class="slbl">Điểm TB ngày</div></div>
+    <div class="day-score-box" id="score-t5"><div class="day-score-num" id="snum-t5">–</div><div class="day-score-lbl">Điểm TB ngày</div></div>
   </div>
+
   <div class="sec"><div class="sec-title">✅ Checklist Thứ Năm</div>
     <ul class="checklist">
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ăn sáng no + uống nước đủ trước CLB</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>CLB Bóng rổ Vinschool – thực hiện kỹ thuật mới</li>
-      <li><div class="cb exam-cb" onclick="toggleCb(this)"></div><strong>Làm đề LMS TA lần 1 (17:40–19:00)</strong></li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Học TA cô Phương đủ buổi, ghi từ mới</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 21:15</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ăn sáng no + giày bóng rổ đầy đủ</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>CLB Bóng rổ Vinschool – thực hiện kỹ thuật mới</li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>Làm đề thử LMS TA lần 1 (17:40–19:00) – Ghi 3 lỗi sai!</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Học TA cô Phương đủ buổi, ghi từ mới</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ngủ trước 21:15</li>
     </ul>
   </div>
 </div>
 
-<!-- ═══════ THỨ SÁU 10/4 ═══════ -->
+<!-- ══════════ THỨ SÁU 10/4 ══════════ -->
 
-<div class="day-panel" id="day-t6">
+<div class="dp" id="day-t6">
   <div class="dh">
-    <div><div class="dtitle">Thứ Sáu 🏋️🏀</div><div class="dsub">10/4 · Gym 16:15 + Bóng rổ TH School 19:30</div></div>
-    <div class="fpill">Gym mới + Bóng rổ tối!</div>
+    <div><div class="dtitle">Thứ Sáu 🏋️</div><div class="dsub">10/4 · Gym 17:30 + Bóng rổ TH School 19:30</div></div>
+    <div class="fpill fpill-orange">Gym + Bóng rổ tối!</div>
   </div>
 
-  <div class="tc c-wake" data-id="t6-1"><div class="tc-top"><div class="tc-time">⏰ 5:30<div class="tend">→ 6:45</div></div><span class="badge">🌅 Sáng</span><div class="tc-body"><div class="tc-name">Dậy – Ăn sáng – Chuẩn bị</div><div class="tc-det">Âm nhạc hôm nay! Hôm nay có cả gym và bóng rổ – chuẩn bị đồ cả 2.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t6-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">⏰ Buổi sáng</div>
+  <div class="tc c-wake"><div class="tc-top"><div class="tc-time">5:30<div class="tend">→ 6:00</div></div><span class="badge">🌅 Dậy</span><div class="tc-body"><div class="tc-name">Dậy – Vệ sinh – Chuẩn bị</div><div class="tc-det">Âm nhạc hôm nay! Hôm nay có cả gym và bóng rổ tối – chuẩn bị đồ cả 2.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-school" data-id="t6-2"><div class="tc-top"><div class="tc-time">🏫 8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅</span></div><div class="tc-det"><strong>Lịch sử · GD Thể chất · Toán · Âm nhạc · Ngữ văn · TANN · TAVN</strong><br>Âm nhạc = môn Lâm thích, tận hưởng!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t6-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-school"><div class="tc-top"><div class="tc-time">8:00<div class="tend">→ 15:25</div></div><span class="badge">🏫 Trường</span><div class="tc-body"><div class="tc-name">Học tại trường <span class="tag t-cal">📅</span></div><div class="tc-det"><strong>Lịch sử · GD Thể chất · Toán · Âm nhạc · Ngữ văn · TANN · TAVN</strong><br>Ngữ văn T120: Báo cáo sản phẩm đọc. Âm nhạc: Tuần 1 đánh giá thực hành biểu diễn!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-rest" data-id="t6-3"><div class="tc-top"><div class="tc-time">😌 15:30<div class="tend">→ 16:10</div></div><span class="badge">😴 Nghỉ + Ăn</span><div class="tc-body"><div class="tc-name">Về nhà – Ăn nhẹ – Chuẩn bị gym</div><div class="tc-det">Nạp năng lượng cho gym. Uống nước đủ. Thay đồ gym.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t6-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌆 Chiều – Tự học + Ôn TA</div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">15:30<div class="tend">→ 16:30</div></div><span class="badge">😴 Nghỉ</span><div class="tc-body"><div class="tc-name">Về nhà – Nghỉ ngơi + Ăn nhẹ</div><div class="tc-det">Nạp năng lượng cho gym tối. Uống nước nhiều.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-gym" data-id="t6-4"><div class="tc-top"><div class="tc-time">🏋️ 16:15<div class="tend">→ 17:15</div></div><span class="badge">🏋️ Gym</span><div class="tc-body"><div class="tc-name">Tập gym <span class="tag t-cal">📅 Calendar</span><span class="tag t-new">🆕 Thêm mới</span></div><div class="tc-det">Lịch gym mới bổ sung T6! Tập đủ buổi. Uống nước đủ. Sau tập ăn nhẹ bổ sung đạm.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t6-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-study"><div class="tc-top"><div class="tc-time">16:30<div class="tend">→ 17:20</div></div><span class="badge">📚 Ôn TA</span><div class="tc-body"><div class="tc-name">Ôn TA HK2 – Unit 3: Inventions (25') + Toán LMS (25') <span class="tag t-exam">Thi 17/4</span></div><div class="tc-det">
+    <ul>
+      <li>TA Unit 3: 15 từ vựng Inventions + Quá khứ bị động (was/were + V3)</li>
+      <li>Làm 5 câu UoE Unit 3 trong Workbook</li>
+      <li>Toán LMS: Tự học bài 15.2 Kết quả xung khắc (20')</li>
+    </ul>
+  </div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-study" data-id="t6-5"><div class="tc-top"><div class="tc-time">📚 17:20<div class="tend">→ 17:50</div></div><span class="badge">📚 Ôn TA</span><div class="tc-body"><div class="tc-name">Ôn TA HK2 – Unit 3 (30')</div><div class="tc-det"><strong>Từ vựng Unit 3: Inventions + thì quá khứ bị động.</strong> Dùng Workbook kiểm tra từ vựng.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t6-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌙 Buổi tối – Gym + Bóng rổ</div>
+  <div class="tc c-gym"><div class="tc-top"><div class="tc-time">17:30<div class="tend">→ 18:30</div></div><span class="badge">🏋️ Gym</span><div class="tc-body"><div class="tc-name">Tập gym <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập đủ buổi. Uống nước đủ. Sau tập ăn nhẹ bổ sung đạm trước bóng rổ.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-family" data-id="t6-6"><div class="tc-top"><div class="tc-time">❤️ 17:50<div class="tend">→ 18:00</div></div><span class="badge">❤️ Bố-con</span><div class="tc-body"><div class="tc-name">Kết nối bố – con: Tổng kết tuần</div><div class="tc-det">Bố hỏi: <em>"Tuần này con tự hào nhất về điều gì?"</em></div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t6-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">18:30<div class="tend">→ 19:20</div></div><span class="badge">🍜 Ăn tối</span><div class="tc-body"><div class="tc-name">Ăn tối sớm + Chuẩn bị bóng rổ</div><div class="tc-det">Ăn no trước 19:00. Thay đồ thể thao sẵn sàng cho TH School.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-family" data-id="t6-7"><div class="tc-top"><div class="tc-time">🍜 18:00<div class="tend">→ 19:20</div></div><span class="badge">🍜 Gia đình</span><div class="tc-body"><div class="tc-name">Ăn tối sớm + Chuẩn bị bóng rổ</div><div class="tc-det">Ăn no trước 19:00. Uống nước đủ. Thay đồ thể thao sẵn sàng cho TH School.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t6-7"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-sport"><div class="tc-top"><div class="tc-time">19:30<div class="tend">→ 20:30</div></div><span class="badge">🏀 TH School</span><div class="tc-body"><div class="tc-name">Bóng rổ TH School <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Sau gym – khởi động kỹ! Ghi 1 kỹ thuật học được hôm nay vào sổ.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Kỹ thuật:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Tốt</button><button class="diff-btn" onclick="setDiff(this,'medium')">Khá</button><button class="diff-btn" onclick="setDiff(this,'hard')">Cần luyện</button></div></div></div></div>
 
-  <div class="tc c-sport" data-id="t6-8"><div class="tc-top"><div class="tc-time">🏀 19:30<div class="tend">→ 20:30</div></div><span class="badge">🏀 TH School</span><div class="tc-body"><div class="tc-name">Bóng rổ TH School <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Sau gym chiều – <strong>khởi động kỹ trước khi tập</strong>. Ghi 1 kỹ thuật học được hôm nay.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t6-8"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
-
-  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:00</strong><span>Dậy 5:30 → 8h 30' ngủ ✅</span></div><div class="sleep-pill">8h30'</div></div>
+  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 21:15</strong><span>Dậy 7:30 sáng T7 → 10h 15' ngủ ✅ (T7 không dậy sớm!)</span></div><div class="sleep-pill">10h+'</div></div>
 
   <div class="sec"><div class="sec-title">📊 Đánh Giá Ngày – Thứ Sáu</div>
-    <div class="eval-grid">
-      <div class="eval-m"><label>🏋️ Buổi gym T6 đầu tiên</label><div class="stars-big" data-day="t6-gym"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🏀 Bóng rổ TH School</label><div class="stars-big" data-day="t6-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-note"><label>💬 Nhận xét + Kỹ thuật TH School:</label><textarea rows="2" placeholder="Ghi nhanh…"></textarea></div>
+    <div class="day-eval-grid">
+      <div class="dem"><label>🏋️ Gym T6 đủ buổi</label><div class="stars-big" data-day="t6-g"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🏀 Bóng rổ TH School</label><div class="stars-big" data-day="t6-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>📚 Ôn TA + Toán LMS</label><div class="stars-big" data-day="t6-s"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🏫 Tập trung ở trường</label><div class="stars-big" data-day="t6-sc"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="den"><label>💬 Nhận xét:</label><textarea rows="2" placeholder="Kỹ thuật TH School: … · Ôn TA tốt chưa?…"></textarea><div style="display:flex;align-items:center;gap:8px;margin-top:6px"><span style="font-size:.68rem;font-weight:700;color:#8A90A8">Tâm trạng:</span><div class="mood-row"><button class="mood-btn" onclick="setMood(this)">😊</button><button class="mood-btn" onclick="setMood(this)">😐</button><button class="mood-btn" onclick="setMood(this)">😓</button></div></div></div>
     </div>
-    <div class="eval-total" id="score-t6"><div class="snum" id="snum-t6">–</div><div class="slbl">Điểm TB ngày</div></div>
+    <div class="day-score-box" id="score-t6"><div class="day-score-num" id="snum-t6">–</div><div class="day-score-lbl">Điểm TB ngày</div></div>
   </div>
+
   <div class="sec"><div class="sec-title">✅ Checklist Thứ Sáu</div>
     <ul class="checklist">
-      <li><div class="cb" onclick="toggleCb(this)"></div>Tập gym T6 16:15–17:15 (lịch mới!)</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ôn TA Unit 3 – từ vựng + ngữ pháp (30')</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ăn tối sớm trước 19:00</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Tập bóng rổ TH School 19:30–20:30</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 21:00</li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>Ôn TA Unit 3: 15 từ + 5 câu UoE Workbook (16:30–16:55)</strong></li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>Toán LMS: Tự học bài 15.2 Xác suất xung khắc (16:55–17:20)</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Gym T6 đủ buổi 17:30–18:30</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ăn tối trước 19:00</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Bóng rổ TH School 19:30–20:30, ghi kỹ thuật học được</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ngủ trước 21:15</li>
     </ul>
   </div>
 </div>
 
-<!-- ═══════ THỨ BẢY 11/4 ═══════ -->
+<!-- ══════════ THỨ BẢY 11/4 ══════════ -->
 
-<div class="day-panel" id="day-t7">
+<div class="dp" id="day-t7">
   <div class="dh">
-    <div><div class="dtitle">Thứ Bảy ⚡</div><div class="dsub">11/4 · Văn Edufly + True North + Bơi + TA Talent</div></div>
-    <div class="fpill" style="background:#C0153B">⚠️ Ngày bận nhất!</div>
+    <div><div class="dtitle">Thứ Bảy ⚡</div><div class="dsub">11/4 · Văn Edufly 9h · True North 14:30 · Gym 17:15 · TA Talent 19:50</div></div>
+    <div class="fpill fpill-red">Ngày bận nhất!</div>
   </div>
-  <div class="alert"><p>⚠️ <strong>T7 có 4 lịch lớn:</strong> Văn Edufly → BTVN×2 → Bóng rổ True North → Bơi → TA Talent 48. Bố mẹ chú ý bữa ăn và nước uống suốt ngày!</p></div>
 
-  <div class="tc c-wake" data-id="t7-1"><div class="tc-top"><div class="tc-time">⏰ 7:30<div class="tend">→ 8:45</div></div><span class="badge">🌅 Sáng</span><div class="tc-body"><div class="tc-name">Dậy – Ăn sáng no – Chuẩn bị</div><div class="tc-det">Ăn sáng đủ chất. Chuẩn bị sách Văn + đồ bóng rổ + đồ bơi cho cả ngày.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t7-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="alarm-ban orange">
+    <span class="ai">⚡</span>
+    <div class="at"><strong>T7 có 4 lịch lớn liên tiếp – Quản lý năng lượng là ưu tiên số 1!</strong><span>Văn Edufly → BTVN×2 → True North → Gym → TA Talent 48. Ăn đủ bữa + uống đủ nước suốt ngày!</span></div>
+  </div>
 
-  <div class="tc c-class" data-id="t7-2"><div class="tc-top"><div class="tc-time">✍️ 9:00<div class="tend">→ 11:00</div></div><span class="badge">✍️ Văn Edufly</span><div class="tc-body"><div class="tc-name">Học Văn Edufly <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập trung ghi chép. <strong>Ghi rõ BTVN thầy/cô giao!</strong> Hỏi ngay khi không hiểu.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t7-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">⏰ Buổi sáng</div>
+  <div class="tc c-wake"><div class="tc-top"><div class="tc-time">7:30<div class="tend">→ 8:45</div></div><span class="badge">🌅 Sáng</span><div class="tc-body"><div class="tc-name">Dậy – Ăn sáng no – Chuẩn bị cả ngày</div><div class="tc-det">Ăn sáng đủ chất. Chuẩn bị: sách Văn + đồ bóng rổ True North + đồ gym. Uống nước ngay khi dậy.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
+
+  <div class="tc c-class"><div class="tc-top"><div class="tc-time">9:00<div class="tend">→ 11:00</div></div><span class="badge">✍️ Văn Edufly</span><div class="tc-body"><div class="tc-name">Học Văn Edufly <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập trung ghi chép. <strong>Ghi rõ BTVN thầy/cô giao!</strong> Nội dung tháng 4: Chương 12 – Yêu thương và tôn trọng.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
   <div class="btvn-split">
-    <div class="btvn-head"><span>✍️</span><strong>BTVN Văn – Edufly (chia 2 phần)</strong><span class="btag">⚠️ Bắt buộc</span></div>
+    <div class="btvn-head"><span>✍️</span><strong>BTVN Văn Edufly – Chia 2 phần (chia để tránh quá tải)</strong><span class="btag">⚠️ Bắt buộc</span></div>
     <div class="btvn-parts">
-      <div class="btvn-part" data-id="t7-bv1"><div class="bp-lbl p1">📌 P.1 – Ngay sau lớp</div><div class="bp-time">11:00 → 11:35 (35')</div><div class="bp-desc"><strong>Đọc hiểu + câu hỏi ngắn.</strong> Làm khi kiến thức còn nóng. Xong mới ăn trưa!</div><div class="star-row" data-task="t7-bv1"><span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span></div></div>
-      <div class="btvn-part" data-id="t7-bv2"><div class="bp-lbl p2">🌙 P.2 – Sau nghỉ trưa</div><div class="bp-time">13:45 → 14:20 (35')</div><div class="bp-desc"><strong>Phần viết / hoàn thiện.</strong> Não đã nghỉ → viết tốt hơn. Sau đó mới đi bóng rổ.</div><div class="star-row" data-task="t7-bv2"><span class="star-sm" data-v="1">⭐</span><span class="star-sm" data-v="2">⭐</span><span class="star-sm" data-v="3">⭐</span><span class="star-sm" data-v="4">⭐</span><span class="star-sm" data-v="5">⭐</span></div></div>
+      <div class="bvp"><div class="bvp-lbl p1">📌 P.1 – Ngay sau lớp</div><div class="bvp-time">11:00 → 11:40 (40')</div><div class="bvp-desc"><strong>Phần đọc hiểu + câu hỏi ngắn.</strong> Kiến thức còn nóng. Xong mới ăn trưa!</div></div>
+      <div class="bvp"><div class="bvp-lbl p2">🌙 P.2 – Sau nghỉ trưa</div><div class="bvp-time">13:40 → 14:20 (40')</div><div class="bvp-desc"><strong>Phần viết + hoàn thiện.</strong> Não đã nghỉ ngơi → viết tốt hơn. Xong rồi mới đi True North!</div></div>
     </div>
   </div>
 
-  <div class="tc c-rest" data-id="t7-3"><div class="tc-top"><div class="tc-time">🍜 11:35<div class="tend">→ 13:45</div></div><span class="badge">🍜 Ăn+Nghỉ</span><div class="tc-body"><div class="tc-name">Ăn trưa + Nghỉ trưa bắt buộc</div><div class="tc-det">Ăn đủ chất (đạm + tinh bột + rau). Nghỉ trưa ≥1 tiếng. Cơ thể cần nạp lại.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t7-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">11:40<div class="tend">→ 13:40</div></div><span class="badge">🍜 Ăn + Nghỉ</span><div class="tc-body"><div class="tc-name">Ăn trưa + Nghỉ trưa bắt buộc (2h)</div><div class="tc-det">Ăn đủ đạm + tinh bột + rau. Nghỉ trưa ≥1 tiếng. Chiều còn bóng rổ + gym + TA – cơ thể phải đủ năng lượng!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-sport" data-id="t7-4"><div class="tc-top"><div class="tc-time">🏀 14:30<div class="tend">→ 16:30</div></div><span class="badge">🏀 True North</span><div class="tc-body"><div class="tc-name">Bóng rổ True North <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập cường độ cao. Uống nước liên tục. Ghi kỹ thuật nổi bật nhất buổi tập!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t7-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌆 Chiều – Thể thao</div>
+  <div class="tc c-sport"><div class="tc-top"><div class="tc-time">14:30<div class="tend">→ 16:30</div></div><span class="badge">🏀 True North</span><div class="tc-body"><div class="tc-name">Bóng rổ True North <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Tập cường độ cao. Uống nước liên tục. Ghi lại 1 kỹ thuật nổi bật nhất hôm nay!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Kỹ thuật:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Xuất sắc</button><button class="diff-btn" onclick="setDiff(this,'medium')">Tốt</button><button class="diff-btn" onclick="setDiff(this,'hard')">Cần luyện</button></div></div></div></div>
 
-  <div class="tc c-rest" data-id="t7-5"><div class="tc-top"><div class="tc-time">😌 16:30<div class="tend">→ 17:10</div></div><span class="badge">😴 Nghỉ</span><div class="tc-body"><div class="tc-name">Ăn nhẹ – Uống nước – Thay đồ bơi</div><div class="tc-det">Chuối/bánh mì. Nghỉ ngắn trước khi bơi. Đừng ăn quá no.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t7-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">16:30<div class="tend">→ 17:10</div></div><span class="badge">😴 Nghỉ</span><div class="tc-body"><div class="tc-name">Ăn nhẹ – Uống nước – Thay đồ gym</div><div class="tc-det">Chuối/bánh mì. Nghỉ 40' trước gym. Đừng ăn quá no.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-swim" data-id="t7-6"><div class="tc-top"><div class="tc-time">🏊 17:15<div class="tend">→ 18:45</div></div><span class="badge">🏊 Học bơi</span><div class="tc-body"><div class="tc-name">Học bơi <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Sau bóng rổ – <strong>tập nhẹ hơn, chú trọng kỹ thuật</strong>. Tránh chấn thương cơ mệt.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t7-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-gym"><div class="tc-top"><div class="tc-time">17:15<div class="tend">→ 18:15</div></div><span class="badge">🏋️ Gym</span><div class="tc-body"><div class="tc-name">Tập gym <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Sau bóng rổ – <strong>tập nhẹ hơn bình thường</strong>, ưu tiên giãn cơ. Tránh chấn thương khi cơ đã mệt.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-rest" data-id="t7-7"><div class="tc-top"><div class="tc-time">🍜 18:45<div class="tend">→ 19:45</div></div><span class="badge">🍜 Ăn tối</span><div class="tc-body"><div class="tc-name">Tắm – Ăn tối đủ đạm – Nghỉ ngơi</div><div class="tc-det">Nhiều đạm (thịt/trứng/cá) để phục hồi. Uống nước đủ trước khi học TA.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t7-7"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌙 Tối – TA Talent 48</div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">18:15<div class="tend">→ 19:45</div></div><span class="badge">🍜 Ăn tối</span><div class="tc-body"><div class="tc-name">Tắm – Ăn tối đủ đạm – Nghỉ ngơi nhẹ</div><div class="tc-det">Nhiều đạm (thịt/trứng/cá) để phục hồi cơ. Uống nước đủ trước khi học TA.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-en" data-id="t7-8"><div class="tc-top"><div class="tc-time">🗣️ 19:50<div class="tend">→ 21:30</div></div><span class="badge">🗣️ TA Talent 48</span><div class="tc-body"><div class="tc-name">Học TA Talent 48 <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Buổi học cuối ngày bận. Ghi từ mới đủ. Uống nước liên tục.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="t7-8"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-en"><div class="tc-top"><div class="tc-time">19:50<div class="tend">→ 21:30</div></div><span class="badge">🗣️ TA Talent 48</span><div class="tc-body"><div class="tc-name">Học TA Talent 48 <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Buổi học cuối ngày bận nhất. Ghi từ mới đủ. Uống nước liên tục trong lớp.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 22:00 · Dậy 7:00</strong><span>→ 9h 00' ngủ ✅ (CN không cần dậy sớm)</span></div><div class="sleep-pill">9h00'</div></div>
+  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 22:00 · Dậy 7:00 sáng CN</strong><span>→ 9h 00' ngủ ✅ (CN không dậy sớm – đặc biệt!)</span></div><div class="sleep-pill">9h00'</div></div>
 
   <div class="sec"><div class="sec-title">📊 Đánh Giá Ngày – Thứ Bảy</div>
-    <div class="eval-grid">
-      <div class="eval-m"><label>✍️ Hiểu bài Văn Edufly</label><div class="stars-big" data-day="t7-van"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>📝 Hoàn thành BTVN Văn</label><div class="stars-big" data-day="t7-hw"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🏀 Bóng rổ True North</label><div class="stars-big" data-day="t7-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>💪 Năng lượng cả ngày</label><div class="stars-big" data-day="t7-energy"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-note"><label>💬 Nhận xét T7 – ngày bận nhất:</label><textarea rows="2" placeholder="Lâm duy trì năng lượng thế nào?…"></textarea></div>
+    <div class="day-eval-grid">
+      <div class="dem"><label>✍️ Hiểu bài Văn Edufly</label><div class="stars-big" data-day="t7-v"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>📝 BTVN Văn hoàn thành</label><div class="stars-big" data-day="t7-hw"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🏀 True North</label><div class="stars-big" data-day="t7-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>💪 Năng lượng cả ngày</label><div class="stars-big" data-day="t7-e"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="den"><label>💬 Nhận xét T7 – ngày bận nhất:</label><textarea rows="2" placeholder="Lâm duy trì năng lượng thế nào? BTVN Văn xong chưa?…"></textarea><div style="display:flex;align-items:center;gap:8px;margin-top:6px"><span style="font-size:.68rem;font-weight:700;color:#8A90A8">Tâm trạng:</span><div class="mood-row"><button class="mood-btn" onclick="setMood(this)">😊</button><button class="mood-btn" onclick="setMood(this)">😐</button><button class="mood-btn" onclick="setMood(this)">😓</button></div></div></div>
     </div>
-    <div class="eval-total" id="score-t7"><div class="snum" id="snum-t7">–</div><div class="slbl">Điểm TB ngày</div></div>
+    <div class="day-score-box" id="score-t7"><div class="day-score-num" id="snum-t7">–</div><div class="day-score-lbl">Điểm TB ngày</div></div>
   </div>
+
   <div class="sec"><div class="sec-title">✅ Checklist Thứ Bảy</div>
     <ul class="checklist">
-      <li><div class="cb" onclick="toggleCb(this)"></div>Học Văn Edufly tập trung, ghi BTVN</li>
-      <li><div class="cb hw-cb" onclick="toggleCb(this)"></div><strong>BTVN Văn P.1: đọc hiểu (11:00–11:35)</strong></li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ăn trưa + nghỉ trưa đủ (11:35–13:45)</li>
-      <li><div class="cb hw-cb" onclick="toggleCb(this)"></div><strong>BTVN Văn P.2: phần viết (13:45–14:20)</strong></li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Tập bóng rổ True North 14:30–16:30</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Học bơi 17:15–18:45</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Học TA Talent 48 đủ buổi</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Uống nước ≥8 ly cả ngày</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Học Văn Edufly tập trung, ghi BTVN</li>
+      <li><div class="cb2 hw" onclick="toggleCb(this)"></div><strong>BTVN Văn P.1: đọc hiểu (11:00–11:40)</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ăn trưa + nghỉ trưa đủ (11:40–13:40)</li>
+      <li><div class="cb2 hw" onclick="toggleCb(this)"></div><strong>BTVN Văn P.2: phần viết (13:40–14:20)</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Bóng rổ True North 14:30–16:30</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Gym nhẹ 17:15–18:15 (ưu tiên giãn cơ)</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>TA Talent 48 đủ buổi, ghi từ mới</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Uống nước ≥8 ly cả ngày</li>
     </ul>
-    <div class="alert"><p>⚠️ T7 bơi ngay sau bóng rổ – <strong>nhắc Lâm khởi động kỹ và tập nhẹ hơn bình thường</strong> để tránh chuột rút và chấn thương khi cơ bắp đã mệt.</p></div>
   </div>
 </div>
 
-<!-- ═══════ CHỦ NHẬT 12/4 ═══════ -->
+<!-- ══════════ CHỦ NHẬT 12/4 ══════════ -->
 
-<div class="day-panel" id="day-cn">
+<div class="dp" id="day-cn">
   <div class="dh">
-    <div><div class="dtitle">Chủ Nhật 🎂🏀</div><div class="dsub">12/4 · Sinh nhật + Gym 16:15 + Bóng rổ Elite 18:00</div></div>
-    <div class="fpill" style="background:#FF6B9D">Sinh nhật & Sạc pin!</div>
+    <div><div class="dtitle">Chủ Nhật 🎂</div><div class="dsub">12/4 · Sinh nhật + Gym 16:15 + Bóng rổ Elite 18:00</div></div>
+    <div class="fpill fpill-pink">Sinh nhật + Nghỉ ngơi!</div>
   </div>
 
-  <div class="bday-banner">
-    <span class="bi">🎂</span>
-    <div class="bt"><strong>Chúc mừng sinh nhật hôm nay! 🎉</strong><span>Hôm nay có sinh nhật trong gia đình – đừng quên chúc mừng!</span></div>
+  <div class="alarm-ban pink" style="--abc:#FF6B9D;--abg:#FFF0F6">
+    <span class="ai">🎂</span>
+    <div class="at"><strong>Hôm nay có sinh nhật trong gia đình! Chúc mừng!</strong><span>Dành thời gian cho gia đình hôm nay. Vẫn có gym + bóng rổ tối nhưng buổi sáng + trưa dành cho gia đình!</span></div>
   </div>
 
-  <div class="tc c-rest" data-id="cn-1"><div class="tc-top"><div class="tc-time">⏰ 7:00<div class="tend">→ 9:00</div></div><span class="badge">🌅 Sáng tự do</span><div class="tc-body"><div class="tc-name">Dậy tự nhiên – Ăn sáng gia đình</div><div class="tc-det">Hôm qua T7 vất vả – ngủ đủ. Ăn sáng cả nhà, không vội.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="cn-1"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">⏰ Buổi sáng – Nghỉ ngơi + Ôn TA</div>
+  <div class="tc c-rest"><div class="tc-top"><div class="tc-time">7:00<div class="tend">→ 9:00</div></div><span class="badge">🌅 Sáng tự do</span><div class="tc-body"><div class="tc-name">Dậy tự nhiên – Ăn sáng gia đình</div><div class="tc-det">Hôm qua T7 vất vả – ngủ đủ giấc. Ăn sáng cả nhà, không vội vàng.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-flex" data-id="cn-2"><div class="tc-top"><div class="tc-time">🎯 9:00<div class="tend">→ 11:30</div></div><span class="badge">🎯 Tự do</span><div class="tc-body"><div class="tc-name">Thời gian hoàn toàn tự do</div><div class="tc-det">Piano / Rap / Chơi với Bảo Linh. Lâm tự chọn!</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="cn-2"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-exam"><div class="tc-top"><div class="tc-time">9:00<div class="tend">→ 9:50</div></div><span class="badge">📚 Ôn TA</span><div class="tc-body"><div class="tc-name">Ôn TA HK2 – Unit 4+5+6 tổng hợp (50') <span class="tag t-exam">Thi 17/4</span></div><div class="tc-det">
+    <ul>
+      <li>Unit 4 Living things: 15 từ vựng + Thì Quá khứ đơn (chủ động & bị động)</li>
+      <li>Unit 5 Money: 15 từ vựng + Quá khứ tiếp diễn</li>
+      <li>Unit 6 People at work: 15 từ vựng + Hiện tại hoàn thành</li>
+      <li>Làm 5 câu UoE cho mỗi Unit trong Workbook</li>
+    </ul>
+  </div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-family" data-id="cn-3"><div class="tc-top"><div class="tc-time">🍜 11:30<div class="tend">→ 14:00</div></div><span class="badge">👨‍👩‍👧 Gia đình</span><div class="tc-body"><div class="tc-name">Ăn trưa gia đình + Nghỉ trưa</div><div class="tc-det">Bữa trưa cùng cả nhà – có thể kết hợp mừng sinh nhật! Nghỉ trưa đầy đủ.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="cn-3"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-study"><div class="tc-top"><div class="tc-time">9:50<div class="tend">→ 10:20</div></div><span class="badge">📐 Toán LMS</span><div class="tc-body"><div class="tc-name">Tự học LMS: Toán Bài 15.1 Thang xác suất (30')</div><div class="tc-det">Vào LMS → tự học bài 15.1. Ghi chú công thức và ví dụ chính. Làm 3 bài mẫu.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-study" data-id="cn-4"><div class="tc-top"><div class="tc-time">📚 14:00<div class="tend">→ 15:30</div></div><span class="badge">📚 Chuẩn bị</span><div class="tc-body"><div class="tc-name">Chuẩn bị tuần mới + Ôn TA HK2</div><div class="tc-det">Sắp xếp cặp sách T2. Xem TKB tuần tới. <strong>Ôn TA 30' – Unit 1→3 tổng hợp</strong> (còn 5 ngày đến thi!).</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="cn-4"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🎂 Buổi trưa – Gia đình</div>
+  <div class="tc c-family"><div class="tc-top"><div class="tc-time">10:20<div class="tend">→ 15:30</div></div><span class="badge">👨‍👩‍👧 Gia đình</span><div class="tc-body"><div class="tc-name">🎂 Sinh nhật gia đình + Nghỉ trưa</div><div class="tc-det">Ăn trưa cùng cả nhà. Có thể đi ăn ngoài để kỷ niệm sinh nhật. Nghỉ trưa đầy đủ trước gym.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-family" data-id="cn-5"><div class="tc-top"><div class="tc-time">❤️ 15:30<div class="tend">→ 16:10</div></div><span class="badge">❤️ Bố-con</span><div class="tc-body"><div class="tc-name">Tổng kết tuần + Trao thưởng</div><div class="tc-det"><strong>Đếm tổng điểm tuần.</strong> Bố trao thưởng nếu đủ điểm. Đặt mục tiêu tuần tới.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="cn-5"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="time-label">🌆 Chiều – Gym + Bóng rổ</div>
+  <div class="tc c-study"><div class="tc-top"><div class="tc-time">15:30<div class="tend">→ 16:10</div></div><span class="badge">📋 Chuẩn bị</span><div class="tc-body"><div class="tc-name">Chuẩn bị tuần mới + Tổng kết điểm tuần với bố</div><div class="tc-det">Sắp xếp cặp sách T2. Xem TKB tuần tới. Bố và Lâm đếm tổng điểm tuần → nhận thưởng nếu đủ mức!</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label></div></div></div></div>
 
-  <div class="tc c-gym" data-id="cn-6"><div class="tc-top"><div class="tc-time">🏋️ 16:15<div class="tend">→ 17:15</div></div><span class="badge">🏋️ Gym</span><div class="tc-body"><div class="tc-name">Tập gym <span class="tag t-cal">📅 Calendar</span><span class="tag t-new">🆕 Thêm mới</span></div><div class="tc-det">Gym CN – lịch mới! Ăn nhẹ + uống nước đủ trước tập 30 phút.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="cn-6"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-gym"><div class="tc-top"><div class="tc-time">16:15<div class="tend">→ 17:15</div></div><span class="badge">🏋️ Gym</span><div class="tc-body"><div class="tc-name">Tập gym <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Gym CN – lịch mới! Ăn nhẹ + uống nước đủ 30' trước tập.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Dễ</button><button class="diff-btn" onclick="setDiff(this,'medium')">Vừa</button><button class="diff-btn" onclick="setDiff(this,'hard')">Khó</button></div></div></div></div>
 
-  <div class="tc c-sport" data-id="cn-7"><div class="tc-top"><div class="tc-time">🏀 18:00<div class="tend">→ 19:30</div></div><span class="badge">🏀 Elite Bách Khoa</span><div class="tc-body"><div class="tc-name">Bóng rổ Elite Bách Khoa <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Buổi 3 trong tuần! Tập vui, không áp lực. Duy trì phong độ.</div></div></div><div class="tc-rate"><span>Đánh giá:</span><div class="stars" data-task="cn-7"><span class="star" data-v="1">⭐</span><span class="star" data-v="2">⭐</span><span class="star" data-v="3">⭐</span><span class="star" data-v="4">⭐</span><span class="star" data-v="5">⭐</span></div></div></div>
+  <div class="tc c-sport"><div class="tc-top"><div class="tc-time">18:00<div class="tend">→ 19:30</div></div><span class="badge">🏀 Elite Bách Khoa</span><div class="tc-body"><div class="tc-name">Bóng rổ Elite Bách Khoa <span class="tag t-cal">📅 Calendar</span></div><div class="tc-det">Buổi 3 bóng rổ trong tuần! Tập vui, thoải mái. Duy trì phong độ cuối tuần.</div></div></div><div class="tc-eval"><div class="eval-row"><span>Hoàn thành:</span><div class="cb-wrap"><label class="cb-opt"><input type="checkbox"> ☑ Có</label><label class="cb-opt"><input type="checkbox"> ☐ Chưa</label></div></div><div class="eval-row"><span>Mức độ:</span><div class="diff-wrap"><button class="diff-btn" onclick="setDiff(this,'easy')">Tốt</button><button class="diff-btn" onclick="setDiff(this,'medium')">Khá</button><button class="diff-btn" onclick="setDiff(this,'hard')">Mệt</button></div></div></div></div>
 
-  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 20:45</strong><span>Dậy 5:30 (T2) → 8h 45' ngủ ✅</span></div><div class="sleep-pill">8h45'</div></div>
+  <div class="sleep-ban"><span class="si">🌙</span><div class="st"><strong>Ngủ 20:45</strong><span>Dậy 5:30 sáng T2 → 8h 45' ngủ ✅</span></div><div class="sleep-pill">8h45'</div></div>
 
   <div class="sec"><div class="sec-title">📊 Đánh Giá Ngày – Chủ Nhật</div>
-    <div class="eval-grid">
-      <div class="eval-m"><label>🏋️ Gym CN lần đầu</label><div class="stars-big" data-day="cn-gym"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>🏀 Bóng rổ Elite</label><div class="stars-big" data-day="cn-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>📚 Ôn TA + Chuẩn bị tuần</label><div class="stars-big" data-day="cn-study"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-m"><label>😊 Tinh thần cả ngày</label><div class="stars-big" data-day="cn-mood"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
-      <div class="eval-note"><label>💬 Nhận xét CN + Mục tiêu tuần tới:</label><textarea rows="2" placeholder="Tuần sau con muốn cải thiện gì?…"></textarea></div>
+    <div class="day-eval-grid">
+      <div class="dem"><label>📚 Ôn TA Unit 4+5+6</label><div class="stars-big" data-day="cn-ta"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🏋️ Gym CN</label><div class="stars-big" data-day="cn-g"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>🏀 Bóng rổ Elite</label><div class="stars-big" data-day="cn-br"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="dem"><label>😊 Tinh thần cả ngày</label><div class="stars-big" data-day="cn-mood"><span class="star-big" data-v="1">⭐</span><span class="star-big" data-v="2">⭐</span><span class="star-big" data-v="3">⭐</span><span class="star-big" data-v="4">⭐</span><span class="star-big" data-v="5">⭐</span></div></div>
+      <div class="den"><label>💬 Nhận xét CN + Mục tiêu tuần tới:</label><textarea rows="2" placeholder="Tuần sau cần cải thiện gì? Ôn TA Unit nào chưa tốt?…"></textarea><div style="display:flex;align-items:center;gap:8px;margin-top:6px"><span style="font-size:.68rem;font-weight:700;color:#8A90A8">Tâm trạng:</span><div class="mood-row"><button class="mood-btn" onclick="setMood(this)">😊</button><button class="mood-btn" onclick="setMood(this)">😐</button><button class="mood-btn" onclick="setMood(this)">😓</button></div></div></div>
     </div>
-    <div class="eval-total" id="score-cn"><div class="snum" id="snum-cn">–</div><div class="slbl">Điểm TB ngày</div></div>
+    <div class="day-score-box" id="score-cn"><div class="day-score-num" id="snum-cn">–</div><div class="day-score-lbl">Điểm TB ngày</div></div>
   </div>
+
   <div class="sec"><div class="sec-title">✅ Checklist Chủ Nhật</div>
     <ul class="checklist">
-      <li><div class="cb" onclick="toggleCb(this)"></div>Thời gian tự do sáng – nghỉ ngơi đủ</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Chuẩn bị cặp sách + TKB tuần tới</li>
-      <li><div class="cb exam-cb" onclick="toggleCb(this)"></div><strong>Ôn TA HK2 – tổng hợp Unit 1→3 (30')</strong></li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Tổng kết tuần + nhận thưởng với bố</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Tập gym CN 16:15–17:15 (lịch mới!)</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Tập bóng rổ Elite 18:00–19:30</li>
-      <li><div class="cb" onclick="toggleCb(this)"></div>Ngủ trước 20:45</li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>Ôn TA HK2 Unit 4+5+6: từ vựng + UoE (9:00–9:50)</strong></li>
+      <li><div class="cb2 ex" onclick="toggleCb(this)"></div><strong>LMS Toán bài 15.1 Thang xác suất (9:50–10:20)</strong></li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Dành thời gian sinh nhật gia đình 🎂</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Chuẩn bị cặp sách T2 + Tổng kết tuần với bố</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Gym CN 16:15–17:15</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Bóng rổ Elite 18:00–19:30</li>
+      <li><div class="cb2" onclick="toggleCb(this)"></div>Ngủ trước 20:45</li>
     </ul>
   </div>
 </div>
 
-<!-- ═══════ TỔNG KẾT ═══════ -->
+<!-- ══════════ TỔNG KẾT ══════════ -->
 
-<div class="day-panel" id="day-sum">
+<div class="dp" id="day-sum">
   <div class="dh"><div><div class="dtitle">📊 Tổng Kết Tuần</div></div></div>
 
-  <!-- Exam countdown -->
+  <!-- Exam Timeline -->
 
   <div class="sec" style="border:2px solid #7B2FF7">
-    <div class="sec-title">🏆 Lịch Thi & Ôn Tập – Từ Reminder iPhone</div>
-    <div class="exam-timeline">
-      <div class="etl-item"><div class="etl-dot" style="background:#C0153B"></div><div class="etl-date">6/4 (T2)</div><div class="etl-desc"><strong>⚠️ HẠN CHÓT Quiz Địa lí</strong> – Làm trước 24h đêm nay trên LMS</div></div>
-      <div class="etl-item"><div class="etl-dot" style="background:#7B2FF7"></div><div class="etl-date">9/4 (T5)</div><div class="etl-desc"><strong>🎯 Làm đề LMS TA lần 1</strong> – Listening 25' + Reading+UoE 35' + Writing 35'</div></div>
-      <div class="etl-item"><div class="etl-dot" style="background:#FF6B35"></div><div class="etl-date">15/4 (T4)</div><div class="etl-desc"><strong>📝 Mock test đầy đủ TA</strong> – Mô phỏng thi thật, không dừng giữa chừng</div></div>
-      <div class="etl-item"><div class="etl-dot" style="background:#FFD166"></div><div class="etl-date">16/4 (T5)</div><div class="etl-desc"><strong>😴 Ngủ sớm 21h</strong> – Ôn nhẹ, ngủ đủ giấc chuẩn bị cho thi</div></div>
-      <div class="etl-item" style="background:linear-gradient(135deg,#EDE8FD,#D8CDFC);border:1px solid #7B2FF7"><div class="etl-dot" style="background:#7B2FF7"></div><div class="etl-date">17/4 (T6)</div><div class="etl-desc"><strong>🏆 THI TIẾNG ANH HK2 – Tiết 1-2-3</strong> · Ăn sáng no · Tự tin · 4 kỹ năng đều nhau!</div></div>
+    <div class="sec-title">🏆 Timeline Học Tập & Thi Cử</div>
+    <div class="timeline">
+      <div class="tli"><div class="tli-dot" style="background:#C0153B"></div><div class="tli-date">T2 6/4</div><div class="tli-desc"><strong>🚨 HẠN CHÓT Quiz Địa lí HK2 Lần 2</strong> – LMS trước 24h</div></div>
+      <div class="tli"><div class="tli-dot" style="background:#F4A300"></div><div class="tli-date">T3 7/4</div><div class="tli-desc"><strong>📝 Nộp Toán Ôn tập HK2: Bài 66–89</strong> – Hạn nộp Thứ Ba</div></div>
+      <div class="tli"><div class="tli-dot" style="background:#0040AA"></div><div class="tli-date">T4 8/4</div><div class="tli-desc"><strong>🔬 Quiz Khoa học 8.3+8.4</strong> – Làm trước tiết học buổi sáng</div></div>
+      <div class="tli"><div class="tli-dot" style="background:#7B2FF7"></div><div class="tli-date">T5 9/4</div><div class="tli-desc"><strong>🎯 Đề thử LMS TA lần 1</strong> – STAGE 6 END-OF-YEAR REVISION</div></div>
+      <div class="tli"><div class="tli-dot" style="background:#845EF7"></div><div class="tli-date">T4 15/4</div><div class="tli-desc"><strong>📝 Mock test đầy đủ TA</strong> – Mô phỏng thi thật (Reminder đã set)</div></div>
+      <div class="tli"><div class="tli-dot" style="background:#FFD166"></div><div class="tli-date">T5 16/4</div><div class="tli-desc"><strong>😴 Ngủ sớm 21h</strong> – Chuẩn bị cho thi ngày mai</div></div>
+      <div class="tli" style="background:linear-gradient(135deg,#EDE8FD,#D8CDFC);border:1px solid #7B2FF7"><div class="tli-dot" style="background:#7B2FF7"></div><div class="tli-date">T6 17/4</div><div class="tli-desc"><strong>🏆 THI TIẾNG ANH HK2 – Tiết 1-2-3!</strong> Ăn sáng no · 4 kỹ năng · Tự tin vào đi!</div></div>
     </div>
   </div>
 
@@ -649,75 +778,68 @@ body{font-family:'Nunito',sans-serif;background:#F6F2ED;color:#1C2340;min-height
       <div class="wsc"><div class="wn">T7</div><div class="ws" id="ws-t7" onclick="showDay('t7',document.querySelectorAll('.tab')[5])">–</div></div>
       <div class="wsc"><div class="wn">CN</div><div class="ws" id="ws-cn" onclick="showDay('cn',document.querySelectorAll('.tab')[6])">–</div></div>
     </div>
-    <div style="text-align:center;margin-top:14px">
-      <div style="font-family:'Fredoka One',cursive;font-size:.76rem;color:#8A90A8;margin-bottom:3px">Điểm TB tuần</div>
-      <div style="font-family:'Fredoka One',cursive;font-size:2.6rem;color:#FF6B35" id="week-avg">–</div>
-      <div style="font-size:.7rem;color:#8A90A8">/ 5.0 ⭐</div>
+    <div style="text-align:center;margin-top:13px">
+      <div style="font-family:'Fredoka One',cursive;font-size:.74rem;color:#8A90A8;margin-bottom:3px">Điểm TB tuần</div>
+      <div style="font-family:'Fredoka One',cursive;font-size:2.5rem;color:#FF6B35" id="week-avg">–</div>
+      <div style="font-size:.68rem;color:#8A90A8">/ 5.0 ⭐</div>
     </div>
   </div>
 
-  <!-- Sleep -->
+  <!-- Sleep summary -->
 
   <div class="sec">
     <div class="sec-title">🌙 Tổng Hợp Giờ Ngủ</div>
-    <div style="display:flex;flex-direction:column;gap:5px;font-size:.8rem">
-      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T2 6/4 · Ngủ 21:15</span><span style="color:#1C8A60">8h 15' ✅</span></div>
-      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T3 7/4 · Ngủ 21:30</span><span style="color:#1C8A60">8h 00' ✅</span></div>
-      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T4 8/4 · Ngủ 21:00</span><span style="color:#1C8A60">8h 30' ✅</span></div>
-      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T5 9/4 · Ngủ 21:15</span><span style="color:#1C8A60">8h 15' ✅</span></div>
-      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T6 10/4 · Ngủ 21:00</span><span style="color:#1C8A60">8h 30' ✅</span></div>
-      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T7 11/4 · Ngủ 22:00 · Dậy 7:00</span><span style="color:#1C8A60">9h 00' ✅</span></div>
-      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>CN 12/4 · Ngủ 20:45 · Dậy 5:30</span><span style="color:#1C8A60">8h 45' ✅</span></div>
-      <div style="display:flex;justify-content:space-between;padding:8px 12px;background:linear-gradient(135deg,#1C2340,#2D4070);border-radius:8px;font-weight:900;color:#fff"><span>Trung bình cả tuần</span><span style="color:#FFD166">8h 28' ✅</span></div>
+    <div style="display:flex;flex-direction:column;gap:5px;font-size:.78rem">
+      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T2 · Ngủ 21:15 · Dậy 5:30</span><span style="color:#1C8A60">8h 15' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T3 · Ngủ 21:30 · Dậy 5:30</span><span style="color:#1C8A60">8h 00' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T4 · Ngủ 21:00 · Dậy 5:30</span><span style="color:#1C8A60">8h 30' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T5 · Ngủ 21:15 · Dậy 5:30</span><span style="color:#1C8A60">8h 15' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T6 · Ngủ 21:15 · Dậy 7:30</span><span style="color:#1C8A60">10h 15' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>T7 · Ngủ 22:00 · Dậy 7:00</span><span style="color:#1C8A60">9h 00' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:6px 10px;background:#F5F0EA;border-radius:8px;font-weight:700"><span>CN · Ngủ 20:45 · Dậy 5:30</span><span style="color:#1C8A60">8h 45' ✅</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 12px;background:linear-gradient(135deg,#1C2340,#2D4070);border-radius:8px;font-weight:900;color:#fff"><span>Trung bình cả tuần</span><span style="color:#FFD166">8h 57' ✅</span></div>
     </div>
   </div>
 
   <!-- Stats -->
 
   <div class="sec">
-    <div class="sec-title">📈 Lịch Cố Định Tuần Này</div>
+    <div class="sec-title">📈 Thống Kê Tuần</div>
     <div class="sum-grid">
-      <div class="sum-card" style="background:#FFE8DF"><div class="si">🏀</div><div class="sv">3</div><div class="sl">Buổi bóng rổ</div></div>
-      <div class="sum-card" style="background:#FFE8DF"><div class="si">🏋️</div><div class="sv">3</div><div class="sl">Buổi gym (T2/T6/CN)</div></div>
-      <div class="sum-card" style="background:#E0F8F6"><div class="si">🏊</div><div class="sv">2</div><div class="sl">Buổi bơi (T4/T7)</div></div>
-      <div class="sum-card" style="background:#DCFAF2"><div class="si">🗣️</div><div class="sv">3</div><div class="sl">Ca tiếng Anh</div></div>
-      <div class="sum-card" style="background:#EDE8FD"><div class="si">🎯</div><div class="sv">2</div><div class="sl">Phiên ôn thi TA</div></div>
-      <div class="sum-card" style="background:#FFF3CC"><div class="si">📝</div><div class="sv">4</div><div class="sl">Phần BTVN</div></div>
-    </div>
-    <div style="margin-top:14px">
-      <div class="bar-row"><div class="bl"><span>🏫 Học tại trường</span><span style="color:#8A90A8">5 ngày</span></div><div class="bar-track"><div class="bar-fill" style="width:60%;background:#4ECDC4"></div></div></div>
-      <div class="bar-row"><div class="bl"><span>🏃 Thể thao tổng (BR+Gym+Bơi)</span><span style="color:#8A90A8">~10 tiếng</span></div><div class="bar-track"><div class="bar-fill" style="width:45%;background:#FF6B35"></div></div></div>
-      <div class="bar-row"><div class="bl"><span>📚 Học thêm + Ôn thi</span><span style="color:#8A90A8">~16 tiếng</span></div><div class="bar-track"><div class="bar-fill" style="width:38%;background:#845EF7"></div></div></div>
-      <div class="bar-row"><div class="bl"><span>😴 Nghỉ ngơi + Tự do</span><span style="color:#8A90A8">~18 tiếng</span></div><div class="bar-track"><div class="bar-fill" style="width:25%;background:#06D6A0"></div></div></div>
+      <div class="scard" style="background:#FFE8DF"><div class="si">🏀</div><div class="sv">3</div><div class="sl">Buổi bóng rổ</div></div>
+      <div class="scard" style="background:#FFE8DF"><div class="si">🏋️</div><div class="sv">3</div><div class="sl">Buổi gym</div></div>
+      <div class="scard" style="background:#E0F8F6"><div class="si">🏊</div><div class="sv">1</div><div class="sl">Buổi bơi</div></div>
+      <div class="scard" style="background:#DCFAF2"><div class="si">🗣️</div><div class="sv">3</div><div class="sl">Ca tiếng Anh</div></div>
+      <div class="scard" style="background:#EDE8FD"><div class="si">💻</div><div class="sv">4</div><div class="sl">Quiz/Task LMS</div></div>
+      <div class="scard" style="background:#FFDDE8"><div class="si">📝</div><div class="sv">4</div><div class="sl">Phần BTVN</div></div>
     </div>
   </div>
 
-  <!-- Reward -->
+  <!-- TA Ôn progress -->
+
+  <div class="sec" style="border:2px solid #7B2FF7">
+    <div class="sec-title">🇬🇧 Tiến Độ Ôn TA HK2 (Thi 17/4)</div>
+    <div style="font-size:.74rem;color:#8A90A8;margin-bottom:8px">Phạm vi: Unit 1–9 · Tuần này ôn Unit 1→6</div>
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#F5F0EA;border-radius:8px;font-size:.74rem;font-weight:700"><span>Unit 1: My World (20 từ + Present Simple/Cont)</span><span style="color:#FF6B35">T3 ✓</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#F5F0EA;border-radius:8px;font-size:.74rem;font-weight:700"><span>Unit 2: Sports (20 từ + Simple/Cont tenses)</span><span style="color:#FF6B35">T4 ✓</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#F5F0EA;border-radius:8px;font-size:.74rem;font-weight:700"><span>Unit 3: Inventions (15 từ + Quá khứ bị động)</span><span style="color:#FF6B35">T6 ✓</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#F5F0EA;border-radius:8px;font-size:.74rem;font-weight:700"><span>Unit 4: Living Things (15 từ + Past Simple)</span><span style="color:#FF6B35">CN ✓</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#F5F0EA;border-radius:8px;font-size:.74rem;font-weight:700"><span>Unit 5: Money (15 từ + Past Cont)</span><span style="color:#FF6B35">CN ✓</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#F5F0EA;border-radius:8px;font-size:.74rem;font-weight:700"><span>Unit 6: People at Work (15 từ + Present Perf)</span><span style="color:#FF6B35">CN ✓</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#EDE8E0;border-radius:8px;font-size:.74rem;font-weight:700;color:#8A90A8"><span>Unit 7: Nature's Power – Tuần sau</span><span>T2 13/4</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#EDE8E0;border-radius:8px;font-size:.74rem;font-weight:700;color:#8A90A8"><span>Unit 8: Entertainment – Tuần sau</span><span>T3 14/4</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 8px;background:#EDE8E0;border-radius:8px;font-size:.74rem;font-weight:700;color:#8A90A8"><span>Unit 9: Amazing Art – Tuần sau</span><span>T4 15/4</span></div>
+    </div>
+  </div>
+
+  <!-- 3 Habits -->
 
   <div class="sec">
-    <div class="sec-title">🏆 Hệ Thống Thưởng "Mùa Giải Bảo Lâm"</div>
-    <div class="rwd-grid">
-      <div class="rwd-card earn"><h4>⭐ Kiếm Điểm</h4>
-        <div class="rwd-item">Dậy đúng giờ <span class="pts">+5đ</span></div>
-        <div class="rwd-item">Làm Quiz Địa lí đúng hạn <span class="pts">+20đ</span></div>
-        <div class="rwd-item">BTVN Toán P.1 đêm T2 <span class="pts">+15đ</span></div>
-        <div class="rwd-item">BTVN Toán P.2 sáng T3 <span class="pts">+15đ</span></div>
-        <div class="rwd-item">BTVN Văn P.1 sáng T7 <span class="pts">+15đ</span></div>
-        <div class="rwd-item">BTVN Văn P.2 trưa T7 <span class="pts">+15đ</span></div>
-        <div class="rwd-item">Làm đề LMS TA lần 1 <span class="pts">+20đ</span></div>
-        <div class="rwd-item">Phát biểu ở trường <span class="pts">+10đ</span></div>
-        <div class="rwd-item">Kỹ thuật mới ở CLB <span class="pts">+20đ</span></div>
-        <div class="rwd-item">Ngủ đúng giờ <span class="pts">+5đ</span></div>
-      </div>
-      <div class="rwd-card lose"><h4>❌ Trừ Điểm</h4>
-        <div class="rwd-item">Quiz Địa lí bỏ lỡ hạn <span class="pts">-30đ</span></div>
-        <div class="rwd-item">BTVN không làm đúng hạn <span class="pts">-20đ</span></div>
-        <div class="rwd-item">Điện thoại quá giờ <span class="pts">-10đ</span></div>
-        <div class="rwd-item">Bỏ buổi tập không lý do <span class="pts">-15đ</span></div>
-        <div class="rwd-item">Ngủ muộn hơn 30' <span class="pts">-5đ</span></div>
-      </div>
-    </div>
-    <div class="note" style="margin-top:10px"><p><strong>🎯 Đổi thưởng CN 12/4:</strong><br>≥150đ = Chọn món ăn tối + 1h game<br>≥200đ = Trên + Hoạt động đặc biệt bố-con<br>≥250đ = Trên + Mua 1 thứ liên quan bóng rổ</p></div>
+    <div class="sec-title">🔥 3 Thói Quen Cần Duy Trì Tuần Này</div>
+    <div class="habit-item" style="--hc:#C0153B;--hb:#FFF0F4"><div class="habit-icon">📝</div><div><div class="habit-name">Habit 1: BTVN ngay – không để dồn</div><div class="habit-desc">Mathexpress xong → làm P.1 BTVN ngay. Văn Edufly xong → làm P.1 ngay. Quy tắc: "Làm xong bài mới nghỉ!" Não còn nóng → học hiệu quả gấp đôi.</div></div></div>
+    <div class="habit-item" style="--hc:#06D6A0;--hb:#EAFAF5"><div class="habit-icon">💧</div><div><div class="habit-name">Habit 2: Uống nước liên tục – nhất là ngày thể thao</div><div class="habit-desc">Mang bình nước mỗi ngày. T4 (bơi + bóng rổ) và T7 (True North + gym) đặc biệt quan trọng: uống trước/trong/sau mỗi buổi tập. ≥8 ly/ngày.</div></div></div>
+    <div class="habit-item" style="--hc:#7B2FF7;--hb:#F0EBFF"><div class="habit-icon">🎯</div><div><div class="habit-name">Habit 3: Ôn TA mỗi ngày 25 phút – đều đặn đến 17/4</div><div class="habit-desc">Còn 11 ngày đến thi. Mỗi ngày ôn 1 Unit: từ vựng + ngữ pháp chính + 5 câu UoE trong Workbook. Đừng dồn vào tuần thi – sẽ không kịp!</div></div></div>
   </div>
 
   <!-- Parent notes -->
@@ -726,86 +848,64 @@ body{font-family:'Nunito',sans-serif;background:#F6F2ED;color:#1C2340;min-height
     <div class="sec-title">📝 Lưu Ý Quan Trọng Cho Bố Mẹ</div>
     <div class="note">
       <p>
-      <strong>① Quiz Địa lí T2 – ưu tiên số 1 ngay sau gym (17:20).</strong> Hạn chót 24h. Nếu bỏ lỡ sẽ ảnh hưởng điểm số học kỳ.<br><br>
-      <strong>② T7 bơi sau bóng rổ – cần giám sát:</strong> Lâm sẽ tập bơi khi cơ đã mệt sau True North. Nhắc khởi động kỹ và HLV biết tình trạng cơ thể.<br><br>
-      <strong>③ Gym T6 và CN là lịch mới hoàn toàn.</strong> Đã thêm vào Calendar iPhone. Tuần đầu cần nhắc nhở Lâm nhớ lịch.<br><br>
-      <strong>④ Thi TA HK2 ngày 17/4 – còn 11 ngày.</strong> Mỗi tối từ giờ ôn ít nhất 20–30 phút từ vựng và ngữ pháp. Không để dồn vào tuần thi.<br><br>
-      <strong>⑤ Thứ Bảy bận nhất trong tuần:</strong> 4 lịch lớn liên tiếp. Đảm bảo Lâm ăn đủ bữa và uống nước liên tục. Cơ thể là ưu tiên số 1.
+      <strong>① T2 có 2 deadline khẩn cùng ngày:</strong> Quiz Địa lí phải làm trước 17:55 (sau gym, trước Mathexpress). Toán bài 66–89 làm P.1 tối T2, P.2 sáng T3.<br><br>
+      <strong>② T4 có bơi + bóng rổ liên tiếp:</strong> Đây là ngày nặng về thể lực nhất. Bố mẹ đảm bảo Lâm ăn đủ trước bơi và có 40' nghỉ giữa 2 môn.<br><br>
+      <strong>③ T7 bận nhất tuần:</strong> 4 lịch lớn liên tiếp. Nếu Lâm có dấu hiệu kiệt sức trước gym 17:15 → có thể tập nhẹ hoặc bỏ gym T7 (ưu tiên sức khỏe).<br><br>
+      <strong>④ Ôn thi TA HK2 (17/4):</strong> Mỗi ngày ôn 1–2 Unit. Không dồn vào tuần 13–17/4. Tuần này cần xong Unit 1→6.<br><br>
+      <strong>⑤ CN là sinh nhật gia đình:</strong> Dành buổi trưa cho gia đình. Lâm vẫn học sáng và tập chiều nhưng giữ tâm trạng vui vẻ!
       </p>
     </div>
-    <div style="margin-top:12px;padding:13px;background:linear-gradient(135deg,#EDE8FD,#D8CDFC);border-radius:11px;border:1px solid #845EF7">
-      <p style="font-size:.82rem;color:#3D2A9E;line-height:1.7">
+    <div style="margin-top:10px;padding:12px;background:linear-gradient(135deg,#EDE8FD,#D8CDFC);border-radius:10px;border:1px solid #845EF7">
+      <p style="font-size:.8rem;color:#3D2A9E;line-height:1.7">
         <strong>🔑 Nói với Lâm mỗi ngày:</strong><br>
-        ✦ <em>"Con là người có kỷ luật – gym 3 buổi/tuần, bơi 2 buổi/tuần."</em><br>
-        ✦ <em>"Con là người chơi bóng rổ giỏi – mỗi buổi con đều tiến bộ."</em><br>
-        ✦ <em>"Con là người dám thử thách – thi TA HK2 con sẽ làm tốt!"</em><br>
-        ✦ <em>"Con là người không bỏ cuộc – dù tuần này bận đến đâu."</em>
+        ✦ <em>"Con là người có kỷ luật – BTVN nộp đúng hạn, luôn!"</em><br>
+        ✦ <em>"Con tập gym 3 buổi, bơi, bóng rổ 3 buổi – con đang mạnh lên mỗi ngày!"</em><br>
+        ✦ <em>"Ôn TA 25 phút mỗi ngày – đến 17/4 con sẽ tự tin bước vào phòng thi!"</em><br>
+        ✦ <em>"Con không bỏ cuộc – dù tuần này bận đến đâu!"</em>
       </p>
     </div>
   </div>
-</div><!-- end sum -->
+</div>
 </div><!-- end content -->
 
 <script>
-const ratings={}, dayScores={};
-
+const ratings={},dayScores={};
 function showDay(id,btn){
-  document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.dp').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('day-'+id).classList.add('active');
   if(btn) btn.classList.add('active');
-  else {
-    const days=['t2','t3','t4','t5','t6','t7','cn','sum'];
-    const i=days.indexOf(id);
-    if(i>=0) document.querySelectorAll('.tab')[i].classList.add('active');
-  }
+  else{const d=['t2','t3','t4','t5','t6','t7','cn','sum'];const i=d.indexOf(id);if(i>=0)document.querySelectorAll('.tab')[i].classList.add('active');}
   window.scrollTo({top:0,behavior:'smooth'});
 }
-
-// Task stars
-document.querySelectorAll('.stars').forEach(c=>{
-  const task=c.dataset.task;
-  c.querySelectorAll('.star').forEach(s=>{
-    s.addEventListener('click',()=>{ const v=+s.dataset.v; ratings[task]=v; updateStars(c,'.star',v); });
-    s.addEventListener('mouseenter',()=>updateStars(c,'.star',+s.dataset.v));
-    s.addEventListener('mouseleave',()=>updateStars(c,'.star',ratings[task]||0));
-  });
-});
-
-// BTVN small stars
-document.querySelectorAll('.star-row').forEach(c=>{
-  const task=c.dataset.task;
-  c.querySelectorAll('.star-sm').forEach(s=>{
-    s.addEventListener('click',()=>{ const v=+s.dataset.v; ratings[task]=v; updateStars(c,'.star-sm',v); });
-  });
-});
-
-// Day eval stars
+function setDiff(el,type){
+  const btns=el.parentElement.querySelectorAll('.diff-btn');
+  btns.forEach(b=>{b.classList.remove('sel','sel-easy','sel-medium','sel-hard')});
+  el.classList.add('sel','sel-'+type);
+}
+function setMood(el){
+  el.parentElement.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('sel'));
+  el.classList.add('sel');
+}
 document.querySelectorAll('.stars-big').forEach(c=>{
-  const key=c.dataset.day, day=key.split('-')[0];
+  const key=c.dataset.day,day=key.split('-')[0];
   c.querySelectorAll('.star-big').forEach(s=>{
-    s.addEventListener('click',()=>{ const v=+s.dataset.v; ratings['day-'+key]=v; updateStars(c,'.star-big',v); calcDay(day); });
-    s.addEventListener('mouseenter',()=>updateStars(c,'.star-big',+s.dataset.v));
-    s.addEventListener('mouseleave',()=>updateStars(c,'.star-big',ratings['day-'+key]||0));
+    s.addEventListener('click',()=>{const v=+s.dataset.v;ratings['d-'+key]=v;upd(c,'.star-big',v);calcDay(day);});
+    s.addEventListener('mouseenter',()=>upd(c,'.star-big',+s.dataset.v));
+    s.addEventListener('mouseleave',()=>upd(c,'.star-big',ratings['d-'+key]||0));
   });
 });
-
-function updateStars(c,sel,v){ c.querySelectorAll(sel).forEach(s=>s.classList.toggle('lit',+s.dataset.v<=v)); }
-
+function upd(c,sel,v){c.querySelectorAll(sel).forEach(s=>s.classList.toggle('lit',+s.dataset.v<=v));}
 function calcDay(day){
-  const keys=Object.keys(ratings).filter(k=>k.startsWith('day-'+day+'-'));
-  if(!keys.length) return;
+  const keys=Object.keys(ratings).filter(k=>k.startsWith('d-'+day+'-'));
+  if(!keys.length)return;
   const avg=keys.reduce((a,k)=>a+ratings[k],0)/keys.length;
   dayScores[day]=avg;
-  const n=document.getElementById('snum-'+day);
-  if(n) n.textContent=avg.toFixed(1)+' ⭐';
-  const ws=document.getElementById('ws-'+day);
-  if(ws){ ws.textContent=avg.toFixed(1); ws.classList.add('has'); }
-  const vals=Object.values(dayScores);
-  if(vals.length){ const wa=vals.reduce((a,b)=>a+b,0)/vals.length; const el=document.getElementById('week-avg'); if(el) el.textContent=wa.toFixed(1)+' ⭐'; }
+  const n=document.getElementById('snum-'+day);if(n)n.textContent=avg.toFixed(1)+' ⭐';
+  const ws=document.getElementById('ws-'+day);if(ws){ws.textContent=avg.toFixed(1);ws.classList.add('has');}
+  const vals=Object.values(dayScores);if(vals.length){const wa=vals.reduce((a,b)=>a+b,0)/vals.length;const el=document.getElementById('week-avg');if(el)el.textContent=wa.toFixed(1)+' ⭐';}
 }
-
-function toggleCb(el){ el.classList.toggle('checked'); }
+function toggleCb(el){el.classList.toggle('ck');}
 </script>
 
 </body>
